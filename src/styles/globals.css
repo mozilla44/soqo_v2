@@ -1,0 +1,38 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #f9f5e9;
+  font-family: "Minion Pro" !important;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Minion Pro";
+  src: url("/fonts/MinionPro-Regular.woff2") format("woff2"),
+    url("/fonts/MinionPro-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Minion Pro";
+  src: url("/fonts/MinionPro-Bold.woff2") format("woff2"),
+    url("/fonts/MinionPro-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+.slider-container {
+  padding: 0 !important;
+}
