@@ -74,7 +74,7 @@ const Ecosystem = ({
         <title>Écosystème - Soqo</title>
       </Head>
       <Section backgroundColor="beige.500">
-        <Title mb={2} fontSize="6xl">
+        <Title mb={2}>
           <RoughNotation
             animationDuration={2000}
             color="#E5F1FC"
@@ -86,7 +86,7 @@ const Ecosystem = ({
         </Title>
         {societies && (
           <>
-            <Text mb={10} fontSize="4xl">
+            <Text mb={10} fontSize="3xl">
               Entreprises
             </Text>
             <EcosystemSlider assets={societies} />
@@ -115,21 +115,21 @@ const Ecosystem = ({
         backgroundImage="url(/assets/bg2.svg)"
         backgroundColor="blue.500"
       >
-        <Title fontSize="6xl">Ils nous aident à grandir</Title>
-        <SimpleGrid spacing={6} columns={{ base: 1, sm: 2, lg: 3 }}>
+        <Title fontSize="5xl">Ils nous aident à grandir</Title>
+        <SimpleGrid spacing={6} columns={{ base: 2, sm: 3, lg: 4 }}>
           {friends.map((friend) => (
-            <Box marginX="auto" mb={10} maxWidth="310px" key={friend.sys.id}>
+            <Box mb={10} maxWidth="310px" key={friend.sys.id}>
               <Image
-                maxWidth="18rem"
+                maxWidth="14rem"
                 width="100%"
                 objectFit="cover"
                 src={friend.fields.photo.fields?.file.url}
                 alt={friend.fields.name}
               />
-              <Text mt={2} fontSize="4xl">
+              <Text mt={2} fontWeight="bold" fontSize="3xl">
                 {friend.fields.name}
               </Text>
-              <Text fontSize="2xl">{friend.fields.title}</Text>
+              <Text fontSize="xl">{friend.fields.title}</Text>
             </Box>
           ))}
         </SimpleGrid>

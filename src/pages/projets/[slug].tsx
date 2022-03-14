@@ -30,7 +30,13 @@ const Projets = ({ project }: { project: IProject }) => {
             justifyContent="space-between"
             flex="1"
           >
-            <Text fontWeight="bold" fontSize="4xl" as="h1">
+            <Text
+              textTransform="uppercase"
+              fontWeight="bold"
+              fontSize="4xl"
+              as="h1"
+              mb={6}
+            >
               {project.fields.title}
             </Text>
             <Box>

@@ -32,7 +32,7 @@ export const CardTag = ({ type }: { type: IProject["fields"]["type"] }) => (
 const Card = ({ type, title, cover, slug }: ICardProps) => (
   <VStack alignItems="flex-start">
     <CustomLink role="group" href={`/projets/${slug}`}>
-      <Box width={{ base: "211px", md: "513px" }}>
+      <Box width={{ base: "210px", md: "450px" }}>
         <Box position="relative">
           <Image
             src={cover}
@@ -40,16 +40,18 @@ const Card = ({ type, title, cover, slug }: ICardProps) => (
             pos="relative"
             objectFit="cover"
             backgroundColor="blue.100"
-            height={{ base: "276px", md: "370px" }}
+            height={{ base: "270px", md: "300px" }}
             width="100%"
           />
           <CardTag type={type} />
         </Box>
-
         <Text
+          textDecoration="underline"
+          mt={4}
+          textTransform="uppercase"
           _groupHover={{ textDecoration: "underline" }}
           color="#1F392D"
-          fontSize={{ base: "18px", md: "32px" }}
+          fontSize={{ base: "xl", md: "3xl" }}
         >
           {title}
         </Text>
@@ -60,7 +62,7 @@ const Card = ({ type, title, cover, slug }: ICardProps) => (
 
 const ProjectSlider = ({ projects }: { projects: IProject[] }) => {
   return (
-    <HStack alignItems="flex-start" pb={10} overflowX="auto" spacing={10}>
+    <HStack alignItems="flex-start" pb={10} overflowX="auto" spacing={4}>
       {projects.map((project) => (
         <Card
           key={project.sys.id}

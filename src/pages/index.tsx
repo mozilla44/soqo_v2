@@ -1,4 +1,4 @@
-import { Box, Flex, Image, SimpleGrid, Text, VStack } from "@chakra-ui/react"
+import { Box, Flex, Text, VStack } from "@chakra-ui/react"
 import { IProject } from "types/generated/contentful"
 import Button from "components/Button"
 import Cover from "components/Cover"
@@ -11,6 +11,8 @@ import Title from "components/Title"
 import client from "core/client"
 import Head from "next/head"
 import { use100vh } from "react-div-100vh"
+import Image from "next/image"
+import partenariat from "../../public/assets/partenaires/partenariat.png"
 
 const Home = ({ projects }: { projects: IProject[] }) => {
   const height = use100vh()
@@ -71,11 +73,11 @@ const Home = ({ projects }: { projects: IProject[] }) => {
           ].map((text) => (
             <Box
               key={text}
-              py={4}
+              py={2}
               width="100%"
-              borderBottom="3px solid"
+              borderBottom="2px solid"
               borderBottomColor="beige.500"
-              fontSize={{ base: "28px", md: "48px" }}
+              fontSize={{ base: "3xl", md: "4xl" }}
             >
               {text}
             </Box>
@@ -114,15 +116,22 @@ const Home = ({ projects }: { projects: IProject[] }) => {
               permet d’inventer les solutions de demain avec tous les acteurs
               d’un même territoire.
             </Text>
-            <Button hoverColor="blue.500" mt={10} href="/ecosysteme">
+            <Button
+              isExternal
+              hoverColor="blue.500"
+              mt={10}
+              href="https://www.un.org/sustainabledevelopment/fr/objectifs-de-developpement-durable/"
+            >
               en savoir plus
             </Button>
           </Box>
-          <Box textAlign="right" flex="1">
+          <Box textAlign={{ base: "center", md: "right" }} flex="1">
             <Image
-              width="381px"
-              src="/assets/partenaires/partenariat.png"
+              width="300px"
+              height="336px"
+              src={partenariat}
               alt="Partenariats"
+              placeholder="blur"
             />
           </Box>
         </Flex>

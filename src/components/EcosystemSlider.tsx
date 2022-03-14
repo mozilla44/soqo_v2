@@ -9,7 +9,7 @@ const EcosystemSlider = ({
 }: {
   assets: IEcosystemFields["images"]
 }) => {
-  const slidesToShow = useBreakpointValue({ base: 2, sm: 3, lg: 4 }, "lg")
+  const slidesToShow = useBreakpointValue({ base: 2, sm: 3, lg: 5 }, "lg")
 
   return (
     <Carousel
@@ -34,7 +34,7 @@ const EcosystemSlider = ({
           key={asset.sys.id}
           src={asset.fields.file.url}
           alt={asset.fields.file.fileName}
-          width="150px"
+          width="140px"
         />
       ))}
     </Carousel>

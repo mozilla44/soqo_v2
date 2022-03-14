@@ -48,43 +48,9 @@ const Services = () => {
         </Text>
       </Section>
       <Section backgroundColor="#f9f5e9">
-        <Flex flexDirection={{ base: "column-reverse", lg: "row" }}>
-          <Box mr={{ base: 0, lg: 10 }} mt={{ base: 6, lg: 0 }} flex="1">
-            <Image alt="Parlons-nous" src="/assets/service.png" />
-          </Box>
-          <Box flex="1">
-            <Text fontWeight="bold" fontSize="5xl" lineHeight="3rem" mb={6}>
-              Pourquoi s’adresser à nous ?
-            </Text>
-            <VStack fontSize="2xl" spacing={6} alignItems="flex-start">
-              <Flex>
-                <Box mr={4}>
-                  <Box fontSize="4xl" as={BsArrowRight} />
-                </Box>
-                Associations et entreprises évoluent dans des environnements &
-                silos différents, avec un langage, des outils, des process et
-                codes différents.
-              </Flex>
-              <Flex>
-                <Box mr={4}>
-                  <Box fontSize="4xl" as={BsArrowRight} />
-                </Box>
-                Les associations manquent de ressources, de clefs de coopération
-              </Flex>
-              <Flex>
-                <Box mr={4}>
-                  <Box fontSize="4xl" as={BsArrowRight} />
-                </Box>
-                Les entreprises manquent de temps, sont perdues face au nombre
-                élevé d’associations et de causes à défendre, ne savent pas
-                comment mesurer leur impact
-              </Flex>
-            </VStack>
-          </Box>
-        </Flex>
-        <SimpleGrid mt={10} columns={{ base: 1, md: 2 }} spacing={6}>
+        <Title>Nos services</Title>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
           <Box>
-            <Title mt="4rem">Nos services</Title>
             <VStack py={10} borderTop="4px" alignItems="flex-start">
               <Text fontSize="3xl" fontWeight="bold">
                 Communication

@@ -13,11 +13,11 @@ const Footer = () => {
       <Box p={10} maxWidth="container.xl" marginX="auto">
         <Box
           width={{ base: "100%", md: "70%" }}
-          fontSize={{ base: "34px", md: "50px" }}
+          fontSize={{ base: "4xl", md: "5xl" }}
           lineHeight={{ base: "38px", md: "initial" }}
         >
           Pour lancer un projet, refaire le monde, ou tout simplement discuter
-          <Text display="inline-block" color="#163A2C">
+          <Text ml={2} display="inline-block" color="#163A2C">
             <RoughNotation color="#E5F1FC" show={isVisible} type="highlight">
               autour d’un café
             </RoughNotation>
@@ -27,29 +27,30 @@ const Footer = () => {
         <Flex
           flexDirection={{ base: "column", md: "row" }}
           justifyContent="space-between"
-          my="4rem"
+          my="3rem"
         >
           <VStack alignItems="flex-start">
             <CustomLink
-              fontSize={{ base: "25px", md: "35px" }}
+              fontSize={{ base: "2xl", md: "3xl" }}
               _hover={{ textDecoration: "underline" }}
               href="mailto:bonjour@soqo.fr"
             >
               bonjour@soqo.fr
             </CustomLink>
             <CustomLink
-              fontSize={{ base: "25px", md: "35px" }}
+              isExternal
+              fontSize={{ base: "2xl", md: "3xl" }}
               _hover={{ textDecoration: "underline" }}
-              href="/"
+              href="https://toyfot4mry1.typeform.com/to/VmjX2qgM"
             >
               Prendre rendez-vous
             </CustomLink>
           </VStack>
-          <VStack mt={{ base: 10, md: 0 }} alignItems="flex-end">
+          <VStack mt={{ base: 4, md: 0 }} alignItems="flex-end">
             <CustomLink
               isExternal
               display="flex"
-              fontSize={{ base: "25px", md: "35px" }}
+              fontSize={{ base: "2xl", md: "3xl" }}
               _hover={{ textDecoration: "underline" }}
               href="https://www.instagram.com/soqo.fr/"
             >
@@ -58,7 +59,7 @@ const Footer = () => {
             <CustomLink
               isExternal
               display="flex"
-              fontSize={{ base: "25px", md: "35px" }}
+              fontSize={{ base: "2xl", md: "3xl" }}
               _hover={{ textDecoration: "underline" }}
               href="https://fr.linkedin.com/company/soqo-fr"
             >

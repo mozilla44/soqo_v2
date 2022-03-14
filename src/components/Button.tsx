@@ -19,10 +19,10 @@ const Button = (props: LinkProps & { hoverColor?: string; href: string }) => {
       fontFamily="arial"
       backgroundColor="transparent"
       borderRadius="full"
-      border="4px solid"
+      border="3px solid"
       borderColor="currentColor"
       color="currentColor"
-      fontSize={{ base: "32px", md: "42px" }}
+      fontSize="3xl"
       px={9}
       _before={{
         content: `""`,
@@ -53,7 +53,7 @@ const Button = (props: LinkProps & { hoverColor?: string; href: string }) => {
         zIndex={2}
         as={BsArrowRight}
         ml={2}
-        mt={2}
+        mt={1}
       />
     </CustomLink>
   )

@@ -1,7 +1,9 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react"
+import { Box, Flex, Text } from "@chakra-ui/react"
 import useIsVisible from "hooks/useIsVisible"
+import Image from "next/image"
 import React from "react"
 import { RoughNotation } from "react-rough-notation"
+import cover from "../../public/assets/cover.png"
 
 const Cover = () => {
   const isVisible = useIsVisible()
@@ -24,6 +26,7 @@ const Cover = () => {
         mr={4}
       >
         <Box
+          maxWidth="40rem"
           display="block"
           fontSize={{ base: "30px", md: "3vw", xl: "40px" }}
           lineHeight="120%"
@@ -52,14 +55,14 @@ const Cover = () => {
         alignItems="center"
         justifyContent="flex-end"
       >
-        <Box
-          py={3}
-          flex="1 1 auto"
-          position="relative"
-          maxWidth="500px"
-          maxHeight="750px"
-        >
-          <Image objectFit="contain" alt="Soqo" src="/assets/cover.png" />
+        <Box py={3} flex="1 1 auto" position="relative">
+          <Image
+            src={cover}
+            alt="Soqo"
+            placeholder="blur"
+            width="500px"
+            height="750px"
+          />
         </Box>
       </Flex>
     </Flex>

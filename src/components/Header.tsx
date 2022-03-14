@@ -24,7 +24,7 @@ import {
 
 export const HEADER_HEIGHT = "120px"
 
-const MenuLink = (props: LinkProps & { href: string; isActive: boolean }) => {
+const MenuLink = (props: LinkProps & { href: string; isActive?: boolean }) => {
   const { children, isActive, ...rest } = props
   const [isVisible, setVisible] = useState(false)
   const isMobile: boolean | undefined = useBreakpointValue({
@@ -77,7 +77,7 @@ const Header = () => {
         maxWidth="container.xl"
       >
         <CustomLink href="/">
-          <Image mt={2} alt="Soqo" width="130px" src="/assets/logo.png" />
+          <Image mt={2} alt="Soqo" width="120px" src="/assets/logo.png" />
         </CustomLink>
         {!isMobile && (
           <HStack spacing={10}>
@@ -93,9 +93,12 @@ const Header = () => {
             <MenuLink isActive={pathname === "/ecosysteme"} href="/ecosysteme">
               écosystème
             </MenuLink>
+            <MenuLink isActive={pathname === "/adn"} href="/adn">
+              adn
+            </MenuLink>
             <MenuLink
-              isActive={pathname === "/parlons-nous"}
-              href="/parlons-nous"
+              isExternal
+              href="https://toyfot4mry1.typeform.com/to/VmjX2qgM"
             >
               parlons-nous
             </MenuLink>
@@ -139,9 +142,12 @@ const Header = () => {
                 >
                   écosystème
                 </MenuLink>
+                <MenuLink isActive={pathname === "/adn"} href="/adn">
+                  adn
+                </MenuLink>
                 <MenuLink
-                  isActive={pathname === "/parlons-nous"}
-                  href="/parlons-nous"
+                  isExternal
+                  href="https://toyfot4mry1.typeform.com/to/VmjX2qgM"
                 >
                   parlons-nous
                 </MenuLink>

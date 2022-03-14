@@ -27,23 +27,23 @@ const Card = ({
         <Image alt="title" width="100%" src={cover} />
         <CardTag type={type} />
       </Box>
-      <Flex mt={4} justifyContent="space-between">
+      <Flex
+        flexDirection={{ base: "column", xl: "row" }}
+        mt={4}
+        justifyContent="space-between"
+      >
         <Text
+          textDecoration="underline"
           textTransform="uppercase"
           maxWidth="20rem"
           _groupHover={{ textDecoration: "underline" }}
           color="#1F392D"
-          fontSize={{ base: "xl", md: "3xl" }}
+          fontSize="3xl"
         >
           {title}
         </Text>
-        <Box>
-          <Button
-            borderWidth="2px"
-            hoverColor="#F9F5E9"
-            href={`/projets/${slug}`}
-            fontSize="xl"
-          >
+        <Box textAlign="right" mt={{ base: 3, xl: 0 }}>
+          <Button hoverColor="#F9F5E9" href={`/projets/${slug}`}>
             découvrir
           </Button>
         </Box>
@@ -68,7 +68,10 @@ const Projets = ({ projects }: IProps) => (
       color="kaki.500"
       backgroundColor="#F9F5E9"
     >
-      <SimpleGrid spacing="4rem" columns={{ base: 1, md: 2 }}>
+      <SimpleGrid
+        spacing={{ md: "2rem", lg: "4rem" }}
+        columns={{ base: 1, md: 2 }}
+      >
         <Box>
           {projects
             .filter((_, i) => i % 2 === 0)
