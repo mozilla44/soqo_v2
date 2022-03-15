@@ -30,6 +30,7 @@ const Card = ({
       <Flex
         flexDirection={{ base: "column", xl: "row" }}
         mt={4}
+        alignItems={{ base: "space-between", xl: "center" }}
         justifyContent="space-between"
       >
         <Text
@@ -38,12 +39,12 @@ const Card = ({
           maxWidth="20rem"
           _groupHover={{ textDecoration: "underline" }}
           color="#1F392D"
-          fontSize="3xl"
+          fontSize="2xl"
         >
           {title}
         </Text>
         <Box textAlign="right" mt={{ base: 3, xl: 0 }}>
-          <Button hoverColor="#F9F5E9" href={`/projets/${slug}`}>
+          <Button hoverColor="beige.500" href={`/projets/${slug}`}>
             découvrir
           </Button>
         </Box>

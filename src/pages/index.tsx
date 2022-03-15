@@ -15,18 +15,12 @@ import Image from "next/image"
 import partenariat from "../../public/assets/partenaires/partenariat.png"
 
 const Home = ({ projects }: { projects: IProject[] }) => {
-  const height = use100vh()
-
   return (
     <Layout>
       <Head>
         <title>Accueil - Soqo</title>
       </Head>
-      <Flex
-        flexDirection="column"
-        backgroundColor="blue.500"
-        height={{ base: "auto", xl: `calc(${height}px - ${HEADER_HEIGHT})` }}
-      >
+      <Flex flexDirection="column" backgroundColor="blue.500">
         <Cover />
         {false && (
           <Box backgroundColor="yellow.500">
@@ -46,8 +40,13 @@ const Home = ({ projects }: { projects: IProject[] }) => {
       </Flex>
       <Box as="section" color="kaki.500" backgroundColor="beige.500">
         <Box p={10} pb={0} maxWidth="container.xl" marginX="auto">
-          <Title>Projets</Title>
+          <Title mb={4}>Projets</Title>
+          <Box maxWidth="50rem" fontSize="2xl" mb={10}>
+            En créant des partenariats innovants nous contribuons ensemble à la
+            construction d’un monde plus juste et plus durable.
+          </Box>
         </Box>
+
         <Box
           maxWidth={{ xl: "container.xl" }}
           px={{ base: 4, md: 10 }}
@@ -56,7 +55,7 @@ const Home = ({ projects }: { projects: IProject[] }) => {
           <ProjectSlider projects={projects} />
         </Box>
         <Box p={10} pt={0} maxWidth="container.xl" marginX="auto">
-          <Button href="/projets" hoverColor="#f9f5e9">
+          <Button href="/projets" hoverColor="beige.500">
             voir tout
           </Button>
         </Box>
@@ -65,11 +64,11 @@ const Home = ({ projects }: { projects: IProject[] }) => {
         <Title color="beige.500">Nos services</Title>
         <VStack>
           {[
-            "Analyse des besoins et définition des objectifs",
+            "Définition de la stratégie d’engagement",
             "Identification de projets associatifs & mise en place du partenariat",
-            "Accompagnement & pilotage du partenariat",
+            "Pilotage du partenariat & engagement des collaborateurs",
             "Mesure d’impact",
-            "No bullshit communication",
+            "Accompagnement à la communication",
           ].map((text) => (
             <Box
               key={text}

@@ -19,11 +19,12 @@ const Button = (props: LinkProps & { hoverColor?: string; href: string }) => {
       fontFamily="arial"
       backgroundColor="transparent"
       borderRadius="full"
-      border="3px solid"
+      border="2px solid"
       borderColor="currentColor"
       color="currentColor"
-      fontSize="3xl"
+      fontSize="2xl"
       px={9}
+      py={1}
       _before={{
         content: `""`,
         position: "absolute",

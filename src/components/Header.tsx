@@ -81,6 +81,9 @@ const Header = () => {
         </CustomLink>
         {!isMobile && (
           <HStack spacing={10}>
+            <MenuLink isActive={pathname === "/adn"} href="/adn">
+              adn
+            </MenuLink>
             <MenuLink
               isActive={pathname.startsWith("/projets")}
               href="/projets"
@@ -93,9 +96,7 @@ const Header = () => {
             <MenuLink isActive={pathname === "/ecosysteme"} href="/ecosysteme">
               écosystème
             </MenuLink>
-            <MenuLink isActive={pathname === "/adn"} href="/adn">
-              adn
-            </MenuLink>
+
             <MenuLink
               isExternal
               href="https://toyfot4mry1.typeform.com/to/VmjX2qgM"
@@ -127,6 +128,9 @@ const Header = () => {
                 <CustomLink href="/">
                   <Image alt="Soqo" width="130px" src="/assets/logo.png" />
                 </CustomLink>
+                <MenuLink isActive={pathname === "/adn"} href="/adn">
+                  adn
+                </MenuLink>
                 <MenuLink
                   isActive={pathname.startsWith("/projets")}
                   href="/projets"
@@ -142,9 +146,7 @@ const Header = () => {
                 >
                   écosystème
                 </MenuLink>
-                <MenuLink isActive={pathname === "/adn"} href="/adn">
-                  adn
-                </MenuLink>
+
                 <MenuLink
                   isExternal
                   href="https://toyfot4mry1.typeform.com/to/VmjX2qgM"

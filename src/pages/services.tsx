@@ -1,21 +1,12 @@
-import {
-  Box,
-  Flex,
-  Image,
-  List,
-  ListItem,
-  SimpleGrid,
-  Text,
-  VStack,
-} from "@chakra-ui/react"
+import { Text } from "@chakra-ui/react"
 import Footer from "components/Footer"
 import Layout from "components/Layout"
 import Section from "components/Section"
+import ServiceAccordion from "components/ServiceAccordion"
 import Title from "components/Title"
 import useIsVisible from "hooks/useIsVisible"
 import Head from "next/head"
 import React from "react"
-import { BsArrowRight } from "react-icons/bs"
 import { RoughNotation } from "react-rough-notation"
 
 const Services = () => {
@@ -49,79 +40,9 @@ const Services = () => {
       </Section>
       <Section backgroundColor="#f9f5e9">
         <Title>Nos services</Title>
-        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
-          <Box>
-            <VStack py={10} borderTop="4px" alignItems="flex-start">
-              <Text fontSize="3xl" fontWeight="bold">
-                Communication
-              </Text>
-              <List pl={6} listStyleType="" fontSize="xl">
-                <ListItem>Principe d’une stratégie Be → Do → Say</ListItem>
-                <ListItem> Création de contenus liés au projet</ListItem>
-                <ListItem>Amplification (interne / B2B / B2C)</ListItem>
-                <ListItem> Stratégie influence</ListItem>
-              </List>
-            </VStack>
-            <VStack py={10} borderTop="4px" alignItems="flex-start">
-              <Text fontSize="3xl" fontWeight="bold">
-                Identification associations et mise en place de partenariat
-              </Text>
-              <List pl={6} listStyleType="" fontSize="xl">
-                <ListItem>
-                  Proposition d’associations cohérentes avec les objectifs
-                </ListItem>
-                <ListItem>
-                  Stratégie de récits pour donner vie à la collaboration
-                </ListItem>
-                <ListItem>
-                  Mise en place de la convention partenariat / mécénat
-                </ListItem>
-              </List>
-            </VStack>
-          </Box>
-          <Box>
-            <VStack py={10} borderTop="4px" alignItems="flex-start">
-              <Text fontSize="3xl" fontWeight="bold">
-                Définition d’objectifs RSE/ RSM
-              </Text>
-              <List pl={6} listStyleType="" fontSize="xl">
-                <ListItem>Analyse de la stratégie</ListItem>
-                <ListItem>
-                  Cadrage des besoins (RSE, RSM, Mécénat, Sponsoring)
-                </ListItem>
-                <ListItem>Objectif de la collaboration</ListItem>
-                <ListItem>Définition budgétaire</ListItem>
-                <ListItem>Engagement des collaborateurs</ListItem>
-              </List>
-            </VStack>
-            <VStack py={10} borderTop="4px" alignItems="flex-start">
-              <Text fontSize="3xl" fontWeight="bold">
-                Pilotage du partenariat / mécénat
-              </Text>
-
-              <List pl={6} listStyleType="" fontSize="xl">
-                <ListItem>Outils d’analyse global (dashboard)</ListItem>
-                <ListItem>Suivi du plan d’action</ListItem>
-                <ListItem>{`Suivi budget Diagnostic & Efficacité`}</ListItem>
-                <ListItem>Reporting mensuel</ListItem>
-              </List>
-            </VStack>
-            <VStack py={10} borderTop="4px" alignItems="flex-start">
-              <Text fontSize="3xl" fontWeight="bold">
-                Mesure de l’impact social & environnementaux
-              </Text>
-              <List pl={6} listStyleType="" fontSize="xl">
-                <ListItem>Résultats qualitatifs et quantitatifs</ListItem>
-                <ListItem>{`Analyse reporting, KPI's, bénéficiaires, retombées presses)`}</ListItem>
-                <ListItem>{`Elaboration de document stratégiques alimentant vos rapports RSE
-              (diagnostics, définition du périmètre de l'étude d'impact,
-              sélection de la méthode d'étude, social ROI)`}</ListItem>
-              </List>
-            </VStack>
-          </Box>
-        </SimpleGrid>
+        <ServiceAccordion />
       </Section>
-      <Footer />
+      <Footer disableAnimation />
     </Layout>
   )
 }

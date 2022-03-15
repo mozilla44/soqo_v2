@@ -35,9 +35,10 @@ const ADN = () => {
           >
             <Text fontSize="2xl">
               Entreprise à mission œuvrant aux frontières de la RSE, du mécénat
-              et de la communication, Soqo est un créateur de liens entre les
-              associations et les entreprises pour développer des projets à
-              impact solidaires et durables.
+              et de la communication, Soqo est un{" "}
+              <b>créateur de liens entre les associations et les entreprises</b>{" "}
+              pour développer des{" "}
+              <b>projets à impact solidaires et durables.</b>
             </Text>
           </Flex>
           <Box mb={{ base: 6, lg: 0 }} flex="1">
@@ -65,7 +66,7 @@ const ADN = () => {
           </Box>
           <Box mt={{ base: 6, lg: 0 }} fontSize="23px" flex="1">
             <VStack spacing={6}>
-              <Text fontSize="xl">
+              <Text fontSize="lg">
                 <b>Najma Souroque</b> et <b>Victor Coeur</b> ont fondé Soqo en
                 novembre 2021. Au-delà du désir d’entreprendre, Najma et Victor
                 se sont retrouvés dans le constat commun de la nécessité de
@@ -73,10 +74,10 @@ const ADN = () => {
                 associations pour créer de l’impact social.
               </Text>
               <Box>
-                <Text fontWeight="bold" fontSize="5xl">
+                <Text fontWeight="bold" fontSize="4xl">
                   Najma
                 </Text>
-                <Text fontSize="xl">
+                <Text fontSize="lg">
                   {`Après une mission au Ministère de l’Ecologie pour la COP21,
                   Najma a travaillé 7 ans pour le festival We Love Green en tant
                   que responsable RSE, Contenus & Institutions. Diplômée d’un
@@ -85,21 +86,20 @@ const ADN = () => {
                   des évènements. Le monde de l’ESS lui est familier tout autant
                   que le pilotage de projet et la RSE.`}
                 </Text>
-                <Box mt={6} textAlign="right">
+                <Box mt={4} textAlign="right">
                   <Button
                     href="https://fr.linkedin.com/in/naj-souroque-paris"
-                    hoverColor="#f9f5e9"
-                    fontSize="3xl"
+                    hoverColor="beige.500"
                   >
                     Linkedin
                   </Button>
                 </Box>
               </Box>
               <Box>
-                <Text fontWeight="bold" fontSize="5xl">
+                <Text fontWeight="bold" fontSize="4xl">
                   Victor
                 </Text>
-                <Text fontSize="xl">
+                <Text fontSize="lg">
                   Diplômé de Kedge, Victor a travaillé 10 ans dans la
                   communication événementielle, pour de petites maisons comme de
                   très grandes marques. Il quitte en 2020 ses fonctions de
@@ -108,11 +108,10 @@ const ADN = () => {
                   suivre une formation sur la philanthropie et le mécénat auprès
                   de l’ESSEC ainsi qu’un programme d’accompagnement chez
                   MakeSense for Entrepreneurs.
-                  <Box mt={6} textAlign="right">
+                  <Box mt={4} textAlign="right">
                     <Button
                       href="https://fr.linkedin.com/in/victorcoeur"
-                      hoverColor="#f9f5e9"
-                      fontSize="3xl"
+                      hoverColor="beige.500"
                     >
                       Linkedin
                     </Button>
@@ -194,8 +193,7 @@ const ADN = () => {
               <Button
                 href="https://www.un.org/sustainabledevelopment/fr/objectifs-de-developpement-durable/"
                 isExternal
-                hoverColor="#f9f5e9"
-                fontSize="3xl"
+                hoverColor="beige.500"
               >
                 en savoir plus
               </Button>

@@ -4,12 +4,18 @@ import CustomLink from "components/CustomLink"
 import { BsArrowUpRight } from "react-icons/bs"
 import { RoughNotation } from "react-rough-notation"
 import { useInView } from "react-hook-inview"
+import useIsVisible from "hooks/useIsVisible"
 
-const Footer = () => {
-  const [ref, isVisible] = useInView()
+const Footer = ({
+  disableAnimation = false,
+}: {
+  disableAnimation?: boolean
+}) => {
+  const [ref, isInView] = useInView()
+  const isVisible = useIsVisible()
 
   return (
-    <Box ref={ref} color="#f9f5e9" backgroundColor="#163A2C">
+    <Box ref={ref} color="beige.500" backgroundColor="kaki.500">
       <Box p={10} maxWidth="container.xl" marginX="auto">
         <Box
           width={{ base: "100%", md: "70%" }}
@@ -17,8 +23,16 @@ const Footer = () => {
           lineHeight={{ base: "38px", md: "initial" }}
         >
           Pour lancer un projet, refaire le monde, ou tout simplement discuter
-          <Text ml={2} display="inline-block" color="#163A2C">
-            <RoughNotation color="#E5F1FC" show={isVisible} type="highlight">
+          <Text
+            ml={2}
+            display="inline-block"
+            color={disableAnimation ? "beige.500" : "kaki.500"}
+          >
+            <RoughNotation
+              color="#E5F1FC"
+              show={!disableAnimation && isInView && isVisible}
+              type="highlight"
+            >
               autour d’un café
             </RoughNotation>
           </Text>

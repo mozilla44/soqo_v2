@@ -6,7 +6,12 @@ const Section = (props: BoxProps) => {
 
   return (
     <Box p={{ base: 0, md: 10 }} as="section" {...rest}>
-      <Box p={{ base: 6, md: 10 }} maxWidth="container.xl" marginX="auto">
+      <Box
+        px={{ base: 6, md: 10 }}
+        py={{ base: 10, md: 10 }}
+        maxWidth="container.xl"
+        marginX="auto"
+      >
         {children}
       </Box>
     </Box>
