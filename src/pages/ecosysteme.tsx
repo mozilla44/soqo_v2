@@ -65,7 +65,7 @@ const Ecosystem = ({
     (item) => item.fields.type === "associations"
   )?.fields.images
 
-  const parteners = ecosystem.find((item) => item.fields.type === "parteners")
+  const parteners = ecosystem.find((item) => item.fields.type === "partners")
     ?.fields.images
 
   return (

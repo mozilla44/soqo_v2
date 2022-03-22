@@ -8,7 +8,7 @@ export interface IEcosystemFields {
   images?: Asset[] | undefined;
 
   /** type */
-  type: "associations" | "parteners" | "societies";
+  type: "associations" | "societies" | "partners";
 }
 
 export interface IEcosystem extends Entry<IEcosystemFields> {
@@ -29,13 +29,13 @@ export interface IEcosystem extends Entry<IEcosystemFields> {
 }
 
 export interface IFriendFields {
-  /** name */
+  /** Prénom/Nom */
   name: string;
 
-  /** title */
+  /** Job */
   title: string;
 
-  /** photo */
+  /** Photo */
   photo: Asset;
 }
 
@@ -57,35 +57,41 @@ export interface IFriend extends Entry<IFriendFields> {
 }
 
 export interface IProjectFields {
-  /** title */
+  /** Titre */
   title: string;
 
-  /** cover */
+  /** Image */
   cover?: Asset | undefined;
 
-  /** slug */
+  /** Url */
   slug: string;
 
   /** Type */
   type?: "social" | "environment" | undefined;
 
-  /** Society */
+  /** Entreprise */
   society?: string | undefined;
 
-  /** Society text */
+  /** Entreprise texte */
   societyText?: string | undefined;
 
-  /** Organization */
+  /** Association */
   organization?: string | undefined;
 
-  /** Organization text */
+  /** Association texte */
   organizationText?: string | undefined;
 
-  /** content */
-  content?: Document | undefined;
-
-  /** metrics */
+  /** Chiffres */
   metrics?: string[] | undefined;
+
+  /** Contenu */
+  content?: string | undefined;
+
+  /** Citation */
+  quote?: string | undefined;
+
+  /** Citation auteur */
+  quoteAuthor?: string | undefined;
 }
 
 export interface IProject extends Entry<IProjectFields> {

@@ -8,6 +8,7 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 import React from "react"
 import { BsArrowRight } from "react-icons/bs"
+import { GoQuote } from "react-icons/go"
 import { IProject } from "types/generated/contentful"
 
 const Projets = ({ project }: { project: IProject }) => {
@@ -60,7 +61,7 @@ const Projets = ({ project }: { project: IProject }) => {
       </Section>
       <Section p={0} color="kaki.500">
         <SimpleGrid columns={{ base: 1, md: 2 }}>
-          <Box p={{ base: 6, sm: 10 }} backgroundColor="yellow.500">
+          <Box backgroundColor="yellow.500" p={{ base: 6, sm: 10 }}>
             <Text mb={{ base: 4, sm: 10 }} fontWeight="semibold" fontSize="3xl">
               Quelques chiffres
             </Text>
@@ -78,6 +79,17 @@ const Projets = ({ project }: { project: IProject }) => {
                 </Flex>
               ))}
             </VStack>
+            <Flex mt={10}>
+              <Box mr={4}>
+                <Box fontSize="6xl" as={GoQuote} />
+              </Box>
+              <Box>
+                <Text fontSize="2xl">{project.fields.quote}</Text>
+                <Text fontWeight="bold" mt={4} fontSize="xl">
+                  {project.fields.quoteAuthor}
+                </Text>
+              </Box>
+            </Flex>
           </Box>
           <Box p={10} backgroundColor="blue.500">
             <Box
@@ -95,7 +107,7 @@ const Projets = ({ project }: { project: IProject }) => {
               whiteSpace="pre-line"
               mt={6}
               fontSize="lg"
-              dangerouslySetInnerHTML={{ __html: project.fields.content }}
+              dangerouslySetInnerHTML={{ __html: project.fields.content! }}
             />
           </Box>
         </SimpleGrid>

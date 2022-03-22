@@ -1,7 +1,8 @@
 import React from "react"
-import { Box, Flex, Text, VStack } from "@chakra-ui/react"
+import { Box, Flex, HStack, Text, VStack } from "@chakra-ui/react"
 import CustomLink from "components/CustomLink"
 import { BsArrowUpRight } from "react-icons/bs"
+import { GoMail, GoCalendar } from "react-icons/go"
 import { RoughNotation } from "react-rough-notation"
 import { useInView } from "react-hook-inview"
 import useIsVisible from "hooks/useIsVisible"
@@ -49,7 +50,10 @@ const Footer = ({
               _hover={{ textDecoration: "underline" }}
               href="mailto:bonjour@soqo.fr"
             >
-              bonjour@soqo.fr
+              <HStack>
+                <GoMail />
+                <Text>bonjour@soqo.fr</Text>
+              </HStack>
             </CustomLink>
             <CustomLink
               isExternal
@@ -57,7 +61,10 @@ const Footer = ({
               _hover={{ textDecoration: "underline" }}
               href="https://toyfot4mry1.typeform.com/to/VmjX2qgM"
             >
-              Prendre rendez-vous
+              <HStack>
+                <GoCalendar />
+                <Text>Prendre rendez-vous</Text>
+              </HStack>
             </CustomLink>
           </VStack>
           <VStack mt={{ base: 4, md: 0 }} alignItems="flex-end">

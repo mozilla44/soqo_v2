@@ -21,7 +21,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => (
     <Head>
       <title>Soqo</title>
       <meta name="description" content="Soqo" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/favicon.png" />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1, min-scale=1, max-scale=1"

@@ -1,4 +1,10 @@
-import { IconButton, Image, useBreakpointValue } from "@chakra-ui/react"
+import {
+  Box,
+  Flex,
+  IconButton,
+  Image,
+  useBreakpointValue,
+} from "@chakra-ui/react"
 import Carousel, { CarouselSlideRenderControlProps } from "nuka-carousel"
 import React from "react"
 import { BsArrowRight } from "react-icons/bs"
@@ -14,10 +20,12 @@ const EcosystemSlider = ({
   return (
     <Carousel
       wrapAround
+      heightMode="max"
       slidesToShow={slidesToShow}
       withoutControls={slidesToShow === 2}
       renderBottomCenterControls={null}
       renderCenterLeftControls={null}
+      initialSlideHeight={200}
       renderCenterRightControls={(props: CarouselSlideRenderControlProps) => (
         <IconButton
           color="kaki.500"
@@ -30,12 +38,17 @@ const EcosystemSlider = ({
       )}
     >
       {assets?.map((asset) => (
-        <Image
-          key={asset.sys.id}
-          src={asset.fields.file.url}
-          alt={asset.fields.file.fileName}
-          width="140px"
-        />
+        <Flex alignItems="center" key={asset.sys.id}>
+          <Box>
+            <Image
+              height="140px"
+              width="140px"
+              objectFit="contain"
+              src={asset.fields.file.url}
+              alt={asset.fields.file.fileName}
+            />
+          </Box>
+        </Flex>
       ))}
     </Carousel>
   )
