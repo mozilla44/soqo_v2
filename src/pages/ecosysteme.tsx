@@ -74,20 +74,17 @@ const Ecosystem = ({
         <title>Écosystème - Soqo</title>
       </Head>
       <Section backgroundColor="beige.500">
-        <Title mb={2}>
-          <RoughNotation
-            animationDuration={2000}
-            color="#E5F1FC"
-            show={isVisible}
-            type="highlight"
-          >
-            Écosystème
-          </RoughNotation>
-        </Title>
         {societies && (
           <>
-            <Text mb={10} fontSize="3xl">
-              Entreprises
+            <Text mb={10} fontSize="4xl">
+              <RoughNotation
+                animationDuration={2000}
+                color="#E5F1FC"
+                show={isVisible}
+                type="highlight"
+              >
+                Les entreprises nous font confiance
+              </RoughNotation>
             </Text>
             <EcosystemSlider assets={societies} />
           </>
@@ -95,7 +92,14 @@ const Ecosystem = ({
         {associations && (
           <>
             <Text my={10} fontSize="4xl">
-              Associations
+              <RoughNotation
+                animationDuration={2000}
+                color="#E5F1FC"
+                show={isVisible}
+                type="highlight"
+              >
+                Les associations également
+              </RoughNotation>
             </Text>
             <EcosystemSlider assets={associations} />
           </>
@@ -103,7 +107,14 @@ const Ecosystem = ({
         {parteners && (
           <>
             <Text my={10} fontSize="4xl">
-              Partenaires
+              <RoughNotation
+                animationDuration={2000}
+                color="#E5F1FC"
+                show={isVisible}
+                type="highlight"
+              >
+                Nos partenaires nous épaulent
+              </RoughNotation>
             </Text>
             <EcosystemSlider assets={parteners} />
           </>
@@ -115,8 +126,11 @@ const Ecosystem = ({
         backgroundImage="url(/assets/bg2.svg)"
         backgroundColor="blue.500"
       >
-        <Title fontSize="5xl">Ils nous aident à grandir</Title>
-        <SimpleGrid spacing={6} columns={{ base: 2, sm: 3, lg: 4 }}>
+        <Title fontSize="5xl">
+          6 personnalités aux profils complémentaires, qui nous inspirent et
+          nous aident à grandir
+        </Title>
+        <SimpleGrid mt={4} spacing={6} columns={{ base: 2, sm: 3, lg: 3 }}>
           {friends.map((friend) => (
             <Box mb={10} maxWidth="310px" key={friend.sys.id}>
               <Image
@@ -142,19 +156,19 @@ const Ecosystem = ({
 Ecosystem.backgroundColor = "#f9f5e9"
 
 export const getStaticProps = async () => {
-  const entries = await client.getEntries()
-  const ecosystem = entries.items.filter(
-    (item) => item.sys.contentType.sys.id === "ecosystem"
-  )
+  const friends = await client.getEntries({
+    content_type: "friend",
+    order: "fields.position",
+  })
 
-  const friends = entries.items.filter(
-    (item) => item.sys.contentType.sys.id === "friend"
-  )
+  const ecosystem = await client.getEntries({
+    content_type: "ecosystem",
+  })
 
   return {
     props: {
-      ecosystem,
-      friends,
+      ecosystem: ecosystem.items,
+      friends: friends.items,
     },
     revalidate: 10,
   }

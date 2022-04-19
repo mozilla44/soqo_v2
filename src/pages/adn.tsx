@@ -9,7 +9,6 @@ import Title from "components/Title"
 import Head from "next/head"
 
 // Assets
-import partnership from "../../public/assets/partenaires/partenariat.png"
 import speakUs from "../../public/assets/parlons-nous.jpg"
 import historyProject from "../../public/assets/cover.png"
 import about from "../../public/assets/qui-sommes-nous.png"
@@ -34,11 +33,12 @@ const ADN = () => {
             flex="1"
           >
             <Text fontSize="2xl">
-              Entreprise à mission œuvrant aux frontières de la RSE, du mécénat
-              et de la communication, Soqo est un{" "}
-              <b>créateur de liens entre les associations et les entreprises</b>{" "}
-              pour développer des{" "}
-              <b>projets à impact solidaires et durables.</b>
+              <b>Entreprise à mission</b>, Soqo a été fondée en novembre 2021
+              par Najma Souroque et Victor Coeur, dans{" "}
+              <b>
+                le but de faciliter les relations entre entreprises et
+                associations
+              </b>
             </Text>
           </Flex>
           <Box mb={{ base: 6, lg: 0 }} flex="1">
@@ -53,26 +53,19 @@ const ADN = () => {
         </Flex>
       </Section>
       <Section backgroundColor="beige.500">
-        <Title>Qui sommes nous ?</Title>
+        <Title>Qui sommes-nous ?</Title>
         <Flex flexDirection={{ base: "column", lg: "row" }}>
           <Box mr={{ base: 0, lg: 10 }} flex="1">
             <Image
               src={about}
               width="611px"
               height="626px"
-              alt="Qui sommes nous ?"
+              alt="Qui sommes-nous ?"
               placeholder="blur"
             />
           </Box>
           <Box mt={{ base: 6, lg: 0 }} fontSize="23px" flex="1">
             <VStack spacing={6}>
-              <Text fontSize="lg">
-                <b>Najma Souroque</b> et <b>Victor Coeur</b> ont fondé Soqo en
-                novembre 2021. Au-delà du désir d’entreprendre, Najma et Victor
-                se sont retrouvés dans le constat commun de la nécessité de
-                faire communiquer le monde de l’entreprise et celui des
-                associations pour créer de l’impact social.
-              </Text>
               <Box>
                 <Text fontWeight="bold" fontSize="4xl">
                   Najma
@@ -88,6 +81,7 @@ const ADN = () => {
                 </Text>
                 <Box mt={4} textAlign="right">
                   <Button
+                    isSmall
                     href="https://fr.linkedin.com/in/naj-souroque-paris"
                     hoverColor="beige.500"
                   >
@@ -110,6 +104,7 @@ const ADN = () => {
                   MakeSense for Entrepreneurs.
                   <Box mt={4} textAlign="right">
                     <Button
+                      isSmall
                       href="https://fr.linkedin.com/in/victorcoeur"
                       hoverColor="beige.500"
                     >
@@ -137,68 +132,13 @@ const ADN = () => {
               </RoughNotation>
             </Text>
           </Title>
-          <VStack fontSize="xl" flex="1" spacing={4}>
-            <Text>
-              Les collaborations innovantes que nous pilotons aident les
-              entreprises à transformer leur modèle et leurs pratiques en menant
-              des{" "}
-              <b>
-                actions à impact, engageantes pour leurs collaborateur.trice.s
-                et influant positivement la société.
-              </b>
-            </Text>
-            <Text>
-              {`Notre engagement d’entreprise à mission de l'Économie Sociale
-              Environnementale et Solidaire, inscrit dans nos statuts, se
-              traduit en 4 axes clés : la poursuite d'une utilité sociale, la
-              recherche d'un modèle économique viable, une gouvernance
-              démocratique et une lucrativité limitée.`}
-            </Text>
-          </VStack>
-        </Flex>
-        <Flex
-          alignItems={{ base: "initial", lg: "flex-end" }}
-          mt={{ base: 10, lg: 0 }}
-          flexDirection={{ base: "column", lg: "row" }}
-        >
-          <Box flex="1">
-            <Title mb={4} fontSize="63px">
-              ODD 17
-            </Title>
-            <Text maxWidth="28rem" fontSize="xl">
-              {`L’objectif de développement durable n°17 (ODD) met à l’honneur
-              l’importance d’une action collective et concertée comme levier
-              incontournable pour réduire les fractures territoriales &
-              problématiques existantes, souvent révélées par les associations
-              et porteurs de projets. Cette action collective et concertée
-              permet d’inventer les solutions de demain avec tous les acteurs
-              d’un même territoire.`}
-            </Text>
-          </Box>
-          <Flex
-            mt={{ base: 10, lg: 0 }}
-            alignItems="flex-end"
-            flex="1"
-            flexDirection="column"
-            justifyContent="space-between"
-          >
-            <Image
-              width="300px"
-              height="336px"
-              src={partnership}
-              alt="Partenariats"
-              placeholder="blur"
-            />
-            <Box mt={6} textAlign="right">
-              <Button
-                href="https://www.un.org/sustainabledevelopment/fr/objectifs-de-developpement-durable/"
-                isExternal
-                hoverColor="beige.500"
-              >
-                en savoir plus
-              </Button>
-            </Box>
-          </Flex>
+          <Text fontSize="xl" flex="1">
+            Notre engagement d’entreprise à mission de l’Économie Sociale
+            Environnementale et Solidaire, inscrit dans nos statuts, se traduit
+            en 4 axes clés : la poursuite d’une utilité sociale, la recherche
+            d’un modèle économique viable, une gouvernance démocratique et une
+            lucrativité limitée.
+          </Text>
         </Flex>
       </Section>
       <Section backgroundColor="beige.500">
@@ -214,18 +154,18 @@ const ADN = () => {
             />
           </Box>
           <Flex flexDirection="column" justifyContent="center" flex="1">
-            <Title mb={4} fontSize="4xl" lineHeight="3rem">
-              {`Soqo, permet la concrétisation de l'engagement.`}
+            <Title mb={4}>
+              Soqo*, partenaire des entreprises, au service des associations
             </Title>
             <VStack>
               <Text fontSize="xl">
-                {`Nous accompagnons les entreprises dans leur passage à l'action
-                et la mise en œuvre concrète de projets à impact.`}
+                Nous accompagnons les entreprises dans leur passage à l’action
+                et la mise en œuvre concrète de projets à impact.
               </Text>
               <Text fontSize="xl">
-                {`Nous permettons aux associations de bénéficier de clefs de
-                coopération, de temps et de financement d'entreprises engagées
-                pour leur cause.`}
+                Nous permettons aux associations de bénéficier de clefs de
+                coopération, de temps et de financement d’entreprises engagées
+                pour leur cause.
               </Text>
             </VStack>
           </Flex>

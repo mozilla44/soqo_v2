@@ -49,7 +49,7 @@ const Item: React.FC<{ label: string }> = ({ label, children }) => {
 const ServiceAccordion = () => {
   return (
     <VStack>
-      <Item label="Définition de la stratégie d’engagement">
+      <Item label="Définition de la stratégie d’engagement de votre entreprise">
         <Text {...titleProps}>
           Cadrer les besoins et fixer les objectifs RSE au service de
           l’innovation sociale
@@ -106,6 +106,20 @@ const ServiceAccordion = () => {
           <ListItem>Monitoring et reporting</ListItem>
         </List>
       </Item>
+      <Item label="Accompagnement à la communication">
+        <Text {...titleProps}>
+          Valoriser les engagements de manière transparente et mobiliser autour
+          des causes soutenues
+        </Text>
+        <List {...listProps}>
+          <ListItem>Accompagnement à la communication du partenariat</ListItem>
+          <ListItem>Stratégie de récits et d’influence</ListItem>
+          <ListItem>
+            Création de contenus et valorisation de la collaboration
+          </ListItem>
+          <ListItem>Amplification (interne / B2B / B2C)</ListItem>
+        </List>
+      </Item>
       <Item label="Mesure d’impact">
         <Text {...titleProps}>
           Mesurer concrètement l’impact social et environnemental du partenariat
@@ -122,23 +136,9 @@ const ServiceAccordion = () => {
             RSE (diagnostics, SROI…)
           </ListItem>
           <ListItem>
-            Mobilisation des parties prenantes à la démarche d’évaluation
-            d’impact social
+            Mobilisation des parties prenantes à la démarche d’évaluation de
+            l’impact social et/ou environnemental
           </ListItem>
-        </List>
-      </Item>
-      <Item label="Accompagnement à la communication">
-        <Text {...titleProps}>
-          Valoriser les engagements de manière transparente et mobiliser autour
-          des causes soutenues
-        </Text>
-        <List {...listProps}>
-          <ListItem>Accompagnement à la communication du partenariat</ListItem>
-          <ListItem>Stratégie de récits et d’influence</ListItem>
-          <ListItem>
-            Création de contenus et valorisation de la collaboration
-          </ListItem>
-          <ListItem>Amplification (interne / B2B / B2C)</ListItem>
         </List>
       </Item>
     </VStack>

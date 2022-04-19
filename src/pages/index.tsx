@@ -1,17 +1,15 @@
 import { Box, Flex, Text, VStack } from "@chakra-ui/react"
-import { IProject } from "types/generated/contentful"
 import Button from "components/Button"
 import Cover from "components/Cover"
 import Footer from "components/Footer"
-import { HEADER_HEIGHT } from "components/Header"
 import Layout from "components/Layout"
 import ProjectSlider from "components/ProjectSlider"
 import Section from "components/Section"
 import Title from "components/Title"
 import client from "core/client"
 import Head from "next/head"
-import { use100vh } from "react-div-100vh"
 import Image from "next/image"
+import { IProject } from "types/generated/contentful"
 import partenariat from "../../public/assets/partenaires/partenariat.png"
 
 const Home = ({ projects }: { projects: IProject[] }) => {
@@ -40,7 +38,7 @@ const Home = ({ projects }: { projects: IProject[] }) => {
       </Flex>
       <Box as="section" color="kaki.500" backgroundColor="beige.500">
         <Box p={10} pb={0} maxWidth="container.xl" marginX="auto">
-          <Title mb={4}>Projets</Title>
+          <Title mb={4}>Nos projets</Title>
           <Box maxWidth="50rem" fontSize="2xl" mb={10}>
             En créant des partenariats innovants nous contribuons ensemble à la
             construction d’un monde plus juste et plus durable.
@@ -64,11 +62,11 @@ const Home = ({ projects }: { projects: IProject[] }) => {
         <Title color="beige.500">Nos services</Title>
         <VStack>
           {[
-            "Définition de la stratégie d’engagement",
+            "Définition de la stratégie d’engagement de votre entreprise",
             "Identification de projets associatifs & mise en place du partenariat",
             "Pilotage du partenariat & engagement des collaborateurs",
-            "Mesure d’impact",
             "Accompagnement à la communication",
+            "Mesure d’impact",
           ].map((text) => (
             <Box
               key={text}
@@ -95,25 +93,26 @@ const Home = ({ projects }: { projects: IProject[] }) => {
         backgroundColor="blue.500"
       >
         <Title display={{ base: "block", md: "none" }} color="kaki.500">
-          Partenariats
+          {`Notre dada : l'ODD 17`}
         </Title>
         <Flex flexDirection={{ base: "column-reverse", md: "row" }}>
           <Box flex={{ base: 1, md: 2 }}>
             <Title display={{ base: "none", md: "block" }} color="kaki.500">
-              Partenariats
+              {`Notre dada : l'ODD 17`}
             </Title>
             <Text
               mt={{ base: 6, md: 0 }}
               width={{ base: "100%", md: "70%" }}
               fontSize="2xl"
             >
-              L’objectif de développement durable n°17 (ODD) met à l’honneur
-              l’importance d’une action collective et concertée comme levier
-              incontournable pour réduire les fractures territoriales &
-              problématiques existantes, souvent révélées par les associations
-              et porteurs de projets. Cette action collective et concertée
-              permet d’inventer les solutions de demain avec tous les acteurs
-              d’un même territoire.
+              L’objectif de développement durable (ODD) n°17 promeut
+              l’importance des actions collectives comme leviers incontournables
+              pour réduire les problématiques sociales et environnementales,
+              souvent révélées par les associations. Ces partenariats doivent
+              être inclusifs, construits sur des principes et des valeurs
+              communes et placer au coeur des préoccupations les peuples et la
+              planète. Ils permettent d’inventer les solutions de demain avec
+              tous les acteurs d’un même territoire
             </Text>
             <Button
               isExternal
@@ -121,10 +120,15 @@ const Home = ({ projects }: { projects: IProject[] }) => {
               mt={10}
               href="https://www.un.org/sustainabledevelopment/fr/objectifs-de-developpement-durable/"
             >
-              en savoir plus
+              découvrir les ODD
             </Button>
           </Box>
-          <Box textAlign={{ base: "center", md: "right" }} flex="1">
+          <Box
+            display="flex"
+            alignItems="center"
+            justifyContent={{ base: "center", md: "flex-end" }}
+            flex="1"
+          >
             <Image
               width="300px"
               height="336px"
@@ -133,6 +137,32 @@ const Home = ({ projects }: { projects: IProject[] }) => {
               placeholder="blur"
             />
           </Box>
+        </Flex>
+      </Section>
+      <Section position="relative" color="kaki.500" backgroundColor="beige.500">
+        <Title display={{ base: "block", md: "none" }} color="kaki.500">
+          Notre manifeste
+        </Title>
+        <Flex flexDirection={{ base: "column-reverse", md: "row" }}>
+          <Box flex={{ base: 1, md: 2 }}>
+            <Title display={{ base: "none", md: "block" }} color="kaki.500">
+              Notre manifeste
+            </Title>
+            <Text
+              mt={{ base: 6, md: 0 }}
+              width={{ base: "100%", md: "70%" }}
+              fontSize="2xl"
+            >
+              {`Égalité sociale, transition écologique, diversité, inclusion
+              économique. Face aux défis actuels, nous sommes convaincus qu'il
+              faut apporter des réponses collectives. Associations et
+              entreprises ont un rôle à jouer ensemble. Chez Soqo, nous croyons
+              en l'innovation sociale et allions l'expertise des associations à
+              la puissance des entreprises pour réaliser des projets concrets à
+              impact positif.`}
+            </Text>
+          </Box>
+          <Box textAlign={{ base: "center", md: "right" }} flex="1"></Box>
         </Flex>
       </Section>
       <Footer />

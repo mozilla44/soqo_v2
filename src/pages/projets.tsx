@@ -9,6 +9,7 @@ import React from "react"
 import client from "core/client"
 import { IProject } from "types/generated/contentful"
 import { CardTag } from "components/ProjectSlider"
+import { BsArrowRight } from "react-icons/bs"
 
 const Card = ({
   title,
@@ -31,23 +32,20 @@ const Card = ({
         flexDirection={{ base: "column", xl: "row" }}
         mt={4}
         alignItems={{ base: "space-between", xl: "center" }}
-        justifyContent="space-between"
       >
         <Text
           textDecoration="underline"
           textTransform="uppercase"
-          maxWidth="20rem"
           _groupHover={{ textDecoration: "underline" }}
           color="#1F392D"
-          fontSize="2xl"
         >
-          {title}
+          <Box fontSize="3xl" display="flex" alignItems="center">
+            {title}{" "}
+            <Box ml={2}>
+              <BsArrowRight />
+            </Box>
+          </Box>
         </Text>
-        <Box textAlign="right" mt={{ base: 3, xl: 0 }}>
-          <Button hoverColor="beige.500" href={`/projets/${slug}`}>
-            découvrir
-          </Button>
-        </Box>
       </Flex>
     </Box>
   </CustomLink>
@@ -108,14 +106,13 @@ const Projets = ({ projects }: IProps) => (
 Projets.backgroundColor = "#F9F5E9"
 
 export const getStaticProps = async () => {
-  const entries = await client.getEntries()
-  const projects = entries.items.filter(
-    (item) => item.sys.contentType.sys.id === "project"
-  )
+  const projects = await client.getEntries({
+    content_type: "project",
+  })
 
   return {
     props: {
-      projects,
+      projects: projects.items,
     },
     revalidate: 10,
   }

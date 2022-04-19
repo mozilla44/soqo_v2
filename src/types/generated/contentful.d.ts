@@ -37,6 +37,9 @@ export interface IFriendFields {
 
   /** Photo */
   photo: Asset;
+
+  /** position */
+  position?: number | undefined;
 }
 
 export interface IFriend extends Entry<IFriendFields> {
@@ -92,6 +95,9 @@ export interface IProjectFields {
 
   /** Citation auteur */
   quoteAuthor?: string | undefined;
+
+  /** position */
+  position?: number | undefined;
 }
 
 export interface IProject extends Entry<IProjectFields> {

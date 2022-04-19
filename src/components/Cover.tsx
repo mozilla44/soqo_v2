@@ -4,6 +4,7 @@ import Image from "next/image"
 import React from "react"
 import { RoughNotation } from "react-rough-notation"
 import cover from "../../public/assets/cover.png"
+import Button from "./Button"
 
 const Cover = () => {
   const isVisible = useIsVisible()
@@ -11,7 +12,7 @@ const Cover = () => {
   return (
     <Flex
       px={10}
-      backgroundColor="#E5F1FC"
+      backgroundColor="blue.500"
       flex="1"
       flexDirection={{ base: "column", md: "row" }}
       marginX="auto"
@@ -32,21 +33,25 @@ const Cover = () => {
           lineHeight="120%"
           mb={10}
         >
-          Face aux defis actuels, nous sommes convaincus qu’il faut apporter des
-          <Box fontWeight="bold" as="span" mx={2}>
-            réponses collectives :
-          </Box>{" "}
-          associations et entreprises ont un rôle determinant{" "}
-          <Text display="inline-block" color="#163A2C">
+          Soqo* est{" "}
+          <Text display="inline-block" color="kaki.500">
             <RoughNotation
               animationDuration={2000}
               color="#F9F5E9"
               show={isVisible}
               type="highlight"
             >
-              à <b>jouer ensemble</b>.
+              <b>un créateur de liens</b>
             </RoughNotation>
-          </Text>
+          </Text>{" "}
+          <strong>entre associations et entreprises</strong> pour développer des
+          projets concrets{" "}
+          <strong>à impact social et environnemental positif</strong>
+        </Box>
+        <Box mb={{ base: 12, md: 0 }}>
+          <Button href="/adn" hoverColor="blue.500">
+            découvrir notre adn
+          </Button>
         </Box>
       </Flex>
       <Flex

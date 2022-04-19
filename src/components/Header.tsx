@@ -27,6 +27,7 @@ export const HEADER_HEIGHT = "120px"
 const MenuLink = (props: LinkProps & { href: string; isActive?: boolean }) => {
   const { children, isActive, ...rest } = props
   const [isVisible, setVisible] = useState(false)
+  const [isHovered, setHovered] = useState(false)
   const isMobile: boolean | undefined = useBreakpointValue({
     base: true,
     lg: false,
@@ -41,13 +42,15 @@ const MenuLink = (props: LinkProps & { href: string; isActive?: boolean }) => {
 
   return (
     <CustomLink
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
       fontStyle={isActive ? "italic" : "initial"}
       fontSize="30px"
       {...rest}
     >
       <RoughNotation
         color="#FFE32D"
-        show={isActive && isVisible}
+        show={(isActive && isVisible) || isHovered}
         type="highlight"
       >
         {children}

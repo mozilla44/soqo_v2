@@ -42,7 +42,20 @@ const Services = () => {
         <Title>Nos services</Title>
         <ServiceAccordion />
       </Section>
-      <Footer disableAnimation />
+      <Section position="relative" backgroundColor="#E5F1FC">
+        <Text
+          fontWeight="normal"
+          fontSize={{ base: "4xl", lg: "5xl" }}
+          lineHeight={{ base: "2.6rem", lg: "initial" }}
+          maxWidth={{ base: "100%", md: "80%" }}
+        >
+          Les <b>collaborations innovantes</b> que nous pilotons aident les
+          entreprises à <b>transformer leur modèle et leurs pratiques</b> en
+          menant des actions à impact, engageantes pour leurs
+          collaborateur.trices et influant positivement la société
+        </Text>
+      </Section>
+      <Footer />
     </Layout>
   )
 }

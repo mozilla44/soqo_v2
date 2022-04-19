@@ -42,13 +42,13 @@ const Projets = ({ project }: { project: IProject }) => {
             </Text>
             <Box>
               <Text fontWeight="bold" fontSize="2xl">
-                {project.fields.organization}
-              </Text>
-              <Text fontSize="xl">{project.fields.organizationText}</Text>
-              <Text mt={6} fontWeight="bold" fontSize="2xl">
                 {project.fields.society}
               </Text>
               <Text fontSize="xl">{project.fields.societyText}</Text>
+              <Text mt={6} fontWeight="bold" fontSize="2xl">
+                {project.fields.organization}
+              </Text>
+              <Text fontSize="xl">{project.fields.organizationText}</Text>
             </Box>
           </Flex>
           <Box mb={{ base: 6, lg: 0 }} flex="1">
@@ -63,7 +63,7 @@ const Projets = ({ project }: { project: IProject }) => {
         <SimpleGrid columns={{ base: 1, md: 2 }}>
           <Box backgroundColor="yellow.500" p={{ base: 6, sm: 10 }}>
             <Text mb={{ base: 4, sm: 10 }} fontWeight="semibold" fontSize="3xl">
-              Quelques chiffres
+              Résultats
             </Text>
             <VStack fontSize="2xl" alignItems="flex-start">
               {project.fields.metrics?.map((metric) => (
@@ -92,17 +92,9 @@ const Projets = ({ project }: { project: IProject }) => {
             </Flex>
           </Box>
           <Box p={10} backgroundColor="blue.500">
-            <Box
-              px={4}
-              display="inline-block"
-              border="1px"
-              borderRadius="full"
-              fontSize="2xl"
-            >
-              {project.fields.type === "environment"
-                ? "Environnement"
-                : "Social"}
-            </Box>
+            <Text mb={{ base: 4, sm: 10 }} fontWeight="semibold" fontSize="3xl">
+              L’histoire
+            </Text>
             <Box
               whiteSpace="pre-line"
               mt={6}

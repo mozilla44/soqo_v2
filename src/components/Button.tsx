@@ -3,7 +3,9 @@ import React, { useState } from "react"
 import { BsArrowRight } from "react-icons/bs"
 import CustomLink from "./CustomLink"
 
-const Button = (props: LinkProps & { hoverColor?: string; href: string }) => {
+const Button = (
+  props: LinkProps & { hoverColor?: string; href: string; isSmall?: boolean }
+) => {
   const [isHover, setHover] = useState(false)
   const { children, hoverColor, ...rest } = props
 
@@ -22,9 +24,9 @@ const Button = (props: LinkProps & { hoverColor?: string; href: string }) => {
       border="2px solid"
       borderColor="currentColor"
       color="currentColor"
-      fontSize="2xl"
-      px={9}
-      py={1}
+      fontSize={props.isSmall ? "xl" : "2xl"}
+      px={props.isSmall ? 4 : 9}
+      py={props.isSmall ? 0 : 1}
       _before={{
         content: `""`,
         position: "absolute",
@@ -54,7 +56,7 @@ const Button = (props: LinkProps & { hoverColor?: string; href: string }) => {
         zIndex={2}
         as={BsArrowRight}
         ml={2}
-        mt={1}
+        mt={props.isSmall ? "2px" : 1}
       />
     </CustomLink>
   )
