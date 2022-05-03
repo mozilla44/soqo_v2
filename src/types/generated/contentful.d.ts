@@ -69,9 +69,6 @@ export interface IProjectFields {
   /** Url */
   slug: string;
 
-  /** Type */
-  type?: "social" | "environment" | undefined;
-
   /** Entreprise */
   society?: string | undefined;
 
@@ -98,6 +95,12 @@ export interface IProjectFields {
 
   /** position */
   position?: number | undefined;
+
+  /** Couleur tag */
+  colorTag?: string | undefined;
+
+  /** Tag */
+  tag?: string | undefined;
 }
 
 export interface IProject extends Entry<IProjectFields> {

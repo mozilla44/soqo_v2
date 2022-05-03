@@ -24,7 +24,9 @@ import {
 
 export const HEADER_HEIGHT = "120px"
 
-const MenuLink = (props: LinkProps & { href: string; isActive?: boolean }) => {
+const MenuLink = (
+  props: LinkProps & { href: string; isActive?: boolean; scroll?: boolean }
+) => {
   const { children, isActive, ...rest } = props
   const [isVisible, setVisible] = useState(false)
   const [isHovered, setHovered] = useState(false)
@@ -100,10 +102,7 @@ const Header = () => {
               écosystème
             </MenuLink>
 
-            <MenuLink
-              isExternal
-              href="https://toyfot4mry1.typeform.com/to/VmjX2qgM"
-            >
+            <MenuLink scroll={false} href="#parlons-nous">
               parlons-nous
             </MenuLink>
           </HStack>
@@ -116,7 +115,12 @@ const Header = () => {
           aria-label="Menu"
           icon={<HamburgerIcon />}
         />
-        <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+        <Drawer
+          returnFocusOnClose={false}
+          isOpen={isOpen}
+          placement="right"
+          onClose={onClose}
+        >
           <DrawerOverlay />
           <DrawerContent>
             <DrawerCloseButton fontSize="xl" />
@@ -150,10 +154,7 @@ const Header = () => {
                   écosystème
                 </MenuLink>
 
-                <MenuLink
-                  isExternal
-                  href="https://toyfot4mry1.typeform.com/to/VmjX2qgM"
-                >
+                <MenuLink scroll={false} href="#parlons-nous">
                   parlons-nous
                 </MenuLink>
               </VStack>

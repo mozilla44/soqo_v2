@@ -15,18 +15,20 @@ const Card = ({
   title,
   slug,
   cover,
-  type,
+  tag,
+  colorTag,
 }: {
   title: string
   slug: string
   cover?: string
-  type: IProject["fields"]["type"]
+  tag: string
+  colorTag: string
 }) => (
   <CustomLink role="group" href={`/projets/${slug}`}>
     <Box mb="4rem">
       <Box backgroundColor="blue.500" position="relative">
         <Image alt="title" width="100%" src={cover} />
-        <CardTag type={type} />
+        <CardTag colorTag={colorTag} tag={tag} />
       </Box>
       <Flex
         flexDirection={{ base: "column", xl: "row" }}
@@ -80,7 +82,8 @@ const Projets = ({ projects }: IProps) => (
                 title={project.fields.title}
                 slug={project.fields.slug}
                 cover={project.fields.cover?.fields.file.url}
-                type={project.fields.type}
+                tag={project.fields.tag!}
+                colorTag={project.fields.colorTag!}
               />
             ))}
         </Box>
@@ -93,7 +96,8 @@ const Projets = ({ projects }: IProps) => (
                 title={project.fields.title}
                 slug={project.fields.slug}
                 cover={project.fields.cover?.fields.file.url}
-                type={project.fields.type}
+                tag={project.fields.tag!}
+                colorTag={project.fields.colorTag!}
               />
             ))}
         </Box>

@@ -11,6 +11,7 @@ import Head from "next/head"
 import Image from "next/image"
 import { IProject } from "types/generated/contentful"
 import partenariat from "../../public/assets/partenaires/partenariat.png"
+import swimming from "../../public/assets/swimming.jpg"
 
 const Home = ({ projects }: { projects: IProject[] }) => {
   return (
@@ -84,6 +85,40 @@ const Home = ({ projects }: { projects: IProject[] }) => {
           en savoir plus
         </Button>
       </Section>
+      <Section position="relative" color="kaki.500" backgroundColor="beige.500">
+        <Title display={{ base: "block", md: "none" }} color="kaki.500">
+          Notre manifeste
+        </Title>
+        <Flex flexDirection={{ base: "column-reverse", md: "row" }}>
+          <Box flex={{ base: 1, md: 2 }}>
+            <Title display={{ base: "none", md: "block" }} color="kaki.500">
+              Notre manifeste
+            </Title>
+            <Text
+              mt={{ base: 6, md: 0 }}
+              width={{ base: "100%", md: "70%" }}
+              fontSize="2xl"
+            >
+              {`Égalité sociale, transition écologique, diversité, inclusion
+              économique. Face aux défis actuels, nous sommes convaincus qu'il
+              faut apporter des réponses collectives. Associations et
+              entreprises ont un rôle à jouer ensemble. Chez Soqo, nous croyons
+              en l'innovation sociale et allions l'expertise des associations à
+              la puissance des entreprises pour réaliser des projets concrets à
+              impact positif.`}
+            </Text>
+          </Box>
+          <Box textAlign={{ base: "center", md: "right" }} flex="1">
+            <Image
+              src={swimming}
+              width="600px"
+              height="900px"
+              alt="Notre manifeste"
+              placeholder="blur"
+            />
+          </Box>
+        </Flex>
+      </Section>
       <Section
         backgroundPosition="left"
         backgroundRepeat="no-repeat"
@@ -112,7 +147,7 @@ const Home = ({ projects }: { projects: IProject[] }) => {
               être inclusifs, construits sur des principes et des valeurs
               communes et placer au coeur des préoccupations les peuples et la
               planète. Ils permettent d’inventer les solutions de demain avec
-              tous les acteurs d’un même territoire
+              tous les acteurs d’un même territoire.
             </Text>
             <Button
               isExternal
@@ -139,38 +174,7 @@ const Home = ({ projects }: { projects: IProject[] }) => {
           </Box>
         </Flex>
       </Section>
-      <Section position="relative" color="kaki.500" backgroundColor="beige.500">
-        <Title display={{ base: "block", md: "none" }} color="kaki.500">
-          Notre manifeste
-        </Title>
-        <Flex flexDirection={{ base: "column-reverse", md: "row" }}>
-          <Box flex={{ base: 1, md: 2 }}>
-            <Title display={{ base: "none", md: "block" }} color="kaki.500">
-              Notre manifeste
-            </Title>
-            <Text
-              mt={{ base: 6, md: 0 }}
-              width={{ base: "100%", md: "70%" }}
-              fontSize="2xl"
-            >
-              {`Égalité sociale, transition écologique, diversité, inclusion
-              économique. Face aux défis actuels, nous sommes convaincus qu'il
-              faut apporter des réponses collectives. Associations et
-              entreprises ont un rôle à jouer ensemble. Chez Soqo, nous croyons
-              en l'innovation sociale et allions l'expertise des associations à
-              la puissance des entreprises pour réaliser des projets concrets à
-              impact positif.`}
-            </Text>
-          </Box>
-          <Box textAlign={{ base: "center", md: "right" }} flex="1"></Box>
-        </Flex>
-      </Section>
-      <Footer />
-      <Box
-        height="14rem"
-        backgroundRepeat="repeat-x"
-        backgroundImage="url(/assets/footer.svg)"
-      />
+      <Footer withIllustration />
     </Layout>
   )
 }

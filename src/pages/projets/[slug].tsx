@@ -2,6 +2,7 @@ import { Box, Flex, Image, SimpleGrid, Text, VStack } from "@chakra-ui/react"
 import Footer from "components/Footer"
 import Layout from "components/Layout"
 import Section from "components/Section"
+import Stamp from "components/Stamp"
 import client from "core/client"
 import { GetStaticPropsContext } from "next"
 import Head from "next/head"
@@ -9,6 +10,7 @@ import { useRouter } from "next/router"
 import React from "react"
 import { BsArrowRight } from "react-icons/bs"
 import { GoQuote } from "react-icons/go"
+import ReactMarkdown from "react-markdown"
 import { IProject } from "types/generated/contentful"
 
 const Projets = ({ project }: { project: IProject }) => {
@@ -59,11 +61,22 @@ const Projets = ({ project }: { project: IProject }) => {
           </Box>
         </Flex>
       </Section>
-      <Section p={0} color="kaki.500">
+      <Section p={0} color="kaki.500" position="relative">
         <SimpleGrid columns={{ base: 1, md: 2 }}>
           <Box backgroundColor="yellow.500" p={{ base: 6, sm: 10 }}>
-            <Text mb={{ base: 4, sm: 10 }} fontWeight="semibold" fontSize="3xl">
-              Résultats
+            <Flex mb={{ base: 4, sm: 10 }} mt={2}>
+              <Box mr={4}>
+                <Box fontSize="6xl" as={GoQuote} />
+              </Box>
+              <Box>
+                <Text fontSize="2xl">{project.fields.quote}</Text>
+                <Text fontWeight="bold" mt={4} fontSize="xl">
+                  {project.fields.quoteAuthor}
+                </Text>
+              </Box>
+            </Flex>
+            <Text mb={4} fontWeight="semibold" fontSize="3xl">
+              Les résultats
             </Text>
             <VStack fontSize="2xl" alignItems="flex-start">
               {project.fields.metrics?.map((metric) => (
@@ -79,28 +92,15 @@ const Projets = ({ project }: { project: IProject }) => {
                 </Flex>
               ))}
             </VStack>
-            <Flex mt={10}>
-              <Box mr={4}>
-                <Box fontSize="6xl" as={GoQuote} />
-              </Box>
-              <Box>
-                <Text fontSize="2xl">{project.fields.quote}</Text>
-                <Text fontWeight="bold" mt={4} fontSize="xl">
-                  {project.fields.quoteAuthor}
-                </Text>
-              </Box>
-            </Flex>
           </Box>
-          <Box p={10} backgroundColor="blue.500">
+          <Box position="relative" p={10} backgroundColor="blue.500">
+            <Stamp />
             <Text mb={{ base: 4, sm: 10 }} fontWeight="semibold" fontSize="3xl">
               L’histoire
             </Text>
-            <Box
-              whiteSpace="pre-line"
-              mt={6}
-              fontSize="lg"
-              dangerouslySetInnerHTML={{ __html: project.fields.content! }}
-            />
+            <Box whiteSpace="pre-line" mt={6} fontSize="lg">
+              <ReactMarkdown>{project.fields.content!}</ReactMarkdown>
+            </Box>
           </Box>
         </SimpleGrid>
       </Section>
