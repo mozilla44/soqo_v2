@@ -34,7 +34,7 @@ const Footer = ({
               color={disableAnimation ? "beige.500" : "kaki.500"}
             >
               <RoughNotation
-                color="#E5F1FC"
+                color="#E3F1FD"
                 show={!disableAnimation && isInView && isVisible}
                 type="highlight"
               >
@@ -57,17 +57,6 @@ const Footer = ({
                 <HStack>
                   <GoMail />
                   <Text>bonjour@soqo.fr</Text>
-                </HStack>
-              </CustomLink>
-              <CustomLink
-                isExternal
-                fontSize={{ base: "2xl", md: "3xl" }}
-                _hover={{ textDecoration: "underline" }}
-                href="https://toyfot4mry1.typeform.com/to/VmjX2qgM"
-              >
-                <HStack>
-                  <GoCalendar />
-                  <Text>Prendre rendez-vous</Text>
                 </HStack>
               </CustomLink>
             </VStack>
@@ -95,7 +84,19 @@ const Footer = ({
           </Flex>
         </Box>
       </Box>
-      <Box id="parlons-nous" height="40rem">
+      <Box
+        backgroundColor="kaki.500"
+        id="parlons-nous"
+        height="40rem"
+        position="relative"
+      >
+        <Box
+          zIndex={10}
+          position="absolute"
+          height="1rem"
+          width="100%"
+          backgroundColor="kaki.500"
+        />
         <Widget
           hideFooter
           hideHeaders

@@ -36,11 +36,11 @@ const Cover = () => {
           lineHeight="120%"
           mb={10}
         >
-          Soqo* est{" "}
+          Nous sommes{" "}
           <Text display="inline-block" color="kaki.500">
             <RoughNotation
               animationDuration={2000}
-              color="#F9F5E9"
+              color="#EFE6D4"
               show={isVisible}
               type="highlight"
             >

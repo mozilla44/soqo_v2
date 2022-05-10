@@ -23,7 +23,7 @@ const ADN = () => {
       <Head>
         <title>ADN - Soqo</title>
       </Head>
-      <Section backgroundColor="#E5F1FC">
+      <Section backgroundColor="blue.500">
         <Flex flexDirection={{ base: "column-reverse", lg: "row" }}>
           <Flex
             mr={10}
@@ -32,12 +32,12 @@ const ADN = () => {
             justifyContent="center"
             flex="1"
           >
-            <Text fontSize="2xl">
+            <Text fontSize={{ base: "30px", md: "3vw", xl: "40px" }}>
               <b>Entreprise à mission</b>, Soqo a été fondée en novembre 2021
               par Najma Souroque et Victor Coeur, dans{" "}
               <b>
                 le but de faciliter les relations entre entreprises et
-                associations
+                associations.
               </b>
             </Text>
           </Flex>
@@ -70,7 +70,7 @@ const ADN = () => {
                 <Text fontWeight="bold" fontSize="4xl">
                   Najma
                 </Text>
-                <Text fontSize="lg">
+                <Text fontSize="2xl">
                   {`Après une mission au Ministère de l’Ecologie pour la COP21,
                   Najma a travaillé 7 ans pour le festival We Love Green en tant
                   que responsable RSE, Contenus & Institutions. Diplômée d’un
@@ -93,7 +93,7 @@ const ADN = () => {
                 <Text fontWeight="bold" fontSize="4xl">
                   Victor
                 </Text>
-                <Text fontSize="lg">
+                <Text fontSize="2xl">
                   Diplômé de Kedge, Victor a travaillé 10 ans dans la
                   communication événementielle, pour de petites maisons comme de
                   très grandes marques. Il quitte en 2020 ses fonctions de
@@ -124,7 +124,7 @@ const ADN = () => {
             <Text fontStyle="italic" display="inline-block" color="#163A2C">
               <RoughNotation
                 animationDuration={2000}
-                color="#f9f5e9"
+                color="#EFE6D4"
                 show={isVisible}
                 type="highlight"
               >
@@ -132,7 +132,7 @@ const ADN = () => {
               </RoughNotation>
             </Text>
           </Title>
-          <Text fontSize="xl" flex="1">
+          <Text fontSize="2xl" flex="1">
             Notre engagement d’entreprise à mission de l’Économie Sociale
             Environnementale et Solidaire, inscrit dans nos statuts, se traduit
             en 4 axes clés : la poursuite d’une utilité sociale, la recherche
@@ -158,11 +158,11 @@ const ADN = () => {
               Soqo*, partenaire des entreprises, au service des associations
             </Title>
             <VStack>
-              <Text fontSize="xl">
+              <Text fontSize="2xl">
                 Nous accompagnons les entreprises dans leur passage à l’action
                 et la mise en œuvre concrète de projets à impact.
               </Text>
-              <Text fontSize="xl">
+              <Text fontSize="2xl">
                 Nous permettons aux associations de bénéficier de clefs de
                 coopération, de temps et de financement d’entreprises engagées
                 pour leur cause.
@@ -177,6 +177,6 @@ const ADN = () => {
   )
 }
 
-ADN.backgroundColor = "#E5F1FC"
+ADN.backgroundColor = "#E3F1FD"
 
 export default ADN

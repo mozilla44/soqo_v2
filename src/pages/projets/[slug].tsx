@@ -19,7 +19,6 @@ const Projets = ({ project }: { project: IProject }) => {
   if (router.isFallback) {
     return null
   }
-
   return (
     <Layout>
       <Head>

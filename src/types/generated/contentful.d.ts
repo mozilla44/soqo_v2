@@ -66,6 +66,9 @@ export interface IProjectFields {
   /** Image */
   cover?: Asset | undefined;
 
+  /** Gallerie */
+  photos?: Asset[] | undefined;
+
   /** Url */
   slug: string;
 
@@ -93,7 +96,7 @@ export interface IProjectFields {
   /** Citation auteur */
   quoteAuthor?: string | undefined;
 
-  /** position */
+  /** Position */
   position?: number | undefined;
 
   /** Couleur tag */
@@ -101,6 +104,15 @@ export interface IProjectFields {
 
   /** Tag */
   tag?: string | undefined;
+
+  /** Lien Instagram */
+  instagramUrl?: string | undefined;
+
+  /** Lien Facebook */
+  facebookUrl?: string | undefined;
+
+  /** Video ID */
+  videoId?: string | undefined;
 }
 
 export interface IProject extends Entry<IProjectFields> {

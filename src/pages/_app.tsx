@@ -30,7 +30,7 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => (
     <Global
       styles={{
         "html,body": {
-          backgroundColor: Component.backgroundColor || "#F9F5E9",
+          backgroundColor: Component.backgroundColor || "#EFE6D4",
         },
       }}
     />

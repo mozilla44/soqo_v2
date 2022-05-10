@@ -99,13 +99,16 @@ const Home = ({ projects }: { projects: IProject[] }) => {
               width={{ base: "100%", md: "70%" }}
               fontSize="2xl"
             >
-              {`Égalité sociale, transition écologique, diversité, inclusion
-              économique. Face aux défis actuels, nous sommes convaincus qu'il
-              faut apporter des réponses collectives. Associations et
-              entreprises ont un rôle à jouer ensemble. Chez Soqo, nous croyons
-              en l'innovation sociale et allions l'expertise des associations à
-              la puissance des entreprises pour réaliser des projets concrets à
-              impact positif.`}
+              <b>
+                Égalité sociale, transition écologique, diversité, inclusion
+                économique
+              </b>
+              . Face aux défis actuels, nous sommes convaincus qu’il faut
+              apporter des réponses collectives. Associations et entreprises ont
+              un rôle <b>déterminant</b> à jouer ensemble. Chez Soqo, nous
+              croyons en l’innovation sociale et allions l’expertise des
+              associations à la puissance des entreprises pour réaliser des
+              projets concrets à impact positif.
             </Text>
           </Box>
           <Box textAlign={{ base: "center", md: "right" }} flex="1">
@@ -179,7 +182,7 @@ const Home = ({ projects }: { projects: IProject[] }) => {
   )
 }
 
-Home.backgroundColor = "#E5F1FC"
+Home.backgroundColor = "#E3F1FD"
 
 export const getStaticProps = async () => {
   const entries = await client.getEntries()

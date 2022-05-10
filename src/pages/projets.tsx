@@ -67,7 +67,7 @@ const Projets = ({ projects }: IProps) => (
       backgroundRepeat="no-repeat"
       backgroundImage="url(/assets/bg-blue.svg)"
       color="kaki.500"
-      backgroundColor="#F9F5E9"
+      backgroundColor="beige.500"
     >
       <SimpleGrid
         spacing={{ md: "2rem", lg: "4rem" }}
@@ -107,7 +107,7 @@ const Projets = ({ projects }: IProps) => (
   </Layout>
 )
 
-Projets.backgroundColor = "#F9F5E9"
+Projets.backgroundColor = "#EFE6D4"
 
 export const getStaticProps = async () => {
   const projects = await client.getEntries({

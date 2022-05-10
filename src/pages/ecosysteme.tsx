@@ -79,7 +79,7 @@ const Ecosystem = ({
             <Text mb={10} fontSize="4xl">
               <RoughNotation
                 animationDuration={2000}
-                color="#E5F1FC"
+                color="#E3F1FD"
                 show={isVisible}
                 type="highlight"
               >
@@ -94,7 +94,7 @@ const Ecosystem = ({
             <Text my={10} fontSize="4xl">
               <RoughNotation
                 animationDuration={2000}
-                color="#E5F1FC"
+                color="#E3F1FD"
                 show={isVisible}
                 type="highlight"
               >
@@ -109,7 +109,7 @@ const Ecosystem = ({
             <Text my={10} fontSize="4xl">
               <RoughNotation
                 animationDuration={2000}
-                color="#E5F1FC"
+                color="#E3F1FD"
                 show={isVisible}
                 type="highlight"
               >
@@ -153,7 +153,7 @@ const Ecosystem = ({
   )
 }
 
-Ecosystem.backgroundColor = "#f9f5e9"
+Ecosystem.backgroundColor = "#EFE6D4"
 
 export const getStaticProps = async () => {
   const friends = await client.getEntries({

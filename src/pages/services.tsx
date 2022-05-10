@@ -19,7 +19,7 @@ const Services = () => {
       <Head>
         <title>Services - Soqo</title>
       </Head>
-      <Section display="flex" position="relative" backgroundColor="#E5F1FC">
+      <Section display="flex" position="relative" backgroundColor="blue.500">
         <Flex flexDirection={{ base: "column-reverse", md: "row" }}>
           <Box flex="1">
             <Text
@@ -33,7 +33,7 @@ const Services = () => {
               <Text display="inline-block" color="#163A2C">
                 <RoughNotation
                   animationDuration={2000}
-                  color="#F9F5E9"
+                  color="#E3F1FD"
                   show={isVisible}
                   type="highlight"
                 >
@@ -53,11 +53,11 @@ const Services = () => {
           </Box>
         </Flex>
       </Section>
-      <Section backgroundColor="#f9f5e9">
+      <Section backgroundColor="beige.500">
         <Title>Nos services</Title>
         <ServiceAccordion />
       </Section>
-      <Section position="relative" backgroundColor="#E5F1FC">
+      <Section position="relative" backgroundColor="blue.500">
         <Text
           fontWeight="normal"
           fontSize={{ base: "4xl", lg: "5xl" }}
@@ -75,6 +75,6 @@ const Services = () => {
   )
 }
 
-Services.backgroundColor = "#E5F1FC"
+Services.backgroundColor = "#E3F1FD"
 
 export default Services
