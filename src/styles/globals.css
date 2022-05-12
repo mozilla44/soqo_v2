@@ -36,3 +36,23 @@ a {
 .slider-container {
   padding: 0 !important;
 }
+
+.markdown-terms hr {
+  margin-top: 1rem;
+  border-color: transparent;
+}
+
+.markdown-terms h3 {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.markdown-terms h4 {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.markdown-terms p {
+  margin-bottom: 0.4rem;
+}

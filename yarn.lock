@@ -1925,10 +1925,10 @@ font-color-contrast@^11.1.0:
   resolved "https://registry.yarnpkg.com/font-color-contrast/-/font-color-contrast-11.1.0.tgz#f147720c1fd6e5e43be7aea86d247b1cdc46508b"
   integrity sha512-PxpFaesCSsDwaciw7MF6B2thUkH7skqZlz4BzUnvapR6+Es2877q7ru/tqfsITuaraPz+TGfsOfdtU4D0qjqEw==
 
-framer-motion@^6:
-  version "6.2.6"
-  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-6.2.6.tgz#75277b4944a1234beaf7453da19028bbf4f75cce"
-  integrity sha512-7eGav5MxEEzDHozQTDY6+psTIOw2i2kM1QVoJOC3bCp9VOKoo+mKR5n7aT5JPh7ksEKFYJYz0GJDils/9S+oLA==
+framer-motion@^6.3.3:
+  version "6.3.3"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-6.3.3.tgz#58978fe6955d13000351ea4c134c9bc052638967"
+  integrity sha512-wo0dCnoq5vn4L8YVOPO9W54dliH78vDaX0Lj+bSPUys6Nt5QaehrS3uaYa0q5eVeikUgtTjz070UhQ94thI5Sw==
   dependencies:
     framesync "6.0.1"
     hey-listen "^1.0.8"
@@ -3143,13 +3143,6 @@ react-icons@^4.3.1:
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.3.1.tgz#2fa92aebbbc71f43d2db2ed1aed07361124e91ca"
   integrity sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ==
 
-react-instagram-embed@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-instagram-embed/-/react-instagram-embed-3.0.0.tgz#a32af7755ff6e46c3914ae1c07ccd78aaafd43ac"
-  integrity sha512-9X/t1J2YXj76iYTnCQx7SQ7DwVNxQOMpE0mnEDgKM9c6z1m7THDmk+kxhdGOrxULSjSZMAwxSxwgRMgT9jEqng==
-  dependencies:
-    type-fest "^1.2.2"
-
 react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
@@ -3631,11 +3624,6 @@ type-fest@^0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
-
-type-fest@^1.2.2:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/type-fest/-/type-fest-1.4.0.tgz#e9fb813fe3bf1744ec359d55d1affefa76f14be1"
-  integrity sha512-yGSza74xk0UG8k+pLh5oeoYirvIiWo5t0/o3zHHAO2tRDiZcxWP7fywNlXhqb6/r6sWvwi+RsyQMWhVLe4BVuA==
 
 type-fest@^2.5.3:
   version "2.12.0"

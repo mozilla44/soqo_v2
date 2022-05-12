@@ -27,7 +27,7 @@ export const HEADER_HEIGHT = "120px"
 const MenuLink = (
   props: LinkProps & { href: string; isActive?: boolean; scroll?: boolean }
 ) => {
-  const { children, isActive, ...rest } = props
+  const { children, isActive, scroll, ...rest } = props
   const [isVisible, setVisible] = useState(false)
   const [isHovered, setHovered] = useState(false)
   const isMobile: boolean | undefined = useBreakpointValue({

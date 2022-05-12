@@ -66,6 +66,9 @@ export interface IProjectFields {
   /** Image */
   cover?: Asset | undefined;
 
+  /** Vignette */
+  thumbnail?: Asset | undefined;
+
   /** Gallerie */
   photos?: Asset[] | undefined;
 
@@ -111,7 +114,7 @@ export interface IProjectFields {
   /** Lien Facebook */
   facebookUrl?: string | undefined;
 
-  /** Video ID */
+  /** YouTube ID */
   videoId?: string | undefined;
 }
 

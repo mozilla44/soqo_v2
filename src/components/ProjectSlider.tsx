@@ -77,7 +77,10 @@ const ProjectSlider = ({ projects }: { projects: IProject[] }) => {
           key={project.sys.id}
           title={project.fields.title}
           slug={project.fields.slug}
-          cover={project.fields.cover?.fields.file.url}
+          cover={
+            project.fields.thumbnail?.fields?.file?.url ||
+            project.fields.cover?.fields.file.url
+          }
           tag={project.fields.tag!}
           colorTag={project.fields.colorTag!}
         />

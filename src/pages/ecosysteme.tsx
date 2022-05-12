@@ -15,40 +15,6 @@ const EcosystemSlider = dynamic(() => import("components/EcosystemSlider"), {
   ssr: false,
 })
 
-const users = [
-  {
-    name: "Liem Nguyen",
-    title: "Strategy & Innovation Transformation in multicultural context",
-    cover: "/assets/ecosystem/liem.png",
-  },
-  {
-    name: "Hanieh Hadizadeh",
-    title: "Chargée de campagne et plaidoyer chez Démocratie Ouverte",
-    cover: "/assets/ecosystem/hanieh.png",
-  },
-  {
-    name: "Swen Déral",
-    title: "ESS & Innovation sociale. Fondateur association La Sauge",
-    cover: "/assets/ecosystem/swen.png",
-  },
-  {
-    name: "Stephanie Calvino",
-    title:
-      "Fondatrice Anti-Fashion project. Responsable ateliers Résilience Roubaix",
-    cover: "/assets/ecosystem/stephanie.png",
-  },
-  {
-    name: "Alexandre Born",
-    title: "Entrepreneur social, Directeur Général chez Bellevilles",
-    cover: "/assets/ecosystem/alexandre.png",
-  },
-  {
-    name: "Celine Hay",
-    title: "Responsable RSE Veja",
-    cover: "/assets/ecosystem/celine.png",
-  },
-]
-
 const Ecosystem = ({
   ecosystem,
   friends,
