@@ -43,14 +43,16 @@ const Ecosystem = ({
         {societies && (
           <>
             <Text mb={10} fontSize="4xl">
+              Les{" "}
               <RoughNotation
                 animationDuration={2000}
                 color="#E3F1FD"
                 show={isVisible}
                 type="highlight"
               >
-                Les entreprises nous font confiance
-              </RoughNotation>
+                entreprises
+              </RoughNotation>{" "}
+              nous font confiance
             </Text>
             <EcosystemSlider assets={societies} />
           </>
@@ -58,14 +60,16 @@ const Ecosystem = ({
         {associations && (
           <>
             <Text my={10} fontSize="4xl">
+              Les{" "}
               <RoughNotation
                 animationDuration={2000}
                 color="#E3F1FD"
                 show={isVisible}
                 type="highlight"
               >
-                Les associations également
-              </RoughNotation>
+                associations
+              </RoughNotation>{" "}
+              également
             </Text>
             <EcosystemSlider assets={associations} />
           </>
@@ -73,14 +77,16 @@ const Ecosystem = ({
         {parteners && (
           <>
             <Text my={10} fontSize="4xl">
+              Nos{" "}
               <RoughNotation
                 animationDuration={2000}
                 color="#E3F1FD"
                 show={isVisible}
                 type="highlight"
               >
-                Nos partenaires nous épaulent
-              </RoughNotation>
+                partenaires
+              </RoughNotation>{" "}
+              nous épaulent
             </Text>
             <EcosystemSlider assets={parteners} />
           </>
