@@ -95,7 +95,7 @@ const Projets = ({ project }: { project: IProject }) => {
             position="relative"
             backgroundColor="yellow.500"
           >
-            <Stamp top={10} />
+            <Stamp top={0} />
             <Box flex="1" p={{ base: 6, sm: 10 }}>
               <Text mb={4} fontWeight="semibold" fontSize="3xl">
                 Les résultats

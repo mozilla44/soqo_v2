@@ -32,7 +32,10 @@ const ADN = () => {
             justifyContent="center"
             flex="1"
           >
-            <Text fontSize={{ base: "30px", md: "3vw", xl: "40px" }}>
+            <Text
+              fontSize={{ base: "30px", md: "3vw", xl: "40px" }}
+              lineHeight="120%"
+            >
               <b>Entreprise à mission</b>, Soqo a été fondée en novembre 2021
               par Najma Souroque et Victor Coeur, dans{" "}
               <b>
