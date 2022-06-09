@@ -1,19 +1,17 @@
 import { Box, Flex, Text } from "@chakra-ui/react"
 import Footer from "components/Footer"
 import Layout from "components/Layout"
+import Marker from "components/Marker"
 import Section from "components/Section"
 import ServiceAccordion from "components/ServiceAccordion"
 import Title from "components/Title"
-import useIsVisible from "hooks/useIsVisible"
 import Head from "next/head"
 import Image from "next/image"
 import React from "react"
-import { RoughNotation } from "react-rough-notation"
+import { Color } from "styles/theme"
 import grandmother from "../../public/assets/grandmother.jpg"
 
 const Services = () => {
-  const isVisible = useIsVisible()
-
   return (
     <Layout>
       <Head>
@@ -21,28 +19,26 @@ const Services = () => {
       </Head>
       <Section display="flex" position="relative" backgroundColor="blue.500">
         <Flex flexDirection={{ base: "column-reverse", md: "row" }}>
-          <Box flex="1">
+          <Box flex="5">
             <Text
               fontWeight="normal"
               fontSize={{ base: "4xl", lg: "5xl" }}
               lineHeight={{ base: "2.6rem", lg: "initial" }}
               maxWidth={{ base: "100%", md: "90%" }}
             >
-              Créer une rencontre inédite et faire converger les enjeux sociaux
-              et environnementaux entre
-              <Text display="inline-block" color="#163A2C">
-                <RoughNotation
-                  animationDuration={2000}
-                  color="#E3F1FD"
-                  show={isVisible}
-                  type="highlight"
-                >
-                  associations et entreprises.
-                </RoughNotation>
-              </Text>
+              Créer{" "}
+              <Marker isBold color={Color.BEIGE}>
+                une rencontre inédite
+              </Marker>{" "}
+              et faire converger{" "}
+              <Marker isBold color={Color.BEIGE}>
+                les enjeux
+              </Marker>{" "}
+              environnementaux et sociaux{" "}
+              <b>entre associations et entreprises</b>.
             </Text>
           </Box>
-          <Box flex="1">
+          <Box flex="4">
             <Image
               src={grandmother}
               width="1000"

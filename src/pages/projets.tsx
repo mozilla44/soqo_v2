@@ -1,5 +1,4 @@
 import { Box, Flex, Image, SimpleGrid, Text } from "@chakra-ui/react"
-import Button from "components/Button"
 import CustomLink from "components/CustomLink"
 import Footer from "components/Footer"
 import Layout from "components/Layout"
@@ -26,7 +25,7 @@ const Card = ({
 }) => (
   <CustomLink role="group" href={`/projets/${slug}`}>
     <Box mb="4rem">
-      <Box backgroundColor="blue.500" position="relative">
+      <Box backgroundColor={colorTag} position="relative">
         <Image alt="title" width="100%" src={cover} />
         <CardTag colorTag={colorTag} tag={tag} />
       </Box>

@@ -1,18 +1,17 @@
 import React from "react"
-import { Box, Flex, HStack, Text, VStack } from "@chakra-ui/react"
+import { Box, Flex, HStack, Text, VStack, Link } from "@chakra-ui/react"
 import CustomLink from "components/CustomLink"
 import { BsArrowUpRight } from "react-icons/bs"
-import { GoMail, GoCalendar } from "react-icons/go"
-import { RoughNotation } from "react-rough-notation"
+import { GoMail } from "react-icons/go"
 import { useInView } from "react-hook-inview"
-import useIsVisible from "hooks/useIsVisible"
 import { Widget } from "@typeform/embed-react"
+import { Color } from "styles/theme"
+import Marker from "./Marker"
+import useIsVisible from "hooks/useIsVisible"
 
 const Footer = ({
-  withIllustration = false,
   disableAnimation = false,
 }: {
-  withIllustration?: boolean
   disableAnimation?: boolean
 }) => {
   const [ref, isInView] = useInView()
@@ -33,13 +32,12 @@ const Footer = ({
               display="inline-block"
               color={disableAnimation ? "beige.500" : "kaki.500"}
             >
-              <RoughNotation
-                color="#E3F1FD"
-                show={!disableAnimation && isInView && isVisible}
-                type="highlight"
+              <Marker
+                isVisible={!disableAnimation && isInView && isVisible}
+                color={Color.BLUE}
               >
                 autour d’un café
-              </RoughNotation>
+              </Marker>
             </Text>
             .
           </Box>
@@ -105,11 +103,24 @@ const Footer = ({
           style={{ width: "100%", height: "100%" }}
         />
       </Box>
+
       <Box
         height="14rem"
         backgroundRepeat="repeat-x"
         backgroundImage="url(/assets/footer.svg)"
-      />
+      >
+        <Box pt={1} textAlign="right" maxWidth="container.xl" marginX="auto">
+          <Link
+            px={1}
+            py={1}
+            color="beige.500"
+            backgroundColor="kaki.500"
+            href="/mentions-legales"
+          >
+            Mention légales
+          </Link>
+        </Box>
+      </Box>
     </>
   )
 }

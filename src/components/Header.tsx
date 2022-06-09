@@ -12,7 +12,6 @@ import React, { useState } from "react"
 import CustomLink from "./CustomLink"
 import { LinkProps } from "@chakra-ui/react"
 import { useRouter } from "next/router"
-import { RoughNotation } from "react-rough-notation"
 import { HamburgerIcon } from "@chakra-ui/icons"
 import {
   Drawer,
@@ -21,6 +20,8 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from "@chakra-ui/react"
+import { Color } from "styles/theme"
+import Marker from "./Marker"
 
 export const HEADER_HEIGHT = "120px"
 
@@ -50,13 +51,12 @@ const MenuLink = (
       fontSize="30px"
       {...rest}
     >
-      <RoughNotation
-        color="#FFE32D"
-        show={(isActive && isVisible) || isHovered}
-        type="highlight"
+      <Marker
+        color={Color.YELLOW}
+        isVisible={(isActive && isVisible) || isHovered}
       >
         {children}
-      </RoughNotation>
+      </Marker>
     </CustomLink>
   )
 }

@@ -12,12 +12,10 @@ import Head from "next/head"
 import speakUs from "../../public/assets/parlons-nous.jpg"
 import historyProject from "../../public/assets/cover.png"
 import about from "../../public/assets/qui-sommes-nous.png"
-import { RoughNotation } from "react-rough-notation"
-import useIsVisible from "hooks/useIsVisible"
+import { Color } from "styles/theme"
+import Marker from "components/Marker"
 
 const ADN = () => {
-  const isVisible = useIsVisible()
-
   return (
     <Layout>
       <Head>
@@ -36,11 +34,15 @@ const ADN = () => {
               fontSize={{ base: "30px", md: "3vw", xl: "40px" }}
               lineHeight="120%"
             >
-              <b>Entreprise à mission</b>, Soqo a été fondée en novembre 2021
-              par Najma Souroque et Victor Coeur, dans{" "}
+              <Marker isBold color={Color.BEIGE}>
+                Entreprise à mission
+              </Marker>
+              , Soqo* a été fondée en novembre 2021 par Najma Souroque et Victor
+              Coeur, dans{" "}
               <b>
-                le but de faciliter les relations entre entreprises et
-                associations.
+                le but de{" "}
+                <Marker color={Color.BEIGE}>faciliter les relations</Marker>{" "}
+                entre associations et entreprises.
               </b>
             </Text>
           </Flex>
@@ -125,14 +127,7 @@ const ADN = () => {
           <Title flex="1">
             Contribution, innovation sociale,
             <Text fontStyle="italic" display="inline-block" color="#163A2C">
-              <RoughNotation
-                animationDuration={2000}
-                color="#EFE6D4"
-                show={isVisible}
-                type="highlight"
-              >
-                transparence.
-              </RoughNotation>
+              <Marker color={Color.BEIGE}>transparence.</Marker>
             </Text>
           </Title>
           <Text fontSize="2xl" flex="1">

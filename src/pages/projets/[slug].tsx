@@ -39,6 +39,16 @@ const Projets = ({ project }: { project: IProject }) => {
     return null
   }
 
+  let photos = []
+
+  if (project.fields.cover) {
+    photos.push(project.fields.cover)
+  }
+
+  if (project.fields.photos) {
+    photos = [...photos, ...project.fields.photos]
+  }
+
   return (
     <Layout>
       <Head>
@@ -73,14 +83,63 @@ const Projets = ({ project }: { project: IProject }) => {
             </Box>
           </Flex>
           <Box mb={{ base: 6, lg: 0 }} flex="1">
-            <Image
-              alt={project.fields.title}
-              src={project.fields.cover?.fields.file.url}
-            />
+            {photos?.length > 0 && (
+              <Carousel
+                renderCenterLeftControls={({ previousSlide, currentSlide }) => (
+                  <>
+                    {currentSlide > 0 && (
+                      <IconButton
+                        ml={3}
+                        borderRadius="full"
+                        color="kaki.500"
+                        fontSize="3xl"
+                        aria-label="Suivant"
+                        onClick={() => previousSlide()}
+                        icon={<BsArrowLeft />}
+                      />
+                    )}
+                  </>
+                )}
+                renderCenterRightControls={({
+                  nextSlide,
+                  slideCount,
+                  currentSlide,
+                }) => (
+                  <>
+                    {currentSlide < slideCount - 1 && (
+                      <IconButton
+                        mr={3}
+                        borderRadius="full"
+                        color="kaki.500"
+                        fontSize="3xl"
+                        aria-label="Suivant"
+                        onClick={() => nextSlide()}
+                        icon={<BsArrowRight />}
+                      />
+                    )}
+                  </>
+                )}
+                autoplay
+                autoplayInterval={4000}
+                slidesToShow={1}
+              >
+                {photos.map((photo) => (
+                  <AspectRatio key={photo.sys.id} ratio={1}>
+                    <Image
+                      height="100%"
+                      width="100%"
+                      objectFit="cover"
+                      src={photo.fields.file.url}
+                      alt={photo.fields.file.fileName}
+                    />
+                  </AspectRatio>
+                ))}
+              </Carousel>
+            )}
           </Box>
         </Flex>
       </Section>
-      <Section p={0} color="kaki.500" position="relative">
+      <Section overflow="hidden" p={0} color="kaki.500" position="relative">
         <SimpleGrid columns={{ base: 1, md: 2 }}>
           <Box p={10} backgroundColor="blue.500">
             <Text mb={{ base: 4, sm: 10 }} fontWeight="semibold" fontSize="3xl">
@@ -148,7 +207,7 @@ const Projets = ({ project }: { project: IProject }) => {
             </Flex>
           </Flex>
         </SimpleGrid>
-        {(project.fields.photos?.length || project.fields.videoId) && (
+        {project.fields.videoId && (
           <SimpleGrid columns={{ base: 1, md: 2 }}>
             <Box
               backgroundColor={
@@ -164,68 +223,7 @@ const Projets = ({ project }: { project: IProject }) => {
                 />
               )}
             </Box>
-            <Box
-              backgroundColor={
-                project.fields.photos?.length ? "transparent" : "kaki.500"
-              }
-            >
-              {project.fields.photos?.length && (
-                <Carousel
-                  renderCenterLeftControls={({
-                    previousSlide,
-                    currentSlide,
-                  }) => (
-                    <>
-                      {currentSlide > 0 && (
-                        <IconButton
-                          ml={3}
-                          borderRadius="full"
-                          color="kaki.500"
-                          fontSize="3xl"
-                          aria-label="Suivant"
-                          onClick={() => previousSlide()}
-                          icon={<BsArrowLeft />}
-                        />
-                      )}
-                    </>
-                  )}
-                  renderCenterRightControls={({
-                    nextSlide,
-                    slideCount,
-                    currentSlide,
-                  }) => (
-                    <>
-                      {currentSlide < slideCount - 1 && (
-                        <IconButton
-                          mr={3}
-                          borderRadius="full"
-                          color="kaki.500"
-                          fontSize="3xl"
-                          aria-label="Suivant"
-                          onClick={() => nextSlide()}
-                          icon={<BsArrowRight />}
-                        />
-                      )}
-                    </>
-                  )}
-                  autoplay
-                  autoplayInterval={4000}
-                  slidesToShow={1}
-                >
-                  {project.fields.photos?.map((photo) => (
-                    <AspectRatio key={photo.sys.id} ratio={1}>
-                      <Image
-                        height="100%"
-                        width="100%"
-                        objectFit="cover"
-                        src={photo.fields.file.url}
-                        alt={photo.fields.file.fileName}
-                      />
-                    </AspectRatio>
-                  ))}
-                </Carousel>
-              )}
-            </Box>
+            <Box backgroundColor={"kaki.500"}></Box>
           </SimpleGrid>
         )}
       </Section>

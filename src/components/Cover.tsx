@@ -1,17 +1,16 @@
-import { Box, Flex, Text } from "@chakra-ui/react"
-import useIsVisible from "hooks/useIsVisible"
+import { Box, Flex } from "@chakra-ui/react"
 import Image from "next/image"
 import React from "react"
-import { RoughNotation } from "react-rough-notation"
+import { Color } from "styles/theme"
 import cover from "../../public/assets/hand.jpg"
 import Button from "./Button"
+import Marker from "./Marker"
 import Stamp from "./Stamp"
 
 const Cover = () => {
-  const isVisible = useIsVisible()
-
   return (
     <Flex
+      overflow="hidden"
       position="relative"
       px={10}
       backgroundColor="blue.500"
@@ -21,7 +20,7 @@ const Cover = () => {
       maxWidth="container.xl"
       justifyContent="space-between"
     >
-      <Stamp display={{ base: "none", md: "block" }} top="5rem" right="-2rem" />
+      <Stamp display={{ base: "none", md: "block" }} top="5rem" right="-1rem" />
       <Flex
         justifyContent="center"
         flexDirection="column"
@@ -37,19 +36,11 @@ const Cover = () => {
           mb={10}
         >
           Nous sommes{" "}
-          <Text display="inline-block" color="kaki.500">
-            <RoughNotation
-              animationDuration={2000}
-              color="#EFE6D4"
-              show={isVisible}
-              type="highlight"
-            >
-              <b>un créateur de liens</b>
-            </RoughNotation>
-          </Text>{" "}
-          <strong>entre associations et entreprises</strong> pour développer des
-          projets concrets{" "}
-          <strong>à impact social et environnemental positif</strong>.
+          <Marker isBold color={Color.BEIGE}>
+            un créateur de liens
+          </Marker>{" "}
+          <b>entre associations et entreprises</b> pour développer des projets
+          concrets <b>à impact social et environnemental positif</b>.
         </Box>
         <Box mb={{ base: 12, md: 0 }}>
           <Button href="/adn" hoverColor="blue.500">

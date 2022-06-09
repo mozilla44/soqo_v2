@@ -48,7 +48,7 @@ const Card = ({ tag, colorTag, title, cover, slug }: ICardProps) => (
             alt={title}
             pos="relative"
             objectFit="cover"
-            backgroundColor="blue.100"
+            backgroundColor={colorTag}
             height={{ base: "270px", md: "300px" }}
             width="100%"
           />

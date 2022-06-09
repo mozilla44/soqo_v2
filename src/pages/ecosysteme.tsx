@@ -9,7 +9,8 @@ import useIsVisible from "hooks/useIsVisible"
 import dynamic from "next/dynamic"
 import Head from "next/head"
 import React from "react"
-import { RoughNotation } from "react-rough-notation"
+import { Color } from "styles/theme"
+import Marker from "components/Marker"
 
 const EcosystemSlider = dynamic(() => import("components/EcosystemSlider"), {
   ssr: false,
@@ -43,16 +44,8 @@ const Ecosystem = ({
         {societies && (
           <>
             <Text mb={10} fontSize="4xl">
-              Les{" "}
-              <RoughNotation
-                animationDuration={2000}
-                color="#E3F1FD"
-                show={isVisible}
-                type="highlight"
-              >
-                entreprises
-              </RoughNotation>{" "}
-              nous font confiance
+              Les <Marker color={Color.BLUE}>entreprises</Marker> nous font
+              confiance
             </Text>
             <EcosystemSlider assets={societies} />
           </>
@@ -60,16 +53,7 @@ const Ecosystem = ({
         {associations && (
           <>
             <Text my={10} fontSize="4xl">
-              Les{" "}
-              <RoughNotation
-                animationDuration={2000}
-                color="#E3F1FD"
-                show={isVisible}
-                type="highlight"
-              >
-                associations
-              </RoughNotation>{" "}
-              également
+              Les <Marker color={Color.BLUE}>associations</Marker> également
             </Text>
             <EcosystemSlider assets={associations} />
           </>
@@ -77,16 +61,7 @@ const Ecosystem = ({
         {parteners && (
           <>
             <Text my={10} fontSize="4xl">
-              Nos{" "}
-              <RoughNotation
-                animationDuration={2000}
-                color="#E3F1FD"
-                show={isVisible}
-                type="highlight"
-              >
-                partenaires
-              </RoughNotation>{" "}
-              nous épaulent
+              Nos <Marker color={Color.BLUE}>partenaires</Marker> nous épaulent
             </Text>
             <EcosystemSlider assets={parteners} />
           </>
