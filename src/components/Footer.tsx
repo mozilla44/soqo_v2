@@ -1,5 +1,14 @@
 import React from "react"
-import { Box, Flex, HStack, Text, VStack, Link } from "@chakra-ui/react"
+import {
+  Box,
+  Flex,
+  HStack,
+  Text,
+  VStack,
+  Link,
+  Input,
+  IconButton,
+} from "@chakra-ui/react"
 import CustomLink from "components/CustomLink"
 import { BsArrowUpRight } from "react-icons/bs"
 import { GoMail } from "react-icons/go"
@@ -8,6 +17,8 @@ import { Widget } from "@typeform/embed-react"
 import { Color } from "styles/theme"
 import Marker from "./Marker"
 import useIsVisible from "hooks/useIsVisible"
+import { CheckIcon } from "@chakra-ui/icons"
+import Newsletter from "./Newsletter"
 
 const Footer = ({
   disableAnimation = false,
@@ -57,6 +68,8 @@ const Footer = ({
                   <Text>bonjour@soqo.fr</Text>
                 </HStack>
               </CustomLink>
+
+              <Newsletter />
             </VStack>
             <VStack mt={{ base: 4, md: 0 }} alignItems="flex-end">
               <CustomLink
