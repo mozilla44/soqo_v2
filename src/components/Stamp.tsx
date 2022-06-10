@@ -4,7 +4,14 @@ import React from "react"
 import stamp from "../../public/assets/tampon.png"
 
 const Stamp = (props: BoxProps) => (
-  <Box zIndex={100} position="absolute" bottom={0} right="-5rem" {...props}>
+  <Box
+    pointerEvents="none"
+    zIndex={100}
+    position="absolute"
+    bottom={0}
+    right="-5rem"
+    {...props}
+  >
     <Image
       src={stamp}
       width="140px"
