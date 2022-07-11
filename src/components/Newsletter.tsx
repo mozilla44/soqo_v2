@@ -23,7 +23,7 @@ const Newsletter = () => {
   }
 
   return (
-    <Box>
+    <Box width="100%">
       <Flex
         as="form"
         onSubmit={(e) => {
@@ -37,7 +37,8 @@ const Newsletter = () => {
           onChange={(e) => setEmail(e.currentTarget.value)}
           value={email}
           borderRightRadius="none"
-          width="20rem"
+          maxWidth="20rem"
+          width="100%"
           _placeholder={{ color: "kaki.500" }}
           placeholder="S'inscrire à la newsletter"
           fontSize="xl"

@@ -12,7 +12,7 @@ const Cover = () => {
     <Flex
       overflow="hidden"
       position="relative"
-      px={10}
+      px={{ base: 4, md: 10 }}
       backgroundColor="blue.500"
       flex="1"
       flexDirection={{ base: "column", md: "row" }}
@@ -43,7 +43,7 @@ const Cover = () => {
           concrets <b>à impact social et environnemental positif</b>.
         </Box>
         <Box mb={{ base: 12, md: 0 }}>
-          <Button href="/adn" hoverColor="blue.500">
+          <Button fontSize="1.6rem" href="/adn" hoverColor="blue.500">
             découvrir notre adn
           </Button>
         </Box>

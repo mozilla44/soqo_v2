@@ -8,7 +8,6 @@ import Layout from "components/Layout"
 import Marker from "components/Marker"
 import ProjectSlider from "components/ProjectSlider"
 import Section from "components/Section"
-import SunIcon from "components/SunIcon"
 import Title from "components/Title"
 import client from "core/client"
 import Head from "next/head"
@@ -42,7 +41,7 @@ const Home = ({ projects }: { projects: IProject[] }) => (
       </CustomLink>
     </Flex>
     <Box as="section" color="kaki.500" backgroundColor="beige.500">
-      <Box p={10} pb={0} maxWidth="container.xl" marginX="auto">
+      <Box px={4} pt={10} pb={0} maxWidth="container.xl" marginX="auto">
         <Title mb={4}>Nos projets</Title>
         <Box maxWidth="50rem" fontSize="2xl" mb={10}>
           En créant des partenariats innovants nous contribuons ensemble à la

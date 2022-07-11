@@ -1,4 +1,3 @@
-import React, { useEffect, useLayoutEffect } from "react"
 import { ChakraProvider } from "@chakra-ui/react"
 import { Global } from "@emotion/react"
 import "focus-visible/dist/focus-visible"
@@ -6,6 +5,7 @@ import { AnimatePresence } from "framer-motion"
 import { NextPage } from "next"
 import type { AppProps } from "next/app"
 import Head from "next/head"
+import React from "react"
 import "styles/globals.css"
 import { sokoTheme } from "styles/theme"
 

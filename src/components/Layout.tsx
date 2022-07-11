@@ -1,5 +1,6 @@
 import { Box } from "@chakra-ui/react"
 import { motion } from "framer-motion"
+import Script from "next/script"
 import React from "react"
 import Header from "./Header"
 
@@ -13,6 +14,18 @@ const MotionBox = motion(Box)
 const Layout: React.FC = ({ children }) => {
   return (
     <>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
+        `}
+      </Script>
       <Header />
       <MotionBox
         variants={variants}

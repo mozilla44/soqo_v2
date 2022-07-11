@@ -31,7 +31,7 @@ const Footer = ({
   return (
     <>
       <Box ref={ref} color="beige.500" backgroundColor="kaki.500">
-        <Box p={10} maxWidth="container.xl" marginX="auto">
+        <Box p={6} maxWidth="container.xl" marginX="auto">
           <Box
             width={{ base: "100%", md: "70%" }}
             fontSize={{ base: "4xl", md: "5xl" }}

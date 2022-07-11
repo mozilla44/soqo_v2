@@ -21,21 +21,24 @@ const Services = () => {
         <Flex flexDirection={{ base: "column-reverse", md: "row" }}>
           <Box flex="5">
             <Text
+              mt={{ base: 6, lg: 0 }}
               fontWeight="normal"
-              fontSize={{ base: "4xl", lg: "5xl" }}
+              fontSize="4xl"
               lineHeight={{ base: "2.6rem", lg: "initial" }}
               maxWidth={{ base: "100%", md: "90%" }}
             >
-              Créer{" "}
+              Vous êtes{" "}
               <Marker isBold color={Color.BEIGE}>
-                une rencontre inédite
-              </Marker>{" "}
-              et faire converger{" "}
+                une entreprise
+              </Marker>
+              , vous souhaitez vous engager aux côtés d’une{" "}
               <Marker isBold color={Color.BEIGE}>
-                les enjeux
+                association
               </Marker>{" "}
-              environnementaux et sociaux{" "}
-              <b>entre associations et entreprises</b>.
+              mais vous manquez de temps et ne savez pas quelle{" "}
+              <b>cause soutenir ?</b> Vous êtes perdus face aux 1,5 millions
+              d’associations françaises et ne savez pas{" "}
+              <b>comment mesurer votre impact ?</b>
             </Text>
           </Box>
           <Box flex="4">
