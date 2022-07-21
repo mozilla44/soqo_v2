@@ -4,6 +4,7 @@ import Footer from "components/Footer"
 import Layout from "components/Layout"
 import Section from "components/Section"
 import Head from "next/head"
+import Image from "next/image"
 import React from "react"
 import { BsArrowUpRight } from "react-icons/bs"
 import { Color } from "styles/theme"
@@ -23,32 +24,31 @@ const EcoConception = () => {
           <Flex flexDirection={{ base: "column", md: "row" }}>
             <Box flex={4}></Box>
             <Box flex={5}>
-              <Text mb={10} lineHeight="3rem" fontSize="4xl">
-                <b>Ce site web est éco conçu </b>
-                <i>(réellement).</i>
-              </Text>
               <VStack alignItems="flex-start" fontSize="xl" spacing={4}>
-                <Text>
-                  La maintenance est réalisée par{" "}
-                  <Link
-                    textDecoration="underline"
-                    href="https://simplon.co/"
-                    isExternal
-                  >
-                    Simplon
-                  </Link>{" "}
-                  le réseau de fabriques numériques et inclusives qui donne sa
-                  chance aux femmes, permet l’inclusion socio-professionnelle
-                  des personnes étrangères et intègre les personnes en situation
-                  de handicap.
+                <Text lineHeight="3rem" fontSize="4xl">
+                  <b>Ce site web est éco conçu </b>
+                  <i>(réellement).</i>
                 </Text>
                 <Text>
-                  Le graphisme du site a été adapté pour alléger le poids des
-                  photos, et on va essayer de limiter leur nombre.
+                  Nous le savons, les sites internet ont des conséquences
+                  écologiques graves : consommation d’énergie, émissions de gaz
+                  à effet de serre, pollution de l’eau et des sols, et
+                  épuisement des ressources naturelles notamment.
                 </Text>
                 <Text>
-                  On a aussi pensé aux réseaux sociaux et (par simplicité aussi
-                  ^^) on a décidé d’utiliser qu’un seul canal :
+                  Ainsi chez Soqo* nous débutons un travail sur nos outils
+                  numériques :
+                </Text>
+                <Text>
+                  Le graphisme de notre site internet a été développé sur des
+                  principes bas carbone et a été adapté pour alléger le poids
+                  des photos. Nous agissons également en interne afin de limiter
+                  leur nombre.
+                </Text>
+                <Text>
+                  Pour les réseaux sociaux, nous avons décidé de n’utiliser
+                  qu’un seul canal de communication pour vous tenir informé de
+                  nos projets et actualités :
                 </Text>
                 <CustomLink
                   isExternal
@@ -60,11 +60,31 @@ const EcoConception = () => {
                   Instagram{" "}
                   <Box fontSize="3l" ml={3} mt={1} as={BsArrowUpRight} />
                 </CustomLink>
-                <Text fontStyle="italic">
-                  On sait aussi une chose c’est que le digital peut aussi
-                  devenir une arme redoutable au service des causes que nous
-                  défendons.
+                <Text mb={4} fontStyle="italic">
+                  Pour aller encore + loin nous avons confié la maintenance de{" "}
+                  <Link textDecoration="underline" href="https://soqo.fr/">
+                    soqo.fr
+                  </Link>{" "}
+                  à{" "}
+                  <Link
+                    textDecoration="underline"
+                    isExternal
+                    href="https://www.numerik-ea.fr/"
+                  >
+                    Numerikea
+                  </Link>
+                  , le pôle de développement web solidaire pour l’emploi des
+                  travailleurs handicapés.
                 </Text>
+                <Box>
+                  <Image
+                    alt="Numerikea"
+                    src="/assets/numerikea.png"
+                    width="182px"
+                    height="47px"
+                    placeholder="blur"
+                  />
+                </Box>
               </VStack>
             </Box>
           </Flex>
