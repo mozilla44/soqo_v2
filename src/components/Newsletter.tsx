@@ -17,6 +17,7 @@ const Newsletter = () => {
         body: JSON.stringify({ email }),
       }).then((res) => res.json())
       setFeedback("Email enregistré ! Merci :)")
+      setEmail('')
     } else {
       setFeedback("Email invalide")
     }
