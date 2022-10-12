@@ -9,7 +9,7 @@ export default async function handler(
   if (req.method === "POST") {
     mailchimp.setConfig({
       apiKey: process.env.MAILCHIMP_API_KEY,
-      server: "us1",
+      server: "us17",
     })
 
     const { email } = JSON.parse(req.body)
