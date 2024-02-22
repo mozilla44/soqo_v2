@@ -81,10 +81,8 @@ const LivreBlanc = () => {
             display="flex"
             alignItems="center"
             justifyContent="space-between"
-            border="3px solid green"
           >
             <Image
-            border="3px solid yellow"
               height="100%"
               width="100%"
               objectFit="cover"
