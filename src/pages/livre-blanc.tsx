@@ -15,6 +15,9 @@ const LivreBlanc = () => {
     <Box /* overflow="hidden" */>
       <Head>
         <title>Livre Blanc - Soqo</title>
+        <meta property="og:title" content="Découvrez notre Livre Blanc !" />
+        <meta property="og:description" content="L’étude qui explore les partenariats associations-entreprises." />
+        <meta property="og:image" content="http://bonjour-soqo.com/thumb_og.png" />
       </Head>
       <NavlessHeader />
 
