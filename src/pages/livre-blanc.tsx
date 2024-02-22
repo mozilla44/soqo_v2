@@ -180,7 +180,7 @@ const LivreBlanc = () => {
 
       {/*form_section*/}
       <Section backgroundColor="#173A2C" id="book_fom">
-      {/*   <Widget
+      <Widget
           id="LDXgbLp7"
           style={{ width: "100%", height: "90vh", border: "none" }}
           className="my-form"
@@ -188,8 +188,7 @@ const LivreBlanc = () => {
           hideHeaders
           disableAutoFocus
           inlineOnMobile={false}
-        /> */}
-        <div data-tf-live="01HQ5MG6A1AP96ZMZ8JC7JM83G"></div><script src="//embed.typeform.com/next/embed.js"></script>
+        />
       </Section>
       <LightFooter />
     </Box>
