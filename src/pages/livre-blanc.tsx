@@ -44,7 +44,7 @@ const LivreBlanc = () => {
             textAlign={{ base: "center", sm: "left" }}
           >
             <Text fontSize="5xl" color="#EFE6D4">
-              Livre Blanc Soqo* 2024
+              Découvrez notre Livre Blanc !
             </Text>
             <Text
               fontSize="3xl"
