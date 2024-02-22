@@ -81,10 +81,13 @@ const LivreBlanc = () => {
             display="flex"
             alignItems="center"
             justifyContent="space-between"
+            border="3px solid green"
           >
             <Image
+            border="3px solid yellow"
               height="100%"
-              minWidth="100%"
+              width="100%"
+              objectFit="cover"
               alt="Livre Blanc Soqo"
               src="/assets/livre.png"
               transform="rotate(-5deg)"
