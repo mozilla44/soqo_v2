@@ -84,6 +84,7 @@ const LivreBlanc = () => {
             display="flex"
             alignItems="center"
             justifyContent="space-between"
+            overflow="hidden"
           >
             <Image
               height="100%"
@@ -94,6 +95,7 @@ const LivreBlanc = () => {
               transform="rotate(-5deg)"
               marginRight={{ sm: "3rem" }}
               marginLeft={{ base: "2rem" }}
+              
             ></Image>
           </Box>
         </Box>
@@ -167,6 +169,8 @@ const LivreBlanc = () => {
             display="flex"
             alignItems="center"
             justifyContent="center"
+            overflow="hidden"
+
           >
             <Image
               height="100%"
