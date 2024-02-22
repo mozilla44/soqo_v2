@@ -12,7 +12,7 @@ import LightFooter from "components/LightFooter";
 
 const LivreBlanc = () => {
   return (
-    <Box overflow="hidden">
+    <Box /* overflow="hidden" */>
       <Head>
         <title>Livre Blanc - Soqo</title>
       </Head>
