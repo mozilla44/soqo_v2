@@ -42,7 +42,6 @@ const LivreBlanc = () => {
             paddingTop={{ sm: "3%" }}
             marginLeft={{ sm: "4rem" }}
             textAlign={{ base: "center", sm: "left" }}
-            /* border="1px solid blue" */
           >
             <Text fontSize="5xl" color="#EFE6D4">
               Découvrez notre Livre Blanc !
@@ -55,9 +54,10 @@ const LivreBlanc = () => {
             >
               L’étude qui explore les partenariats associations-entreprises.
             </Text>
-            <Box   gap="1rem" marginTop="1rem" /* border="2px solid red" */  width={{base:"100%",sm:"100%",md:"25rem"}} display="flex" flexDirection={{base:"column", sm:"row"}} justifyContent="space-between">
-              <Box  fontWeight=" bold" color="#173A2C" p="0.3rem"/* border="3px solid yellow" */ alignItems=" center" backgroundColor="#EFE6D4" borderRadius="10px">&#x1F913; 28 pages d’analyse</Box>
-              <Box fontWeight=" bold" color="#173A2C" p="0.3rem" /* border="3px solid yellow" */  alignItems="center" backgroundColor="#EFE6D4" borderRadius="10px">&#x1F4CA; + 150 associations interrogées</Box>
+            <Box   gap="1rem"  marginTop="1rem"  width={{base:"100%",sm:"",md:"26rem"}} display="flex" flexDirection={{base:"column", sm:"row"}} justifyContent="space-between">
+              <Box  fontWeight=" bold" color="#173A2C" p="0.3rem"  alignItems=" center" backgroundColor="#EFE6D4" borderRadius="10px">&#x1F913; 28 pages d’analyses</Box>
+              <Box fontWeight=" bold" color="#173A2C" p="0.3rem"   alignItems="center" backgroundColor="#EFE6D4" borderRadius="10px">&#x1F4CA; + 150 associations interrogées</Box>
+
 
             </Box>
             <Text fontSize="2xl" color="#EFE6D4" marginTop="2rem">
@@ -120,10 +120,10 @@ const LivreBlanc = () => {
             marginLeft={{ sm: "2" }}
             textAlign={{ base: "center", sm: "left" }}
           >
-            <Text fontSize="5xl" color="#173A2C">
-              L’étude qui explore les partenariats associations-entreprises
+            <Text fontSize="5xl" color="#173A2C" lineHeight="3.5rem">
+              L&#39;étude qui explore les partenariats associations-entreprises
             </Text>
-            <Box textAlign="left" marginTop="1rem" border="3px solid red">
+            <Box textAlign="left" marginTop="1rem">
               <Text fontSize={{ base: "2xl", sm: "3xl" }} color="#173A2C">
                 &#127919; 28 pages d'analyses
               </Text>
