@@ -42,6 +42,7 @@ const LivreBlanc = () => {
             paddingTop={{ sm: "3%" }}
             marginLeft={{ sm: "4rem" }}
             textAlign={{ base: "center", sm: "left" }}
+            /* border="1px solid blue" */
           >
             <Text fontSize="5xl" color="#EFE6D4">
               Découvrez notre Livre Blanc !
@@ -52,8 +53,13 @@ const LivreBlanc = () => {
               marginTop="2rem"
               fontWeight="bold"
             >
-              L’étude qui explore les partenariats associations-entreprises
+              L’étude qui explore les partenariats associations-entreprises.
             </Text>
+            <Box   gap="1rem" marginTop="1rem" /* border="2px solid red" */  width={{base:"100%",sm:"100%",md:"25rem"}} display="flex" flexDirection={{base:"column", sm:"row"}} justifyContent="space-between">
+              <Box  fontWeight=" bold" color="#173A2C" p="0.3rem"/* border="3px solid yellow" */ alignItems=" center" backgroundColor="#EFE6D4" borderRadius="10px">&#x1F913; 28 pages d’analyse</Box>
+              <Box fontWeight=" bold" color="#173A2C" p="0.3rem" /* border="3px solid yellow" */  alignItems="center" backgroundColor="#EFE6D4" borderRadius="10px">&#x1F4CA; + 150 associations interrogées</Box>
+
+            </Box>
             <Text fontSize="2xl" color="#EFE6D4" marginTop="2rem">
               Téléchargez notre première étude menée auprès de 150 associations
               françaises de toutes tailles et réparties sur l’ensemble du
@@ -117,7 +123,7 @@ const LivreBlanc = () => {
             <Text fontSize="5xl" color="#173A2C">
               L’étude qui explore les partenariats associations-entreprises
             </Text>
-            <Box textAlign="left" marginTop="1rem">
+            <Box textAlign="left" marginTop="1rem" border="3px solid red">
               <Text fontSize={{ base: "2xl", sm: "3xl" }} color="#173A2C">
                 &#127919; 28 pages d'analyses
               </Text>
@@ -174,14 +180,16 @@ const LivreBlanc = () => {
 
       {/*form_section*/}
       <Section backgroundColor="#173A2C" id="book_fom">
-        <Widget
+      {/*   <Widget
           id="LDXgbLp7"
           style={{ width: "100%", height: "90vh", border: "none" }}
           className="my-form"
           hideFooter
           hideHeaders
           disableAutoFocus
-        />
+          inlineOnMobile={false}
+        /> */}
+        <div data-tf-live="01HQ5MG6A1AP96ZMZ8JC7JM83G"></div><script src="//embed.typeform.com/next/embed.js"></script>
       </Section>
       <LightFooter />
     </Box>
