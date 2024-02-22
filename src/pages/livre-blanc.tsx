@@ -119,10 +119,10 @@ const LivreBlanc = () => {
             <Text fontSize="5xl" color="#173A2C" /* border="3px solid yellow" */>
               L’étude qui explore les partenariats associations-entreprises
             </Text>
-            <Box textAlign="left" marginTop="1rem"><Text  fontSize={{base:"2xl", sm:"3xl"}} color="#173A2C">&#127919; 28 pages d'analyses</Text><Text color="#173A2C" fontSize="2xl" marginLeft="2.6rem">complètes et accessibles pour comprendre les enjeux des relations associations-entreprises</Text></Box>
-            <Box  textAlign="left" marginTop="1rem"><Text fontSize={{base:"2xl", sm:"3xl"}} color="#173A2C">&#127919; Les chiffres clés</Text><Text color="#173A2C" fontSize="2xl" marginLeft="2.6rem">sur les grandes tendances du monde associatif en France</Text></Box>
-            <Box textAlign="left" marginTop="1rem" ><Text fontSize={{base:"2xl", sm:"3xl"}} color="#173A2C"> &#127919;150 associations répondantes</Text><Text color="#173A2C" fontSize="2xl" marginLeft="2.6rem">de toutes tailles et réparties sur l’ensemble du territoire</Text></Box>
-            <Box  textAlign="left" marginTop="1rem"><Text fontSize={{base:"2xl", sm:"3xl"}} color="#173A2C">&#127919; Les éléments essentiels</Text><Text color="#173A2C" fontSize="2xl" marginLeft="2.6rem">pour des alliances réussies entre associations et entreprises </Text></Box>
+            <Box textAlign="left" marginTop="1rem"><Text  fontSize={{base:"2xl", sm:"3xl"}} color="#173A2C">&#127919; 28 pages d'analyses</Text><Text color="#173A2C" fontSize={{base:"xl",sm:"2xl"}} >complètes et accessibles pour comprendre les enjeux des relations associations-entreprises</Text></Box>
+            <Box  textAlign="left" marginTop="1rem"><Text fontSize={{base:"2xl", sm:"3xl"}} color="#173A2C">&#127919; Les chiffres clés</Text><Text color="#173A2C" fontSize={{base:"xl",sm:"2xl"}} >sur les grandes tendances du monde associatif en France</Text></Box>
+            <Box textAlign="left" marginTop="1rem" ><Text fontSize={{base:"2xl", sm:"3xl"}} color="#173A2C"> &#127919; 150 associations répondantes</Text><Text color="#173A2C" fontSize={{base:"xl",sm:"2xl"}}>de toutes tailles et réparties sur l’ensemble du territoire</Text></Box>
+            <Box  textAlign="left" marginTop="1rem"><Text fontSize={{base:"2xl", sm:"3xl"}} color="#173A2C">&#127919; Les éléments essentiels</Text><Text color="#173A2C" fontSize={{base:"xl",sm:"2xl"}}>pour des alliances réussies entre associations et entreprises </Text></Box>
           </Box>
           <Box  /* border="3px solid blue"  */  height={{base:"25rem",sm:"35rem"}} display="flex" alignItems="center"
           justifyContent="center">
