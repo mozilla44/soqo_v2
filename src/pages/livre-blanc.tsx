@@ -9,6 +9,8 @@ import { Widget } from "@typeform/embed-react";
 import LightFooter from "components/LightFooter";
 import Marker from "components/Marker";
 import { Color } from "styles/theme";
+import { Card, CardText, Emoji } from "components/Card";
+import { KeyInfos } from "components/KeyInfos";
 
 //TODO :page needs heavy refactoring. Only had 3 days to learn next.js and design + code the page .
 //TODO::make components (or css/sass) instead of repeated style props.
@@ -74,26 +76,8 @@ const LivreBlanc = () => {
               flexDirection={{ base: "column", sm: "row" }}
               justifyContent="space-between"
             >
-              <Box
-                fontWeight=" bold"
-                color={Color.KAKI}
-                p="0.3rem"
-                alignItems=" center"
-                backgroundColor={Color.BEIGE}
-                borderRadius="10px"
-              >
-                &#x1F913; 28 pages d’analyses
-              </Box>
-              <Box
-                fontWeight=" bold"
-                color={Color.KAKI}
-                p="0.3rem"
-                alignItems="center"
-                backgroundColor={Color.BEIGE}
-                borderRadius="10px"
-              >
-                &#x1F4CA; + 150 associations interrogées
-              </Box>
+              <KeyInfos>&#x1F913; 28 pages d’analyses</KeyInfos>
+              <KeyInfos>&#x1F4CA; + 150 associations interrogées</KeyInfos>
             </Box>
             <Text fontSize="2xl" color={Color.BEIGE} marginTop="2rem">
               Téléchargez notre première étude menée auprès de 150 associations
@@ -165,14 +149,14 @@ const LivreBlanc = () => {
               <Text
                 fontSize={{ base: "2xl", sm: "3xl" }}
                 color={Color.KAKI}
-                fontWeight="bold" /* border="3px solid red" */
+                fontWeight="bold"
               >
                 &#127919; 28 pages d'analyses
               </Text>
               <Text
                 color={Color.KAKI}
                 fontSize={{ base: "xl", sm: "2xl" }}
-                /* border="3px solid blue" */ marginLeft="2.3rem"
+                marginLeft="2.3rem"
               >
                 complètes et accessibles pour comprendre les enjeux des
                 relations associations-entreprises
@@ -182,14 +166,14 @@ const LivreBlanc = () => {
               <Text
                 fontSize={{ base: "2xl", sm: "3xl" }}
                 color={Color.KAKI}
-                fontWeight="bold" /* border="3px solid red" */
+                fontWeight="bold"
               >
                 &#127919; Les chiffres clés
               </Text>
               <Text
                 color={Color.KAKI}
                 fontSize={{ base: "xl", sm: "2xl" }}
-                /* border="3px solid blue" */ marginLeft="2.3rem"
+                marginLeft="2.3rem"
               >
                 sur les grandes tendances du monde associatif en France
               </Text>
@@ -198,7 +182,7 @@ const LivreBlanc = () => {
               <Text
                 fontSize={{ base: "2xl", sm: "3xl" }}
                 color={Color.KAKI}
-                fontWeight="bold" /* border="3px solid red" */
+                fontWeight="bold"
               >
                 {" "}
                 &#127919; 150 associations répondantes
@@ -206,7 +190,7 @@ const LivreBlanc = () => {
               <Text
                 color={Color.KAKI}
                 fontSize={{ base: "xl", sm: "2xl" }}
-                /* border="3px solid blue" */ marginLeft="2.3rem"
+                marginLeft="2.3rem"
               >
                 de toutes tailles et réparties sur l’ensemble du territoire
               </Text>
@@ -215,14 +199,14 @@ const LivreBlanc = () => {
               <Text
                 fontSize={{ base: "2xl", sm: "3xl" }}
                 color={Color.KAKI}
-                fontWeight="bold" /* border="3px solid red" */
+                fontWeight="bold"
               >
                 &#127919; Les éléments essentiels
               </Text>
               <Text
                 color={Color.KAKI}
                 fontSize={{ base: "xl", sm: "2xl" }}
-                /* border="3px solid blue" */ marginLeft="2.3rem"
+                marginLeft="2.3rem"
               >
                 pour des alliances réussies entre associations et entreprises{" "}
               </Text>
@@ -260,21 +244,28 @@ const LivreBlanc = () => {
         minHeight={{ sm: "80vh" }}
         justifyContent="center"
       >
-        <Text fontSize={{base:"4xl",sm:"5xl"}} textAlign="center" color={Color.KAKI}>
+        <Text
+          fontSize={{ base: "4xl", sm: "5xl" }}
+          textAlign="center"
+          color={Color.KAKI}
+        >
           Renforcer les relations entre{" "}
           <Marker isBold color={Color.YELLOW}>
             associations
           </Marker>{" "}
-          et <Marker isBold color={Color.YELLOW}>entreprises</Marker> pour un avenir
-          plus solidaire !
+          et{" "}
+          <Marker isBold color={Color.YELLOW}>
+            entreprises
+          </Marker>{" "}
+          pour un avenir plus solidaire !
         </Text>
         <Text
           marginTop="1.5rem"
-          fontSize={{base:"1.5rem",sm:"1.7rem"}}
+          fontSize={{ base: "1.5rem", sm: "1.7rem" }}
           w={{ sm: "85%" }}
           textAlign="center"
           alignSelf="center"
-          width={{ base:"90%",sm: "80%" }}
+          width={{ base: "90%", sm: "80%" }}
         >
           En liant nos résultats aux recherches les plus actuelles sur le
           mécénat d’entreprise et le secteur associatif, en partageant des
@@ -283,18 +274,16 @@ const LivreBlanc = () => {
         </Text>
         <Text
           marginTop="1.5rem"
-          fontSize={{base:"1.5rem",sm:"1.7rem"}}
+          fontSize={{ base: "1.5rem", sm: "1.7rem" }}
           w={{ sm: "85%" }}
           textAlign="center"
           alignSelf="center"
-          width={{ base:"90%",sm: "80%" }}
+          width={{ base: "90%", sm: "80%" }}
         >
           Notre Livre Blanc se découpe en{" "}
           <Marker isBold color={Color.YELLOW}>
-            {" "}
-            4 grandes parties
+            4 grandes parties :
           </Marker>
-          :{" "}
         </Text>
 
         <Stack
@@ -307,121 +296,35 @@ const LivreBlanc = () => {
           marginTop="4rem"
           marginBottom="4rem"
         >
-          <Box
-            width={{ base: "90%", sm: "23%" }}
-            height="15rem"
-            display="flex"
-            flexDirection={{ base: "column" }}
-            alignItems="center"
-            justifyContent="center"
-            backgroundColor={Color.BEIGE}
-            p={{base:"10%",sm:"2%"}}
-            borderRadius="10px"
-            transitionDuration="300ms"
-            _hover={{transform: "scale(1.02)"}}
-          >
-            <Text fontSize="xl" fontWeight="bold">
-              1️⃣
-            </Text>
-            <Text
-              fontSize="xl"
-              height="100%"
-              display="flex"
-              alignItems="center"
-              textAlign="center"
-              fontWeight="bold"
-            >
+          <Card>
+            <Emoji>1️⃣</Emoji>
+            <CardText>
               Éclairage sur le monde associatif : dynamisme, défis et enjeux
               <br />
               financiers.
-            </Text>
-          </Box>
-          <Box
-            width={{ base: "90%", sm: "23%" }}
-            height="15rem"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            backgroundColor={Color.BEIGE}
-            borderRadius="10px"
-            fontWeight="bold"
-            flexDirection={{ base: "column" }}
-            p={{base:"10%",sm:"2%"}}
-            transitionDuration="300ms"
-            _hover={{transform: "scale(1.02)"}}
-          >
-            <Text fontSize="xl" fontWeight="bold">
-            2️⃣
-            </Text>
-
-            <Text
-              fontSize="xl"
-              height="100%"
-              textAlign="center"
-              display="flex"
-              alignItems="center"
-              fontWeight="bold"
-            >
+            </CardText>
+          </Card>
+          <Card>
+            <Emoji>2️⃣</Emoji>
+            <CardText>
               L’engagement croissant des entreprises auprès des associations :
               bénéfices et opportunités.
-            </Text>
-          </Box>
-          <Box
-            width={{ base: "90%", sm: "23%" }}
-            height="15rem"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            backgroundColor={Color.BEIGE}
-            borderRadius="10px"
-            fontWeight="bold"
-            p={{base:"10%",sm:"2%"}}
-            flexDirection={{ base: "column" }}
-            transitionDuration="300ms"
-            _hover={{transform: "scale(1.02)"}}
-          >
-            <Text fontSize="xl" fontWeight="bold">
-            3️⃣
-            </Text>
-            <Text
-              fontSize="xl"
-              height="100%"
-              display="flex"
-              alignItems="center"
-              textAlign="center"
-            >
+            </CardText>
+          </Card>
+          <Card>
+            <Emoji>3️⃣</Emoji>
+            <CardText>
               Bâtir des partenariats durables avec les entreprises : un
               challenge pour toutes les associations.
-            </Text>
-          </Box>
-          <Box
-            width={{ base: "90%", sm: "23%" }}
-            height="15rem"
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            backgroundColor={Color.BEIGE}
-            borderRadius="10px"
-            fontWeight="bold"
-            p={{base:"10%",sm:"2%"}}
-            flexDirection={{ base: "column" }}
-            transitionDuration="300ms"
-            _hover={{transform: "scale(1.02)"}}
-          >
-            <Text fontSize="xl" fontWeight="bold">
-            4️⃣
-            </Text>
-            <Text
-              fontSize="xl"
-              height="100%"
-              display="flex"
-              alignItems="center"
-              textAlign="center"
-            >
+            </CardText>
+          </Card>
+          <Card>
+            <Emoji>4️⃣</Emoji>
+            <CardText>
               Quel futur pour les <br />
               relations associations - entreprises ?<br />
-            </Text>
-          </Box>
+            </CardText>
+          </Card>
         </Stack>
       </Box>
 
