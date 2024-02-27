@@ -222,7 +222,7 @@ const LivreBlanc = () => {
             <Image
               height="100%"
               minWidth="100%"
-              alt="Livre Blanc Soqo"
+              alt="Un apercu du livre blanc soqo"
               src="/assets/pile.png"
               transform="rotate(-5deg)"
               marginRight={{ sm: "3rem" }}
