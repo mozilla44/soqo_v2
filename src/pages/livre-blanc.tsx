@@ -158,40 +158,72 @@ const LivreBlanc = () => {
             marginLeft={{ sm: "2" }}
             textAlign={{ base: "center", sm: "left" }}
           >
-            <Text fontSize="5xl" color={Color.KAKI} lineHeight="3.5rem" >
-            L&#39;étude qui explore les partenariats associations-entreprises
+            <Text fontSize="5xl" color={Color.KAKI} lineHeight="3.5rem">
+              L&#39;étude qui explore les partenariats associations-entreprises
             </Text>
             <Box textAlign="left" marginTop="1rem">
-              <Text fontSize={{ base: "2xl", sm: "3xl" }} color={Color.KAKI}  fontWeight="bold"/* border="3px solid red" */>
+              <Text
+                fontSize={{ base: "2xl", sm: "3xl" }}
+                color={Color.KAKI}
+                fontWeight="bold" /* border="3px solid red" */
+              >
                 &#127919; 28 pages d'analyses
               </Text>
-              <Text color={Color.KAKI} fontSize={{ base: "xl", sm: "2xl" }} /* border="3px solid blue" */ marginLeft="2.3rem">
+              <Text
+                color={Color.KAKI}
+                fontSize={{ base: "xl", sm: "2xl" }}
+                /* border="3px solid blue" */ marginLeft="2.3rem"
+              >
                 complètes et accessibles pour comprendre les enjeux des
                 relations associations-entreprises
               </Text>
             </Box>
             <Box textAlign="left" marginTop="1rem">
-              <Text fontSize={{ base: "2xl", sm: "3xl" }} color={Color.KAKI} fontWeight="bold"/* border="3px solid red" */>
+              <Text
+                fontSize={{ base: "2xl", sm: "3xl" }}
+                color={Color.KAKI}
+                fontWeight="bold" /* border="3px solid red" */
+              >
                 &#127919; Les chiffres clés
               </Text>
-              <Text color={Color.KAKI} fontSize={{ base: "xl", sm: "2xl" }} /* border="3px solid blue" */ marginLeft="2.3rem">
+              <Text
+                color={Color.KAKI}
+                fontSize={{ base: "xl", sm: "2xl" }}
+                /* border="3px solid blue" */ marginLeft="2.3rem"
+              >
                 sur les grandes tendances du monde associatif en France
               </Text>
             </Box>
             <Box textAlign="left" marginTop="1rem">
-              <Text fontSize={{ base: "2xl", sm: "3xl" }} color={Color.KAKI} fontWeight="bold"/* border="3px solid red" */>
+              <Text
+                fontSize={{ base: "2xl", sm: "3xl" }}
+                color={Color.KAKI}
+                fontWeight="bold" /* border="3px solid red" */
+              >
                 {" "}
                 &#127919; 150 associations répondantes
               </Text>
-              <Text color={Color.KAKI} fontSize={{ base: "xl", sm: "2xl" }} /* border="3px solid blue" */ marginLeft="2.3rem">
+              <Text
+                color={Color.KAKI}
+                fontSize={{ base: "xl", sm: "2xl" }}
+                /* border="3px solid blue" */ marginLeft="2.3rem"
+              >
                 de toutes tailles et réparties sur l’ensemble du territoire
               </Text>
             </Box>
             <Box textAlign="left" marginTop="1rem">
-              <Text fontSize={{ base: "2xl", sm: "3xl" }} color={Color.KAKI} fontWeight="bold"/* border="3px solid red" */>
+              <Text
+                fontSize={{ base: "2xl", sm: "3xl" }}
+                color={Color.KAKI}
+                fontWeight="bold" /* border="3px solid red" */
+              >
                 &#127919; Les éléments essentiels
               </Text>
-              <Text color={Color.KAKI} fontSize={{ base: "xl", sm: "2xl" }}  /* border="3px solid blue" */ marginLeft="2.3rem">
+              <Text
+                color={Color.KAKI}
+                fontSize={{ base: "xl", sm: "2xl" }}
+                /* border="3px solid blue" */ marginLeft="2.3rem"
+              >
                 pour des alliances réussies entre associations et entreprises{" "}
               </Text>
             </Box>
@@ -228,17 +260,21 @@ const LivreBlanc = () => {
         minHeight={{ sm: "80vh" }}
         justifyContent="center"
       >
-        <Text fontSize="5xl" textAlign="center" color={Color.KAKI}>
-          Renforcer les relations entre <Marker  isBold color={Color.YELLOW}>associations</Marker> {" "}  et <Marker  color={Color.YELLOW}>entreprises</Marker> pour un
-          avenir plus solidaire !
+        <Text fontSize={{base:"4xl",sm:"5xl"}} textAlign="center" color={Color.KAKI}>
+          Renforcer les relations entre{" "}
+          <Marker isBold color={Color.YELLOW}>
+            associations
+          </Marker>{" "}
+          et <Marker isBold color={Color.YELLOW}>entreprises</Marker> pour un avenir
+          plus solidaire !
         </Text>
         <Text
           marginTop="1.5rem"
-          fontSize="1.7rem"
+          fontSize={{base:"1.5rem",sm:"1.7rem"}}
           w={{ sm: "85%" }}
           textAlign="center"
           alignSelf="center"
-          width={{ sm: "80%" }}
+          width={{ base:"90%",sm: "80%" }}
         >
           En liant nos résultats aux recherches les plus actuelles sur le
           mécénat d’entreprise et le secteur associatif, en partageant des
@@ -247,14 +283,20 @@ const LivreBlanc = () => {
         </Text>
         <Text
           marginTop="1.5rem"
-          fontSize="1.7rem"
+          fontSize={{base:"1.5rem",sm:"1.7rem"}}
           w={{ sm: "85%" }}
           textAlign="center"
           alignSelf="center"
-          width={{ sm: "80%" }}
+          width={{ base:"90%",sm: "80%" }}
         >
-          Notre Livre Blanc se découpe en <Marker  isBold color={Color.YELLOW}> 4 grandes parties</Marker>:{" "}
+          Notre Livre Blanc se découpe en{" "}
+          <Marker isBold color={Color.YELLOW}>
+            {" "}
+            4 grandes parties
+          </Marker>
+          :{" "}
         </Text>
+
         <Stack
           width={{ sm: "80%" }}
           alignSelf={{ sm: "center" }}
@@ -264,7 +306,6 @@ const LivreBlanc = () => {
           p={{ base: "0.5rem" }}
           marginTop="4rem"
           marginBottom="4rem"
-
         >
           <Box
             width={{ base: "90%", sm: "23%" }}
@@ -274,11 +315,13 @@ const LivreBlanc = () => {
             alignItems="center"
             justifyContent="center"
             backgroundColor={Color.BEIGE}
-            p="2%"
+            p={{base:"10%",sm:"2%"}}
             borderRadius="10px"
+            transitionDuration="300ms"
+            _hover={{transform: "scale(1.02)"}}
           >
-            <Text fontSize="xl" fontWeight="bold" textDecoration="underline">
-              &#8544;
+            <Text fontSize="xl" fontWeight="bold">
+              1️⃣
             </Text>
             <Text
               fontSize="xl"
@@ -288,8 +331,9 @@ const LivreBlanc = () => {
               textAlign="center"
               fontWeight="bold"
             >
-              Éclairage sur le monde associatif : dynamisme, défis et enjeux<br />
-              financiers. 
+              Éclairage sur le monde associatif : dynamisme, défis et enjeux
+              <br />
+              financiers.
             </Text>
           </Box>
           <Box
@@ -302,10 +346,12 @@ const LivreBlanc = () => {
             borderRadius="10px"
             fontWeight="bold"
             flexDirection={{ base: "column" }}
-            p="2%"
+            p={{base:"10%",sm:"2%"}}
+            transitionDuration="300ms"
+            _hover={{transform: "scale(1.02)"}}
           >
-            <Text fontSize="xl" fontWeight="bold" textDecoration="underline">
-              &#8545;
+            <Text fontSize="xl" fontWeight="bold">
+            2️⃣
             </Text>
 
             <Text
@@ -329,11 +375,13 @@ const LivreBlanc = () => {
             backgroundColor={Color.BEIGE}
             borderRadius="10px"
             fontWeight="bold"
-            p="2%"
+            p={{base:"10%",sm:"2%"}}
             flexDirection={{ base: "column" }}
+            transitionDuration="300ms"
+            _hover={{transform: "scale(1.02)"}}
           >
-            <Text fontSize="xl" textDecoration="underline" fontWeight="bold">
-              &#8546;
+            <Text fontSize="xl" fontWeight="bold">
+            3️⃣
             </Text>
             <Text
               fontSize="xl"
@@ -355,11 +403,13 @@ const LivreBlanc = () => {
             backgroundColor={Color.BEIGE}
             borderRadius="10px"
             fontWeight="bold"
-            p="2%"
+            p={{base:"10%",sm:"2%"}}
             flexDirection={{ base: "column" }}
+            transitionDuration="300ms"
+            _hover={{transform: "scale(1.02)"}}
           >
-            <Text fontSize="xl" fontWeight="bold" textDecoration="underline">
-              &#8547;
+            <Text fontSize="xl" fontWeight="bold">
+            4️⃣
             </Text>
             <Text
               fontSize="xl"
@@ -368,7 +418,8 @@ const LivreBlanc = () => {
               alignItems="center"
               textAlign="center"
             >
-              Quel futur pour les <br />relations associations - entreprises ?<br />
+              Quel futur pour les <br />
+              relations associations - entreprises ?<br />
             </Text>
           </Box>
         </Stack>
