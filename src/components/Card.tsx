@@ -18,7 +18,7 @@ export const Card = (props: BoxProps) => {
       borderRadius="10px"
       fontWeight="bold"
       transitionDuration="300ms"
-      boxShadow="0.2rem 0.2rem 1rem #173A2C"
+      boxShadow="0.2rem 0.2rem 1rem grey"
     >
       {children}
     </Box>
