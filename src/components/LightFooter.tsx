@@ -1,4 +1,5 @@
 import { Box, Link } from "@chakra-ui/react"
+import { Color } from "styles/theme"
 
 const LightFooter = () => {
     return (
@@ -12,7 +13,7 @@ const LightFooter = () => {
             px={1}
             py={1}
             color="beige.500"
-            backgroundColor="kaki.500"
+            backgroundColor={Color.KAKI}
             href="/mentions-legales"
           >
             Mention légales
