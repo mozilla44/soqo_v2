@@ -19,7 +19,7 @@ const Marker = ({
 
   return (
     <RoughNotation
-      animationDuration={2000}
+      animationDuration={960}
       color={color}
       show={isVisible === undefined ? isElementVisible : isVisible}
       type="highlight"

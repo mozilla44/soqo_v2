@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Image, Link } from "@chakra-ui/react";
 /* import Image from "next/image"; */
-import React from "react";
+import React, { ReactNode } from "react";
 import { Color } from "styles/theme";
 import Marker from "./Marker";
 import { Text } from "@chakra-ui/react";
@@ -9,7 +9,7 @@ import { Button } from '@chakra-ui/react';
 
 // Define the props interface
 interface CoverProps {
-  title: string;
+  title: ReactNode;
   content: string;
   // Adjust the type based on your needs
   buttonText: string;
@@ -82,6 +82,7 @@ const Cover: React.FC<CoverProps> = ({
             margin="0"
             padding={0}
             objectFit="cover"
+            borderLeft={"1px solid black"}
             
           />
         </Box>

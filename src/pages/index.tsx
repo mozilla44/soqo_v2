@@ -26,17 +26,23 @@ const Home = ({ projects }: { projects: IProject[] }) => (
     <Header headerBgColor={Color.BEIGE} linkColor={Color.KAKI}/>
 
     <Flex position="relative" flexDirection="column" backgroundColor="blue.500">
-      <Cover
-        title={`Nous sommes un\nbureau de création\nde projèts à impact`}
-        content={`Nous accompagnons les\nentreprises dans leurs\nengagements responsables`}
-        imageSrc={"/assets/hand.jpg"}
-        buttonText="Je souhaite en savoir plus"
-        buttonLink = ""
-        btnColor={Color.BEIGE}
-        btnBackground={Color.KAKI}
+  <Cover
+    title={
+      <>
+        Nous sommes un<br />
+        bureau de création<br />
+         de <Marker  color={Color.BLUE}>projèts à impact</Marker>
+      </>
+    }
+    content={`Nous accompagnons les\nentreprises dans leurs\nengagements responsables`}
+    imageSrc={"/assets/hand.jpg"}
+    buttonText="Je souhaite en savoir plus"
+    buttonLink=""
+    btnColor={Color.BEIGE}
+    btnBackground={Color.KAKI}
+  />
+</Flex>
 
-      />
-    </Flex>
     <Box as="section" color="kaki.500" backgroundColor="beige.500">
       <Box px={4} pt={10} pb={0} maxWidth="container.xl" marginX="auto">
         <Title mb={4}>Nos projets</Title>
