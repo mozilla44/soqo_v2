@@ -1,21 +1,21 @@
-import { Box, Flex, Text, VStack } from "@chakra-ui/react"
-import Button from "components/Button"
-import Counter from "components/Counter"
-import Cover from "components/Cover"
-import CustomLink from "components/CustomLink"
-import Footer from "components/Footer"
-import Layout from "components/Layout"
-import Marker from "components/Marker"
-import ProjectSlider from "components/ProjectSlider"
-import Section from "components/Section"
-import Title from "components/Title"
-import client from "core/client"
-import Head from "next/head"
-import Image from "next/image"
-import { Color } from "styles/theme"
-import { IProject } from "types/generated/contentful"
-import partenariat from "../../public/assets/partenaires/partenariat.png"
-import swimming from "../../public/assets/swimming.jpg"
+import { Box, Flex, Text, VStack } from "@chakra-ui/react";
+import Button from "components/Button";
+import Counter from "components/Counter";
+import Cover from "components/Cover";
+import CustomLink from "components/CustomLink";
+import Footer from "components/Footer";
+import Layout from "components/Layout";
+import Marker from "components/Marker";
+import ProjectSlider from "components/ProjectSlider";
+import Section from "components/Section";
+import Title from "components/Title";
+import client from "core/client";
+import Head from "next/head";
+import Image from "next/image";
+import { Color } from "styles/theme";
+import { IProject } from "types/generated/contentful";
+import partenariat from "../../public/assets/partenaires/partenariat.png";
+import hand from "../../public/assets/hand.jpg";
 
 const Home = ({ projects }: { projects: IProject[] }) => (
   <Layout>
@@ -23,22 +23,13 @@ const Home = ({ projects }: { projects: IProject[] }) => (
       <title>Accueil - Soqo</title>
     </Head>
     <Flex position="relative" flexDirection="column" backgroundColor="blue.500">
-      <Cover />
-      <CustomLink href="/eco-conception">
-        <Box backgroundColor="yellow.500">
-          <Flex
-            marginX="auto"
-            maxWidth="container.xl"
-            px={4}
-            py={2}
-            justifyContent="flex-end"
-            alignItems="center"
-            fontSize="2xl"
-          >
-            <Counter />
-          </Flex>
-        </Box>
-      </CustomLink>
+      <Cover
+        title={`Nous sommes un\nbureau de création\nde projèts à impact`}
+        content={`Nous accompagnons les\nentreprises dans leurs\nengagements responsables`}
+        imageSrc={hand}
+        buttonText=""
+        buttonLink="/"
+      />
     </Flex>
     <Box as="section" color="kaki.500" backgroundColor="beige.500">
       <Box px={4} pt={10} pb={0} maxWidth="container.xl" marginX="auto">
@@ -126,7 +117,7 @@ const Home = ({ projects }: { projects: IProject[] }) => (
         </Box>
         <Box textAlign={{ base: "center", md: "right" }} flex="1">
           <Image
-            src={swimming}
+            src={hand}
             width="600px"
             height="900px"
             alt="Notre manifeste"
@@ -192,22 +183,22 @@ const Home = ({ projects }: { projects: IProject[] }) => (
     </Section>
     <Footer />
   </Layout>
-)
+);
 
-Home.backgroundColor = "#E3F1FD"
+Home.backgroundColor = "#E3F1FD";
 
 export const getStaticProps = async () => {
-  const entries = await client.getEntries()
+  const entries = await client.getEntries();
   const projects = entries.items.filter(
     (item) => item.sys.contentType.sys.id === "project"
-  )
+  );
 
   return {
     props: {
       projects,
     },
     revalidate: 10,
-  }
-}
+  };
+};
 
-export default Home
+export default Home;

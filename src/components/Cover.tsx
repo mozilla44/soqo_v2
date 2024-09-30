@@ -1,13 +1,28 @@
-import { Box, Flex } from "@chakra-ui/react"
-import Image from "next/image"
-import React from "react"
-import { Color } from "styles/theme"
-import cover from "../../public/assets/hand.jpg"
-import Button from "./Button"
-import Marker from "./Marker"
-import Stamp from "./Stamp"
+import { Box, Flex, Heading } from "@chakra-ui/react";
+import Image from "next/image";
+import React from "react";
+import { Color } from "styles/theme";
+import Button from "./Button";
+import Marker from "./Marker";
+import Stamp from "./Stamp";
+import { Text } from "@chakra-ui/react";
 
-const Cover = () => {
+// Define the props interface
+interface CoverProps {
+  title: string;
+  content: string;
+  imageSrc: StaticImageData; // Adjust the type based on your needs
+  buttonText: string;
+  buttonLink: string;
+}
+
+const Cover: React.FC<CoverProps> = ({
+  title,
+  content,
+  imageSrc,
+  buttonText,
+  buttonLink,
+}) => {
   return (
     <Flex
       overflow="hidden"
@@ -35,16 +50,12 @@ const Cover = () => {
           lineHeight="120%"
           mb={10}
         >
-          Nous sommes{" "}
-          <Marker isBold color={Color.BEIGE}>
-            un créateur de liens
-          </Marker>{" "}
-          <b>entre associations et entreprises</b> pour développer des projets
-          concrets <b>à impact social et environnemental positif</b>.
+          <Text fontSize={"5xl"} lineHeight="120%">{title}</Text>
+          <Text  marginTop="1rem"fontSize={"2xl"} lineHeight="120%">{content}</Text>
         </Box>
         <Box mb={{ base: 12, md: 0 }}>
-          <Button fontSize="1.6rem" href="/adn" hoverColor="blue.500">
-            découvrir notre adn
+          <Button fontSize="1.6rem" href={buttonLink} hoverColor="blue.500">
+            {buttonText}
           </Button>
         </Box>
       </Flex>
@@ -56,7 +67,7 @@ const Cover = () => {
       >
         <Box py={3} flex="1 1 auto" position="relative">
           <Image
-            src={cover}
+            src={imageSrc}
             alt="Soqo"
             placeholder="blur"
             width="500px"
@@ -65,7 +76,7 @@ const Cover = () => {
         </Box>
       </Flex>
     </Flex>
-  )
-}
+  );
+};
 
-export default Cover
+export default Cover;
