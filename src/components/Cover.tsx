@@ -39,6 +39,7 @@ const Cover: React.FC<CoverProps> = ({
       w={"100vw"}
       justifyContent="space-between"
       maxHeight="80vh"
+      border={"1px solid black"}
     >
       <Flex
         justifyContent="center"
