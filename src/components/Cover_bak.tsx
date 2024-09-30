@@ -1,45 +1,41 @@
-import { Box, Flex, Heading, Image, Link } from "@chakra-ui/react";
-/* import Image from "next/image"; */
+import { Box, Flex, Heading } from "@chakra-ui/react";
+import Image from "next/image";
 import React from "react";
 import { Color } from "styles/theme";
+import Button from "./Button";
 import Marker from "./Marker";
+import Stamp from "./Stamp";
 import { Text } from "@chakra-ui/react";
-import { Button } from '@chakra-ui/react';
-
 
 // Define the props interface
 interface CoverProps {
   title: string;
   content: string;
-  // Adjust the type based on your needs
+  imageSrc: StaticImageData; // Adjust the type based on your needs
   buttonText: string;
   buttonLink: string;
-  imageSrc: string;
-  btnColor: string;
-  btnBackground: string;
 }
 
 const Cover: React.FC<CoverProps> = ({
   title,
   content,
+  imageSrc,
   buttonText,
   buttonLink,
-  imageSrc,
-  btnBackground,
-  btnColor
 }) => {
   return (
     <Flex
       overflow="hidden"
       position="relative"
-      backgroundColor={Color.BEIGE}
+      px={{ base: 4, md: 10 }}
+      backgroundColor="blue.500"
       flex="1"
       flexDirection={{ base: "column", md: "row" }}
       marginX="auto"
-      w={"100vw"}
+      maxWidth="container.xl"
       justifyContent="space-between"
-      maxHeight="80vh"
     >
+      <Stamp display={{ base: "none", md: "block" }} top="5rem" right="-1rem" />
       <Flex
         justifyContent="center"
         flexDirection="column"
@@ -53,35 +49,29 @@ const Cover: React.FC<CoverProps> = ({
           fontSize={{ base: "30px", md: "3vw", xl: "40px" }}
           lineHeight="120%"
           mb={10}
-          marginLeft="15%"
         >
-          <Text fontSize={"6xl"} lineHeight="120%">
-            {title}
-          </Text>
-          <Text marginTop="1rem" fontSize={"3xl"} lineHeight="120%">
-            {content}
-          </Text>
-          <Button fontSize="1.6rem" color={btnColor} backgroundColor={btnBackground} fontFamily="Minion Pro" marginTop={"2rem"} fontWeight="400" padding={"1.5rem"}>
-            <Link href={buttonLink}>{buttonText}</Link>
+          <Text fontSize={"5xl"} lineHeight="120%">{title}</Text>
+          <Text  marginTop="1rem"fontSize={"2xl"} lineHeight="120%">{content}</Text>
+        </Box>
+        <Box mb={{ base: 12, md: 0 }}>
+          <Button fontSize="1.6rem" href={buttonLink} hoverColor="blue.500">
+            {buttonText}
           </Button>
         </Box>
       </Flex>
       <Flex
         display={{ base: "none", md: "flex" }}
-        maxWidth="40%"
-        height={"100%"}
-        
+        width="40%"
+        alignItems="center"
+        justifyContent="flex-end"
       >
-        <Box py={3} flex="1 1 auto" position="relative" margin="0" padding={0} height="80%">
+        <Box py={3} flex="1 1 auto" position="relative">
           <Image
+            src={imageSrc}
             alt="Soqo"
             placeholder="blur"
-            boxSize="100%"
-            src={imageSrc}
-            margin="0"
-            padding={0}
-            objectFit="cover"
-            
+            width="500px"
+            height="750px"
           />
         </Box>
       </Flex>

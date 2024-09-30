@@ -2,7 +2,6 @@ import { Box } from "@chakra-ui/react"
 import { motion } from "framer-motion"
 import Script from "next/script"
 import React from "react"
-import BookBanner from "./BookBanner"
 import Header from "./Header"
 
 const variants = {
@@ -27,8 +26,6 @@ const Layout: React.FC = ({ children }) => {
           gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
         `}
       </Script>
-      <BookBanner/>
-      <Header />
       <MotionBox
         variants={variants}
         initial="initial"

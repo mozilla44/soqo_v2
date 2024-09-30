@@ -16,19 +16,25 @@ import { Color } from "styles/theme";
 import { IProject } from "types/generated/contentful";
 import partenariat from "../../public/assets/partenaires/partenariat.png";
 import hand from "../../public/assets/hand.jpg";
+import Header from "components/Header";
 
 const Home = ({ projects }: { projects: IProject[] }) => (
   <Layout>
     <Head>
       <title>Accueil - Soqo</title>
     </Head>
+    <Header headerBgColor={Color.BEIGE} linkColor={Color.KAKI}/>
+
     <Flex position="relative" flexDirection="column" backgroundColor="blue.500">
       <Cover
         title={`Nous sommes un\nbureau de création\nde projèts à impact`}
         content={`Nous accompagnons les\nentreprises dans leurs\nengagements responsables`}
-        imageSrc={hand}
-        buttonText=""
-        buttonLink="/"
+        imageSrc={"/assets/hand.jpg"}
+        buttonText="Je souhaite en savoir plus"
+        buttonLink = ""
+        btnColor={Color.BEIGE}
+        btnBackground={Color.KAKI}
+
       />
     </Flex>
     <Box as="section" color="kaki.500" backgroundColor="beige.500">

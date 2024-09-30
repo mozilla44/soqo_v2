@@ -26,9 +26,9 @@ import Marker from "./Marker"
 export const HEADER_HEIGHT = "120px"
 
 const MenuLink = (
-  props: LinkProps & { href: string; isActive?: boolean; scroll?: boolean }
+  props: LinkProps & { href: string; isActive?: boolean; scroll?: boolean; linkColor?: string }
 ) => {
-  const { children, isActive, scroll, ...rest } = props
+  const { children, isActive, scroll, linkColor, ...rest } = props
   const [isVisible, setVisible] = useState(false)
   const [isHovered, setHovered] = useState(false)
   const isMobile: boolean | undefined = useBreakpointValue({
@@ -49,6 +49,7 @@ const MenuLink = (
       onMouseLeave={() => setHovered(false)}
       fontStyle={isActive ? "italic" : "initial"}
       fontSize="30px"
+      color={linkColor}
       {...rest}
     >
       <Marker
@@ -61,7 +62,7 @@ const MenuLink = (
   )
 }
 
-const Header = () => {
+const Header = ({ headerBgColor = "transparent", linkColor = "initial" }) => {
   const { pathname } = useRouter()
   const { isOpen, onOpen, onClose } = useDisclosure()
   const isMobile: boolean | undefined = useBreakpointValue({
@@ -70,7 +71,7 @@ const Header = () => {
   })
 
   return (
-    <Box height={HEADER_HEIGHT}>
+    <Box height="6rem">
       <Container
         display="flex"
         flexDirection="row"
@@ -78,31 +79,34 @@ const Header = () => {
         justifyContent="space-between"
         py={6}
         px={10}
-        backgroundColor="transparent"
+        backgroundColor={headerBgColor}
         maxWidth="container.xl"
+        height="100%"
+        minW={"100%"}
       >
         <CustomLink href="/">
           <Image mt={2} alt="Soqo" width="120px" src="/assets/logo.png" />
         </CustomLink>
         {!isMobile && (
           <HStack spacing={10}>
-            <MenuLink isActive={pathname === "/adn"} href="/adn">
+            <MenuLink isActive={pathname === "/adn"} href="/adn" linkColor={linkColor}>
               adn
             </MenuLink>
             <MenuLink
               isActive={pathname.startsWith("/projets")}
               href="/projets"
+              linkColor={linkColor}
             >
               projets
             </MenuLink>
-            <MenuLink isActive={pathname === "/services"} href="/services">
+            <MenuLink isActive={pathname === "/services"} href="/services" linkColor={linkColor}>
               services
             </MenuLink>
-            <MenuLink isActive={pathname === "/ecosysteme"} href="/ecosysteme">
+            <MenuLink isActive={pathname === "/ecosysteme"} href="/ecosysteme" linkColor={linkColor}>
               écosystème
             </MenuLink>
 
-            <MenuLink scroll={false} href="#parlons-nous">
+            <MenuLink scroll={false} href="#parlons-nous" linkColor={linkColor}>
               parlons-nous
             </MenuLink>
           </HStack>
@@ -135,26 +139,24 @@ const Header = () => {
                 <CustomLink href="/">
                   <Image alt="Soqo" width="130px" src="/assets/logo.png" />
                 </CustomLink>
-                <MenuLink isActive={pathname === "/adn"} href="/adn">
+                <MenuLink isActive={pathname === "/adn"} href="/adn" linkColor={linkColor}>
                   adn
                 </MenuLink>
                 <MenuLink
                   isActive={pathname.startsWith("/projets")}
                   href="/projets"
+                  linkColor={linkColor}
                 >
                   projets
                 </MenuLink>
-                <MenuLink isActive={pathname === "/services"} href="/services">
+                <MenuLink isActive={pathname === "/services"} href="/services" linkColor={linkColor}>
                   services
                 </MenuLink>
-                <MenuLink
-                  isActive={pathname === "/ecosysteme"}
-                  href="/ecosysteme"
-                >
+                <MenuLink isActive={pathname === "/ecosysteme"} href="/ecosysteme" linkColor={linkColor}>
                   écosystème
                 </MenuLink>
 
-                <MenuLink scroll={false} href="#parlons-nous">
+                <MenuLink scroll={false} href="#parlons-nous" linkColor={linkColor}>
                   parlons-nous
                 </MenuLink>
               </VStack>
