@@ -4,8 +4,7 @@ import React, { ReactNode } from "react";
 import { Color } from "styles/theme";
 import Marker from "./Marker";
 import { Text } from "@chakra-ui/react";
-import { Button } from '@chakra-ui/react';
-
+import { Button } from "@chakra-ui/react";
 
 // Define the props interface
 interface CoverProps {
@@ -26,7 +25,7 @@ const Cover: React.FC<CoverProps> = ({
   buttonLink,
   imageSrc,
   btnBackground,
-  btnColor
+  btnColor,
 }) => {
   return (
     <Flex
@@ -62,8 +61,22 @@ const Cover: React.FC<CoverProps> = ({
           <Text marginTop="1rem" fontSize={"3xl"} lineHeight="120%">
             {content}
           </Text>
-          <Button fontSize="1.6rem" color={btnColor} backgroundColor={btnBackground} fontFamily="Minion Pro" marginTop={"2rem"} fontWeight="400" padding={"1.5rem"}>
-            <Link href={buttonLink}>{buttonText}</Link>
+          <Button
+            _hover={{
+              boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",
+              transform: "translateY(-0.09rem)",
+            }}
+            fontSize="1.6rem"
+            color={btnColor}
+            backgroundColor={btnBackground}
+            fontFamily="Minion Pro"
+            marginTop={"2rem"}
+            fontWeight="400"
+            padding={"1.5rem"}
+          >
+            <Link _hover={{ textDecoration: "none" }} href={buttonLink}>
+              {buttonText}
+            </Link>
           </Button>
         </Box>
       </Flex>
@@ -71,9 +84,15 @@ const Cover: React.FC<CoverProps> = ({
         display={{ base: "none", md: "flex" }}
         maxWidth="40%"
         height={"100%"}
-        
       >
-        <Box py={3} flex="1 1 auto" position="relative" margin="0" padding={0} height="80%">
+        <Box
+          py={3}
+          flex="1 1 auto"
+          position="relative"
+          margin="0"
+          padding={0}
+          height="80%"
+        >
           <Image
             alt="Soqo"
             placeholder="blur"
@@ -83,7 +102,6 @@ const Cover: React.FC<CoverProps> = ({
             padding={0}
             objectFit="cover"
             borderLeft={"1px solid black"}
-            
           />
         </Box>
       </Flex>
