@@ -18,6 +18,7 @@ import partenariat from "../../public/assets/partenaires/partenariat.png";
 import Header from "components/Header";
 import hand from "/public/assets/hand.jpg"
 import LogosSlideshow from "components/LogosSlideshow";
+import Services from "components/Services";
 
 const Home = ({ projects }: { projects: IProject[] }) => (
   <Layout>
@@ -47,6 +48,7 @@ const Home = ({ projects }: { projects: IProject[] }) => (
 
   </Flex>
 </Flex >
+<Services/>
 
     {/* <Box as="section" color="kaki.500" backgroundColor="beige.500">
       <Box px={4} pt={10} pb={0} maxWidth="container.xl" marginX="auto">

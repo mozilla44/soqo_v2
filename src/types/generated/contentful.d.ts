@@ -194,19 +194,37 @@ export interface IProject extends Entry<IProjectFields> {
   };
 }
 
+export interface IServiceFields {
+  /** nom */
+  name?: string | undefined;
+}
+
+/** Les services du bandeau Services */
+
+export interface IService extends Entry<IServiceFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "service";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export type CONTENT_TYPE =
   | "blogPost"
   | "ecosystem"
   | "friend"
   | "logoCarrouselHomepage"
-  | "project";
-
-export type IEntry =
-  | IBlogPost
-  | IEcosystem
-  | IFriend
-  | ILogoCarrouselHomepage
-  | IProject;
+  | "project"
+  | "service";
 
 export type LOCALE_CODE = "en-US" | "fr";
 
