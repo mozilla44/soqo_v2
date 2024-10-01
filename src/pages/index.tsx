@@ -15,8 +15,9 @@ import Image from "next/image";
 import { Color } from "styles/theme";
 import { IProject } from "types/generated/contentful";
 import partenariat from "../../public/assets/partenaires/partenariat.png";
-import hand from "../../public/assets/hand.jpg";
 import Header from "components/Header";
+import hand from "/public/assets/hand.jpg"
+import LogosSlideshow from "components/LogosSlideshow";
 
 const Home = ({ projects }: { projects: IProject[] }) => (
   <Layout>
@@ -41,9 +42,13 @@ const Home = ({ projects }: { projects: IProject[] }) => (
     btnColor={Color.BEIGE}
     btnBackground={Color.KAKI}
   />
-</Flex>
+  <Flex className="test" direction={"row"}>
+  <LogosSlideshow/>
 
-    <Box as="section" color="kaki.500" backgroundColor="beige.500">
+  </Flex>
+</Flex >
+
+    {/* <Box as="section" color="kaki.500" backgroundColor="beige.500">
       <Box px={4} pt={10} pb={0} maxWidth="container.xl" marginX="auto">
         <Title mb={4}>Nos projets</Title>
         <Box maxWidth="50rem" fontSize="2xl" mb={10}>
@@ -192,7 +197,7 @@ const Home = ({ projects }: { projects: IProject[] }) => (
           />
         </Box>
       </Flex>
-    </Section>
+    </Section> */}
     <Footer />
   </Layout>
 );

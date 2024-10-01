@@ -3,6 +3,37 @@
 import { Asset, Entry } from "contentful";
 import { Document } from "@contentful/rich-text-types";
 
+export interface IBlogPostFields {
+  /** Titre */
+  titre: string;
+
+  /** slug */
+  slug: string;
+
+  /** contenu */
+  contenu: Document;
+
+  /** image */
+  image: Asset;
+}
+
+export interface IBlogPost extends Entry<IBlogPostFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "blogPost";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface IEcosystemFields {
   /** images */
   images?: Asset[] | undefined;
@@ -59,6 +90,34 @@ export interface IFriend extends Entry<IFriendFields> {
   };
 }
 
+export interface ILogoCarrouselHomepageFields {
+  /** nom */
+  name: string;
+
+  /** logo */
+  logo: Asset;
+}
+
+/** logo du bandeau défilant sur la homepage */
+
+export interface ILogoCarrouselHomepage
+  extends Entry<ILogoCarrouselHomepageFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "logoCarrouselHomepage";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface IProjectFields {
   /** Titre */
   title: string;
@@ -69,7 +128,7 @@ export interface IProjectFields {
   /** Vignette */
   thumbnail?: Asset | undefined;
 
-  /** Gallerie */
+  /** Galerie */
   photos?: Asset[] | undefined;
 
   /** Url */
@@ -135,7 +194,19 @@ export interface IProject extends Entry<IProjectFields> {
   };
 }
 
-export type CONTENT_TYPE = "ecosystem" | "friend" | "project";
+export type CONTENT_TYPE =
+  | "blogPost"
+  | "ecosystem"
+  | "friend"
+  | "logoCarrouselHomepage"
+  | "project";
+
+export type IEntry =
+  | IBlogPost
+  | IEcosystem
+  | IFriend
+  | ILogoCarrouselHomepage
+  | IProject;
 
 export type LOCALE_CODE = "en-US" | "fr";
 

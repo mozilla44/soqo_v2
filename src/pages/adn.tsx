@@ -9,11 +9,11 @@ import Title from "components/Title"
 import Head from "next/head"
 
 // Assets
-import speakUs from "../../public/assets/parlons-nous.jpg"
 import historyProject from "../../public/assets/cover.png"
 import about from "../../public/assets/qui-sommes-nous.png"
 import { Color } from "styles/theme"
 import Marker from "components/Marker"
+import Header from "components/Header"
 
 const ADN = () => {
   return (
@@ -48,11 +48,10 @@ const ADN = () => {
           </Flex>
           <Box mb={{ base: 6, lg: 0 }} flex="1">
             <Image
-              src={speakUs}
+              src={"/public/assets/adn.png"}
               width="701px"
               height="310px"
               alt="Parlons-nous"
-              placeholder="blur"
             />
           </Box>
         </Flex>
@@ -66,7 +65,6 @@ const ADN = () => {
               width="611px"
               height="626px"
               alt="Qui sommes-nous ?"
-              placeholder="blur"
             />
           </Box>
           <Box mt={{ base: 6, lg: 0 }} fontSize="23px" flex="1">
@@ -146,7 +144,6 @@ const ADN = () => {
               src={historyProject}
               alt="Soqo"
               objectFit="cover"
-              placeholder="blur"
               width="500px"
               height="600px"
             />
