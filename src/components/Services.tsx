@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createClient, Entry } from "contentful";
-import { Box, Flex, Heading, Text, Wrap, WrapItem, Badge } from "@chakra-ui/react";
+import { Box, Flex, Heading, Wrap, WrapItem, Badge } from "@chakra-ui/react";
 import { Color } from "styles/theme";
 
 // Your Contentful space ID and access token
@@ -52,15 +52,16 @@ const Services: React.FC = () => {
   }, []);
 
   return (
-    <Box bg={Color.KAKI} p={10} borderRadius="md" textAlign="center">
-      <Flex alignItems={"flex-start"} justifyContent="center" mb={8}>
-        <Heading as="h2" size="lg" color="white" alignSelf={"flex-start"}>
+    <Box bg={Color.KAKI} borderRadius="md" textAlign="center" p={"2rem 0 2rem 0 "} border={"3px solid pink"}>
+      {/* Header Section */}
+      <Flex justifyContent="flex-start" mb={8}>
+        <Heading as="h2"  pl={"2.5rem"} size="lg" color="white" fontFamily={"Minion Pro"}>
           Nos services
         </Heading>
       </Flex>
 
       {/* Service Buttons */}
-      <Wrap spacing={4} justify="center" maxWidth="800px" mx="auto">
+      <Wrap spacing={4} justify="center" maxWidth="100vw" mx="auto" /* border={"3px solid blue"} */>
         {services.map((service) => (
           <WrapItem key={service.id}>
             <Badge
@@ -70,7 +71,9 @@ const Services: React.FC = () => {
               py={2}
               borderColor="white"
               color="white"
-              fontSize="md"
+              fontSize="0.9rem"
+              fontWeight={200}
+              fontFamily={"Minion Pro"}
             >
               {service.title}
             </Badge>

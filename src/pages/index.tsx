@@ -16,7 +16,7 @@ import { Color } from "styles/theme";
 import { IProject } from "types/generated/contentful";
 import partenariat from "../../public/assets/partenaires/partenariat.png";
 import Header from "components/Header";
-import hand from "/public/assets/hand.jpg"
+import hand from "/public/assets/hand.jpg";
 import LogosSlideshow from "components/LogosSlideshow";
 import Services from "components/Services";
 
@@ -25,30 +25,32 @@ const Home = ({ projects }: { projects: IProject[] }) => (
     <Head>
       <title>Accueil - Soqo</title>
     </Head>
-    <Header headerBgColor={Color.BEIGE} linkColor={Color.KAKI}/>
+    <Header headerBgColor={Color.BEIGE} linkColor={Color.KAKI} />
 
     <Flex position="relative" flexDirection="column" backgroundColor="blue.500">
-  <Cover
-    title={
-      <>
-        Nous sommes un<br />
-        bureau de création<br />
-         de <Marker  color={Color.BLUE}>projèts à impact</Marker>
-      </>
-    }
-    content={`Nous accompagnons les\nentreprises dans leurs\nengagements responsables`}
-    imageSrc={"/assets/hand.jpg"}
-    buttonText="Je souhaite en savoir plus"
-    buttonLink=""
-    btnColor={Color.BEIGE}
-    btnBackground={Color.KAKI}
-  />
-  <Flex className="test" direction={"row"}>
-  <LogosSlideshow/>
+      <Cover
+        title={
+          <>
+            Nous sommes un
+            <br />
+            bureau de création
+            <br />
+            de <Marker color={Color.BLUE}>projèts à impact</Marker>
+          </>
+        }
+        content={`Nous accompagnons les\nentreprises dans leurs\nengagements responsables`}
+        imageSrc={"/assets/hand.jpg"}
+        buttonText="Je souhaite en savoir plus"
+        buttonLink=""
+        btnColor={Color.BEIGE}
+        btnBackground={Color.KAKI}
+      />
+      <Flex className="test" direction={"row"}>
+        <LogosSlideshow />
+      </Flex>
+  <Services/>
 
-  </Flex>
-</Flex >
-<Services/>
+    </Flex>
 
     {/* <Box as="section" color="kaki.500" backgroundColor="beige.500">
       <Box px={4} pt={10} pb={0} maxWidth="container.xl" marginX="auto">
