@@ -15,8 +15,8 @@ import Image from "next/image";
 import { Color } from "styles/theme";
 import { IProject } from "types/generated/contentful";
 import partenariat from "../../public/assets/partenaires/partenariat.png";
-import hand from "../../public/assets/hand.jpg";
 import Header from "components/Header";
+import hand from "/public/assets/hand.jpg"
 
 const Home = ({ projects }: { projects: IProject[] }) => (
   <Layout>

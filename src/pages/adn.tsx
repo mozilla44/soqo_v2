@@ -9,7 +9,6 @@ import Title from "components/Title"
 import Head from "next/head"
 
 // Assets
-import speakUs from "../../public/assets/parlons-nous.jpg"
 import historyProject from "../../public/assets/cover.png"
 import about from "../../public/assets/qui-sommes-nous.png"
 import { Color } from "styles/theme"
@@ -48,7 +47,7 @@ const ADN = () => {
           </Flex>
           <Box mb={{ base: 6, lg: 0 }} flex="1">
             <Image
-              src={speakUs}
+              src={""}
               width="701px"
               height="310px"
               alt="Parlons-nous"

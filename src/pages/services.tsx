@@ -9,7 +9,6 @@ import Head from "next/head"
 import Image from "next/image"
 import React from "react"
 import { Color } from "styles/theme"
-import grandmother from "../../public/assets/grandmother.jpg"
 
 const Services = () => {
   return (
@@ -43,7 +42,7 @@ const Services = () => {
           </Box>
           <Box flex="4">
             <Image
-              src={grandmother}
+              src={""}
               width="1000"
               height="667"
               alt="Nos services"
