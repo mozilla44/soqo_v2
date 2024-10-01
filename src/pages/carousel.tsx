@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Asset, createClient, Entry } from 'contentful';
+import { Image } from '@chakra-ui/react';
 
 // Your Contentful space ID and access token
 const SPACE_ID = 'a79r4ev0d3on'; // Ensure this is the correct space ID
@@ -39,7 +40,7 @@ interface ILogoCarrouselHomepage extends Entry<ILogoCarrouselHomepageFields> {
 
 // React Component
 const LogoCarrouselNames: React.FC = () => {
-  const [names, setNames] = useState<string[]>([]);
+  const [items, setItems] = useState<{ name: string; imageUrl: string }[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -51,9 +52,12 @@ const LogoCarrouselNames: React.FC = () => {
       })
       .then((response) => {
         console.log(response)
-        // Extract the 'name' field from each entry
-        const fetchedNames = response.items.map((entry) => entry.fields.name);
-        setNames(fetchedNames);
+        // Extract the 'name' and 'logo' fields from each entry
+        const fetchedItems = response.items.map((entry) => ({
+          name: entry.fields.name,
+          imageUrl: entry.fields.logo.fields.file.url,
+        }));
+        setItems(fetchedItems);
         setLoading(false);
       })
       .catch((err) => {
@@ -68,10 +72,12 @@ const LogoCarrouselNames: React.FC = () => {
 
   return (
     <div>
-      <h2>Logo Carousel Names</h2>
       <ul>
-        {names.map((name, index) => (
-          <li key={index}>{name}</li>
+        {items.map((item, index) => (
+          <li key={index}>
+            <Image src={item.imageUrl} alt={item.name} style={{ width: '100px', height: 'auto' }} />
+            {/* <p>{item.name}</p> */}
+          </li>
         ))}
       </ul>
     </div>
