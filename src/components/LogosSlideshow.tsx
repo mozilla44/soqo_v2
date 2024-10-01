@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Asset, createClient, Entry } from 'contentful';
 import { Image } from '@chakra-ui/react';
+import  Carousel  from 'nuka-carousel';
 
 // Your Contentful space ID and access token
 const SPACE_ID = 'a79r4ev0d3on'; // Ensure this is the correct space ID
@@ -71,16 +72,20 @@ const LogoCarrouselNames: React.FC = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <div>
-      <ul>
-        {items.map((item, index) => (
-          <li key={index}>
-            <Image src={item.imageUrl} alt={item.name} style={{ width: '100px', height: 'auto' }} />
-            {/* <p>{item.name}</p> */}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Carousel 
+    wrapAround
+    heightMode="max"
+    autoplay={true} autoplayInterval={1000} 
+    renderBottomCenterControls={null}
+    renderCenterLeftControls={null}
+    initialSlideHeight={200}>
+      {items.map((item, index) => (
+        <div key={index}>
+          <Image src={item.imageUrl} alt={item.name} style={{ width: '100px', height: 'auto' }} />
+          {/* <p>{item.name}</p> */}
+        </div>
+      ))}
+    </Carousel>
   );
 };
 

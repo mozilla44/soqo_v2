@@ -17,6 +17,7 @@ import { IProject } from "types/generated/contentful";
 import partenariat from "../../public/assets/partenaires/partenariat.png";
 import Header from "components/Header";
 import hand from "/public/assets/hand.jpg"
+import LogosSlideshow from "components/LogosSlideshow";
 
 const Home = ({ projects }: { projects: IProject[] }) => (
   <Layout>
@@ -41,7 +42,11 @@ const Home = ({ projects }: { projects: IProject[] }) => (
     btnColor={Color.BEIGE}
     btnBackground={Color.KAKI}
   />
-</Flex>
+  <Flex className="test" direction={"row"}>
+  <LogosSlideshow/>
+
+  </Flex>
+</Flex >
 
     <Box as="section" color="kaki.500" backgroundColor="beige.500">
       <Box px={4} pt={10} pb={0} maxWidth="container.xl" marginX="auto">
