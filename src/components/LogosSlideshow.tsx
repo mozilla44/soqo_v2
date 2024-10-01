@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import { Asset, createClient, Entry } from 'contentful';
-import { Image } from '@chakra-ui/react';
-import  Carousel  from 'nuka-carousel';
+import React, { useEffect, useState } from "react";
+import { Asset, createClient, Entry } from "contentful";
+import { Box, Image } from "@chakra-ui/react";
+import Carousel from "nuka-carousel";
 
 // Your Contentful space ID and access token
-const SPACE_ID = 'a79r4ev0d3on'; // Ensure this is the correct space ID
-const ACCESS_TOKEN = 'zty4_VAKl1zPFH8HN3GzrjRBr5cFvmXEVqjV91d-Lkc'; // Ensure this is the correct access token
+const SPACE_ID = "a79r4ev0d3on"; // Ensure this is the correct space ID
+const ACCESS_TOKEN = "zty4_VAKl1zPFH8HN3GzrjRBr5cFvmXEVqjV91d-Lkc"; // Ensure this is the correct access token
 
 // Create a client to connect to Contentful
 const client = createClient({
@@ -49,10 +49,10 @@ const LogoCarrouselNames: React.FC = () => {
     // Fetch entries from Contentful
     client
       .getEntries<ILogoCarrouselHomepageFields>({
-        content_type: 'logoCarrouselHomepage', // Ensure this matches the content type ID in Contentful
+        content_type: "logoCarrouselHomepage", // Ensure this matches the content type ID in Contentful
       })
       .then((response) => {
-        console.log(response)
+        console.log(response);
         // Extract the 'name' and 'logo' fields from each entry
         const fetchedItems = response.items.map((entry) => ({
           name: entry.fields.name,
@@ -62,8 +62,8 @@ const LogoCarrouselNames: React.FC = () => {
         setLoading(false);
       })
       .catch((err) => {
-        console.error('Error fetching entries from Contentful:', err);
-        setError('Failed to load entries.');
+        console.error("Error fetching entries from Contentful:", err);
+        setError("Failed to load entries.");
         setLoading(false);
       });
   }, []);
@@ -72,20 +72,46 @@ const LogoCarrouselNames: React.FC = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <Carousel 
-    wrapAround
-    heightMode="max"
-    autoplay={true} autoplayInterval={1000} 
-    renderBottomCenterControls={null}
-    renderCenterLeftControls={null}
-    initialSlideHeight={200}>
-      {items.map((item, index) => (
-        <div key={index}>
-          <Image src={item.imageUrl} alt={item.name} style={{ width: '100px', height: 'auto' }} />
-          {/* <p>{item.name}</p> */}
-        </div>
-      ))}
-    </Carousel>
+    <Box
+      id="carousel_container"
+      border={"3px solid red"}
+      display={"flex"}
+      justifyContent={"center"}
+      alignItems={"center"} 
+    >
+      <Carousel
+        autoplay
+        autoplayInterval={2000}
+        wrapAround
+        speed={500}
+        withoutControls
+        pauseOnHover={false}
+        slidesToShow={4}
+        disableEdgeSwiping
+      >
+        {items.map((item, index) => (
+          <Box
+            key={index}
+            border={"3x solid red"}
+            margin={"auto"}
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            height={"8rem"} /* Defined height for consistency */
+            width={"150px"} /* Defined width for consistency */
+          >
+            <Image
+              src={item.imageUrl}
+              alt={item.name}
+              width={"100%"}
+              height={"100%"}
+              objectFit={"contain"}
+              /* border={"3px solid blue"} */ 
+            />
+          </Box>
+        ))}
+      </Carousel>
+    </Box>
   );
 };
 
