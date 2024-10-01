@@ -202,13 +202,13 @@ const Home = ({ projects }: { projects: IProject[] }) => (
         </Box>
       </Flex>
     </Section> */}
-    <Footer />
+    {/* <Footer /> */}
   </Layout>
 );
 
-Home.backgroundColor = "#E3F1FD";
+/* Home.backgroundColor = "#E3F1FD"; */
 
-export const getStaticProps = async () => {
+/* export const getStaticProps = async () => {
   const entries = await client.getEntries();
   const projects = entries.items.filter(
     (item) => item.sys.contentType.sys.id === "project"
@@ -220,6 +220,6 @@ export const getStaticProps = async () => {
     },
     revalidate: 10,
   };
-};
+}; */
 
 export default Home;

@@ -52,16 +52,16 @@ const Services: React.FC = () => {
   }, []);
 
   return (
-    <Box bg={Color.KAKI} borderRadius="md" textAlign="center" p={"2rem 0 2rem 0 "} border={"3px solid pink"}>
+    <Box bg={Color.KAKI}  textAlign="center" p={"2rem 0 2rem 0 "} /* border={"3px solid pink"} */>
       {/* Header Section */}
       <Flex justifyContent="flex-start" mb={8}>
-        <Heading as="h2"  pl={"2.5rem"} size="lg" color="white" fontFamily={"Minion Pro"}>
+        <Heading as="h2"  ml={"6.5rem"} size="lg" color="white" fontFamily={"Minion Pro"} fontWeight={'thin'}>
           Nos services
         </Heading>
       </Flex>
 
       {/* Service Buttons */}
-      <Wrap spacing={4} justify="center" maxWidth="100vw" mx="auto" /* border={"3px solid blue"} */>
+      <Wrap spacing={4} justify="center" maxWidth="100vw" /* mx="auto" */  /* border={"1px solid blue"}  */ margin={"1rem"}/* p={"0 1.5rem 0 1rem"} */>
         {services.map((service) => (
           <WrapItem key={service.id}>
             <Badge
