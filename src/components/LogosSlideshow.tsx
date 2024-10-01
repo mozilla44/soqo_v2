@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Asset, createClient, Entry } from "contentful";
 import { Box, Image } from "@chakra-ui/react";
 import Carousel from "nuka-carousel";
+import { Color } from "styles/theme";
+import { ILogoCarrouselHomepageFields,ILogoCarrouselHomepage } from "types/generated/contentful";
 
 // Your Contentful space ID and access token
 const SPACE_ID = "a79r4ev0d3on"; // Ensure this is the correct space ID
@@ -13,31 +15,10 @@ const client = createClient({
   accessToken: ACCESS_TOKEN,
 });
 
-interface ILogoCarrouselHomepageFields {
-  /** nom */
-  name: string;
 
-  /** logo */
-  logo: Asset;
-}
 
 /** logo du bandeau défilant sur la homepage */
-interface ILogoCarrouselHomepage extends Entry<ILogoCarrouselHomepageFields> {
-  sys: {
-    id: string;
-    type: string;
-    createdAt: string;
-    updatedAt: string;
-    locale: string;
-    contentType: {
-      sys: {
-        id: "logoCarrouselHomepage";
-        linkType: "ContentType";
-        type: "Link";
-      };
-    };
-  };
-}
+
 
 // React Component
 const LogoCarrouselNames: React.FC = () => {
@@ -74,10 +55,10 @@ const LogoCarrouselNames: React.FC = () => {
   return (
     <Box
       id="carousel_container"
-      border={"3px solid red"}
       display={"flex"}
       justifyContent={"center"}
       alignItems={"center"} 
+      backgroundColor={Color.BEIGE}
     >
       <Carousel
         autoplay
@@ -92,7 +73,7 @@ const LogoCarrouselNames: React.FC = () => {
         {items.map((item, index) => (
           <Box
             key={index}
-            border={"3x solid red"}
+            /* border={"3x solid red"} */
             margin={"auto"}
             display="flex"
             justifyContent="center"

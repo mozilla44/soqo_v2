@@ -48,7 +48,7 @@ const Home = ({ projects }: { projects: IProject[] }) => (
   </Flex>
 </Flex >
 
-    <Box as="section" color="kaki.500" backgroundColor="beige.500">
+    {/* <Box as="section" color="kaki.500" backgroundColor="beige.500">
       <Box px={4} pt={10} pb={0} maxWidth="container.xl" marginX="auto">
         <Title mb={4}>Nos projets</Title>
         <Box maxWidth="50rem" fontSize="2xl" mb={10}>
@@ -197,7 +197,7 @@ const Home = ({ projects }: { projects: IProject[] }) => (
           />
         </Box>
       </Flex>
-    </Section>
+    </Section> */}
     <Footer />
   </Layout>
 );
