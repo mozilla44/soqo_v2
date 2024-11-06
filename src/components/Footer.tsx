@@ -176,7 +176,6 @@ const Footer: React.FC<FooterProps> = ({
         </Stack>
       </Container>
       <Box display="flex" justifyContent="center" alignItems="center" pb={"2rem"}>
-        <EcoIndexBadge />
       </Box>
     </Box>
   );
