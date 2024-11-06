@@ -4,7 +4,7 @@ import Expertise from "components/Expertise";
 import Domains from "components/Expertise";
 import Footer from "components/Footer";
 import Header from "components/Header";
-import GreenPictures from "components/GreenPictures";
+import GreenPictures from "components/greenPictures";
 import Layout from "components/Layout";
 import LogosSlideshow from "components/LogosSlideshow";
 import Marker from "components/Marker";

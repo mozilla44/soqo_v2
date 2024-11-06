@@ -18,7 +18,7 @@ import {
   IVerbatimImpactFields,
 } from "types/generated/contentful";
 import Expertise from "components/Expertise";
-import GreenPictures from "components/GreenPictures";
+import GreenPictures from "components/greenPictures";
 import AltCover from "components/AltCover_bak";
 
 interface ProjectsProps {
