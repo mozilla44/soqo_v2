@@ -40,7 +40,7 @@ function Founders() {
               “Une équipe experte et passionnée, à vos côtés pour concrétiser
               vos ambitions et générer un impact significatif”
             </Text>
-            <Text mt={2}>
+            <Text  fontSize="xl" mt={2}>
               Victor
             </Text>
           </Box>
@@ -91,7 +91,7 @@ function Founders() {
               “Le rôle de notre société à mission : innover pour un avenir plus
               durable.”
             </Text>
-            <Text mt={2}>
+            <Text  fontSize="xl" mt={2}>
               Najma
             </Text>
           </Box>
