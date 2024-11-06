@@ -55,7 +55,7 @@ const Home: React.FC<HomeProps> = ({
       logosrc={"/assets/logo.png"}
     />
 
-    <Flex position="relative" flexDirection="column">
+    <Flex position="relative" flexDirection="column" maxW={"100vw"}>
       {/*  <AltCover
         title={
           <>
