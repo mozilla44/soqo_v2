@@ -23,7 +23,7 @@ const EmptyButton: React.FC<CustomButtonProps> = ({
 }) => {
   return (
     <Button
-      padding="1.5rem"
+      padding="1.2rem"
       cursor="pointer"
       as="a"
       fontWeight="500"
