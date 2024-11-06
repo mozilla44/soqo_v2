@@ -31,10 +31,10 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
           name="viewport"
           content="width=device-width, initial-scale=1, min-scale=1, max-scale=1"
         />
-        <script
+       {/*  <script
           src="//cdn.conveythis.com/javascript/conveythis.js?api_key=pub_fc8de8d7941e7002b92fea3c72ed815f"
           async
-        ></script> 
+        ></script>  */}
       </Head>
       <Global
         styles={{

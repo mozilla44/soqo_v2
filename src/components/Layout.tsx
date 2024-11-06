@@ -26,6 +26,10 @@ const Layout: React.FC = ({ children }) => {
           gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}');
         `}
       </Script>
+      <Script
+          src="//cdn.conveythis.com/javascript/conveythis.js?api_key=pub_fc8de8d7941e7002b92fea3c72ed815f"
+          async
+        ></Script> 
       <MotionBox
         variants={variants}
         initial="initial"
