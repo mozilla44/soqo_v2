@@ -417,7 +417,7 @@ const LivreBlanc = () => {
             fontFamily="Minion Pro"
             fontWeight="500"
             padding={{ base: "1rem", md: "1.5rem" }}
-            onClick={() => handleOpenModal("https://example.com")} // Replace with another external link if needed
+            onClick={() => handleOpenModal("https://tally.so/r/3j9yQx")} // Replace with another external link if needed
           >
             Télécharger le Livre Blanc
           </Button>

@@ -172,10 +172,10 @@ const FAQ = () => {
           </Item>
           <Item label="Les projets de Soqo* se déroulent-ils uniquement en France ?">
             <Text {...titleProps}>
-              Soqo* est une entreprise française, et la majorité de nos projets
+              Soqo* est une société française, et la majorité de nos projets
               se déroulent sur le territoire national. Cependant, nous
               accompagnons également les entreprises dans leurs projets à
-              l&apos;international. Grâce à un réseau de partenaires développés au
+              l&apos;international. Grâce à un réseau de partenaires développé au
               fil des années, nous pouvons intervenir dans toutes les régions du
               monde.
             </Text>
