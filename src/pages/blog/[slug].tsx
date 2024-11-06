@@ -72,16 +72,17 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ post }) => {
           />
         )}
 
-        <Box marginBottom="8">
+        <Box marginBottom="8" >
           <ReactMarkdown
             components={{
               h1: ({ children }) => (
                 <Box
                   as="h1"
-                  fontSize={{ base: "2xl", md: "3xl" }}
+                  fontSize={{ base: "4xl", md: "5xl" }}
                   fontWeight="bold"
                   mb="4"
                   textAlign="left"
+                  lineHeight={"110%"}
                 >
                   {children}
                 </Box>
@@ -89,18 +90,21 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ post }) => {
               h2: ({ children }) => (
                 <Box
                   as="h2"
-                  fontSize={{ base: "xl", md: "2xl" }}
+                  fontSize={{ base: "xl", md: "3xl" }}
                   fontWeight="bold"
                   mb="3"
                   textAlign="left"
+                  lineHeight={"110%"}
+
                 >
                   {children}
                 </Box>
               ),
               p: ({ children }) => (
                 <Box
+                  lineHeight={"110%"}
                   as="p"
-                  fontSize={{ base: "md", md: "lg" }}
+                  fontSize={{ base: "md", md: "2xl" }}
                   mb="4"
                   textAlign="left"
                 >
@@ -109,9 +113,10 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ post }) => {
               ),
               li: ({ children }) => (
                 <Box
+                fontSize={{ base: "md", md: "2xl" }}
                   as="li"
                   ml="4"
-                  mb="2"
+                  mb="1"
                   listStyleType="disc"
                   textAlign="left"
                 >
@@ -125,6 +130,17 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ post }) => {
               ),
               ol: ({ children }) => (
                 <Box as="ol" mb="4" textAlign="left">
+                  {children}
+                </Box>
+              ),
+              a: ({ href, children }) => (
+                <Box
+                  as="a"
+                  href={href}
+                  color={Color.KAKI}
+                  textDecoration="underline"
+                  _hover={{ color: "blue.700" }}
+                >
                   {children}
                 </Box>
               ),
