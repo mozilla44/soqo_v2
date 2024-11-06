@@ -58,7 +58,7 @@ export const Map = () => {
       </Box>
       <Box w={{ base: "90%", md: "50%" }} mr={{ base: 0, md: "2rem" }}>
         <Image
-          src="/assets/map2.png"
+          src="/assets/Map2.png"
           alt="World Map"
           boxSize="full"
           objectFit="cover"
