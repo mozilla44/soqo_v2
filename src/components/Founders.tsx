@@ -36,9 +36,9 @@ function Founders() {
           alignItems={{ base: "center", md: "start" }}
         >
           <Box>
-            <Text fontSize="xl">
+            <Text fontSize="xl" fontWeight={"bold"}>
               “Une équipe experte et passionnée, à vos côtés pour concrétiser
-              vos ambitions et générer un impact significatif”
+              vos ambitions et générer un impact significatif”.
             </Text>
             <Text  fontSize="xl" mt={2}>
               Victor
@@ -87,7 +87,7 @@ function Founders() {
           alignItems={{ base: "center", md: "start" }}
         >
           <Box>
-            <Text fontSize="xl">
+            <Text fontSize="xl" fontWeight={"bold"}>
               “Le rôle de notre société à mission : innover pour un avenir plus
               durable.”
             </Text>
