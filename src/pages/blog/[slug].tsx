@@ -9,6 +9,9 @@ import { Color } from "styles/theme";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import EmptyButton from "components/EmptyButton";
+import reactMarkdown from "react-markdown";
+import ReactMarkdown from "react-markdown";
+import { css } from "@chakra-ui/react";
 
 interface BlogDetailProps {
   post: IBlogPost;
@@ -41,7 +44,13 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ post }) => {
         fontFamily={"Minion Pro"}
         mb="0"
       >
-        <Text as="h1" lineHeight={"110%"} fontSize={{ base: "4xl", md: "6xl" }} fontWeight="bold" marginBottom="2">
+        <Text
+          as="h1"
+          lineHeight={"110%"}
+          fontSize={{ base: "4xl", md: "6xl" }}
+          fontWeight="bold"
+          marginBottom="2"
+        >
           {titre}
         </Text>
         <Text fontSize="xl" color={Color.KAKI} marginBottom="4">
@@ -63,11 +72,38 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ post }) => {
           />
         )}
 
-        <Box marginBottom="8" textAlign="center">
-          <Text textAlign={"left"} fontSize={{ base: "lg", md: "2xl" }}>
-            {article}
-          </Text>
-        </Box>
+<Box marginBottom="8">
+  <ReactMarkdown
+    components={{
+      h1: ({ children }) => (
+        <Text as="h1" fontSize={{ base: "2xl", md: "3xl" }} fontWeight="bold" marginBottom="4" textAlign="left">
+          {children}
+        </Text>
+      ),
+      h2: ({ children }) => (
+        <Text as="h2" fontSize={{ base: "xl", md: "2xl" }} fontWeight="semibold" marginBottom="3" textAlign="left">
+          {children}
+        </Text>
+      ),
+      p: ({ children }) => (
+        <Text fontSize={{ base: "md", md: "lg" }} marginBottom="2" textAlign="left">
+          {children}
+        </Text>
+      ),
+      li: ({ children }) => (
+        <Text as="li" ml="4" listStyleType="disc" textAlign="left">
+          {children}
+        </Text>
+      ),
+    }}
+  >
+    {article}
+  </ReactMarkdown>
+</Box>
+
+
+
+
 
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing="6">
           {image && (
@@ -129,7 +165,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export const getStaticProps: GetStaticProps<BlogDetailProps> = async (context) => {
+export const getStaticProps: GetStaticProps<BlogDetailProps> = async (
+  context
+) => {
   const { slug } = context.params as { slug: string };
   const entries = await client.getEntries<IBlogPostFields>({
     content_type: "blogPost",
