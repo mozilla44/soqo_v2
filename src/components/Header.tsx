@@ -310,7 +310,7 @@ const Header: React.FC<HeaderProps> = ({
             Contact
           </MenuLink>
           <CustomLink
-            href="/le-qlub"
+            href="https://leqlub.soqo.fr/"
             px="2rem"
             py="0.3rem"
             fontSize="xl"
