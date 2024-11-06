@@ -93,6 +93,7 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ post }) => {
                   fontSize={{ base: "xl", md: "3xl" }}
                   fontWeight="bold"
                   mb="3"
+                  mt={"2rem"}
                   textAlign="left"
                   lineHeight={"110%"}
 
