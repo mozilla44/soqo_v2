@@ -72,38 +72,67 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ post }) => {
           />
         )}
 
-<Box marginBottom="8">
-  <ReactMarkdown
-    components={{
-      h1: ({ children }) => (
-        <Text as="h1" fontSize={{ base: "2xl", md: "3xl" }} fontWeight="bold" marginBottom="4" textAlign="left">
-          {children}
-        </Text>
-      ),
-      h2: ({ children }) => (
-        <Text as="h2" fontSize={{ base: "xl", md: "2xl" }} fontWeight="semibold" marginBottom="3" textAlign="left">
-          {children}
-        </Text>
-      ),
-      p: ({ children }) => (
-        <Text fontSize={{ base: "md", md: "lg" }} marginBottom="2" textAlign="left">
-          {children}
-        </Text>
-      ),
-      li: ({ children }) => (
-        <Text as="li" ml="4" listStyleType="disc" textAlign="left">
-          {children}
-        </Text>
-      ),
-    }}
-  >
-    {article}
-  </ReactMarkdown>
-</Box>
-
-
-
-
+        <Box marginBottom="8">
+          <ReactMarkdown
+            components={{
+              h1: ({ children }) => (
+                <Box
+                  as="h1"
+                  fontSize={{ base: "2xl", md: "3xl" }}
+                  fontWeight="bold"
+                  mb="4"
+                  textAlign="left"
+                >
+                  {children}
+                </Box>
+              ),
+              h2: ({ children }) => (
+                <Box
+                  as="h2"
+                  fontSize={{ base: "xl", md: "2xl" }}
+                  fontWeight="bold"
+                  mb="3"
+                  textAlign="left"
+                >
+                  {children}
+                </Box>
+              ),
+              p: ({ children }) => (
+                <Box
+                  as="p"
+                  fontSize={{ base: "md", md: "lg" }}
+                  mb="4"
+                  textAlign="left"
+                >
+                  {children}
+                </Box>
+              ),
+              li: ({ children }) => (
+                <Box
+                  as="li"
+                  ml="4"
+                  mb="2"
+                  listStyleType="disc"
+                  textAlign="left"
+                >
+                  {children}
+                </Box>
+              ),
+              ul: ({ children }) => (
+                <Box as="ul" mb="4" textAlign="left">
+                  {children}
+                </Box>
+              ),
+              ol: ({ children }) => (
+                <Box as="ol" mb="4" textAlign="left">
+                  {children}
+                </Box>
+              ),
+            }}
+          >
+            {article}
+          </ReactMarkdown>
+        </Box>
 
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing="6">
           {image && (
