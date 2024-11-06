@@ -28,6 +28,7 @@ import {
   ICarrouseQlub,
   ICarrouseQlubFields,
 } from "types/generated/contentful";
+import CoverNoModal from "components/CoverNoModal";
 
 interface QlubProps {
   logos: { name: string; imageUrl: string }[];
@@ -76,7 +77,7 @@ const Qlub: React.FC<QlubProps> = ({ logos, verbatimEntries }) => {
           logosrc={"/assets/logo.png"}
         />
 
-        <Cover
+        {/* <Cover
           btnText={"Découvrir le Qlub"}
           buttonLink={"https://cal.com/laura_duboc"}
           btnTextColor={Color.BEIGE}
@@ -92,7 +93,25 @@ const Qlub: React.FC<QlubProps> = ({ logos, verbatimEntries }) => {
           content={
             "Le Qlub, reflet de notre travail de terrain, fédère des associations engagées pour répondre aux besoins sociaux et environnementaux actuels."
           }
+        /> */}
+        <CoverNoModal
+          btnText={"Découvrir le Qlub"}
+          buttonLink={"https://leqlub.soqo.fr/"}
+          btnTextColor={Color.BEIGE}
+          btnBgColor={Color.KAKI}
+          btnMarginTop={"2rem"}
+          borderColor={Color.KAKI}
+          bgColor={Color.BLUE}
+          textColor={Color.KAKI}
+          mobileHeight={"30vh"}
+          btnBorderColor=""
+          imageSrc={"/assets/soil.png"}
+          title={"Un réseau d’associations engagées à nos côtés"}
+          content={
+            "Le Qlub, reflet de notre travail de terrain, fédère des associations engagées pour répondre aux besoins sociaux et environnementaux actuels."
+          }
         />
+
 
         <LogosSlideshow items={logos} bgColor={Color.BEIGE} />
 
