@@ -126,7 +126,7 @@ const Events: React.FC<EventsProps> = ({ logos }) => {
           pic2={"/assets/pic2.png"}
           pic3={"/assets/pic3.png"}
           btnText={"Découvrir nos projets"}
-          btnLink={"/"}
+          btnLink={"/projets_evenements"}
         />
         </Box>
         
