@@ -192,7 +192,7 @@ const MobileMenuContent: React.FC<MobileMenuContentProps> = ({
       Contact
     </MenuLink>
     <CustomLink
-      href="http://leqlub.soqo.fr/"
+      href="/le-qlub"
       px="2rem"
       py="0.3rem"
       fontSize="xl"
@@ -310,7 +310,7 @@ const Header: React.FC<HeaderProps> = ({
             Contact
           </MenuLink>
           <CustomLink
-            href="https://leqlub.soqo.fr/"
+            href="/le-qlub"
             px="2rem"
             py="0.3rem"
             fontSize="xl"
