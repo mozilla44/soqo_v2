@@ -111,6 +111,8 @@ const CoverNoModal: React.FC<TestProps> = ({
             border={`1px solid ${btnBorderColor || 'transparent'}`}
             width="fit-content"
             href={buttonLink}
+            target="_blank"
+            rel="noopener noreferrer" 
           >
             {btnText}
           </Button>
