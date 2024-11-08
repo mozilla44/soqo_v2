@@ -35,6 +35,7 @@ const DomainSection: React.FC<DomainsSectionProps> = ({ title, textItems, logosr
       fontFamily={"Minion Pro"}
       flexDirection={["column", "row"]}
       minHeight={["auto", "600px"]}
+      px={{ base: 7, md: 0 }}
     >
       
       <VStack

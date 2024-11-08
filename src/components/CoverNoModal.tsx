@@ -65,7 +65,8 @@ const CoverNoModal: React.FC<TestProps> = ({
         flexDirection="column"
         justifyContent="center"
         paddingX="4.5rem"
-        paddingY="5rem"
+        paddingY={{md:"5rem", base: "2rem"}}
+
         borderRight="1px solid rgba(0, 0, 0, 0.1)"
       >
         <Heading
@@ -77,7 +78,7 @@ const CoverNoModal: React.FC<TestProps> = ({
           color={textColor}
           textAlign="left"
           ml={{ md: "8%", base: "0%" }}
-          width={{ md: "80%", base: "100%" }}
+          width={{ md: "80%", base: "18rem" }}
           lineHeight="110%"
         >
           {title}
@@ -95,7 +96,7 @@ const CoverNoModal: React.FC<TestProps> = ({
         {isButtonVisible && (
           <Button
             as="a"
-            ml="8%"
+            ml={{md:"8%"}}
             cursor="pointer"
             _hover={{
               boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",

@@ -10,7 +10,7 @@ export const Map = () => {
       maxHeight={{ md: "85vh" }}
       bg="#EFE5D4"
       w="100vw"
-      h={{ base: "auto", md: "100vh" }}
+      h={{ base: "auto", md: "70vh" }}
       alignItems="center"
       justifyContent="space-between"
       p={{ base: "5", md: "0" }}
@@ -20,10 +20,11 @@ export const Map = () => {
       <Box
         w={{ base: "100%", md: "40%" }}
         textAlign="left"
-        pl={{ base: 0, md: "5rem" }}
+        pl={{ base: 4, md: "5rem" }}
         mt={{ base: 4, md: "0" }}
         mb={{ base: 4, md: 0 }}
         ml={{ base: 0, md: "2rem" }}
+        px={{ base: "1.5rem", md: "0" }}
       >
         <Text
           fontSize={{ base: "3xl", md: "5xl" }}
@@ -56,7 +57,7 @@ export const Map = () => {
           &nbsp;&nbsp;&nbsp;En savoir plus&nbsp;&nbsp;&nbsp;
         </EmptyButton>
       </Box>
-      <Box w={{ base: "90%", md: "50%" }} mr={{ base: 0, md: "2rem" }}>
+      <Box w={{ base: "90%", md: "50%" }} mr={{ base: 0, md: "2rem" }} >
         <Image
           src="/assets/Map2.png"
           alt="World Map"

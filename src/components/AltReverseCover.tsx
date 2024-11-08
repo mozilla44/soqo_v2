@@ -76,7 +76,7 @@ const ReverseCover: React.FC<TestProps> = ({
         display="flex"
         flexDirection="column"
         justifyContent="center"
-        paddingX="4.5rem"
+        paddingX={{md:"4.5rem", base: "3rem" }}
         paddingY="5rem"
       >
         <Heading
@@ -106,7 +106,7 @@ const ReverseCover: React.FC<TestProps> = ({
         {isButtonVisible && (
          <Button
          as={"a"}
-         ml="8%"
+         ml={{md:"8%", base:""}}
          cursor="pointer"
          _hover={{
            boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",
@@ -119,7 +119,7 @@ const ReverseCover: React.FC<TestProps> = ({
          fontFamily="Minion Pro"
          mt={btnMarginTop}
          fontWeight="500"
-         padding={{ base: "1rem", md: "1.5rem" }}
+         padding={{ base: "", md: "1.5rem" }}
          border={`1px solid ${btnBorderColor || 'transparent'}`}
          width="fit-content"
          href='/le-qlub'

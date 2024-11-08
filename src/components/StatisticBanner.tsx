@@ -29,10 +29,12 @@ function StatisticBanner() {
           89%
         </Text>
         <Text
+
           fontSize={["xl", "3xl"]}
           color={Color.KAKI}
           textAlign="left"
           lineHeight="110%"
+          width={{ base: "85%", }}
         >
           des entreprises estiment que les enjeux sociaux et environnementaux <br />
           sont un moteur essentiel dans la mise en œuvre de leurs actions RSE.

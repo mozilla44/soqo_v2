@@ -228,13 +228,22 @@ const Adn: React.FC<AdnProps> = ({ logos, teamEntries }) => {
       imageUrl: "/assets/nguyen.png",
     },
   ];
-
+  const [isMounted, setIsMounted] = useState(false);
   const isMobile = useBreakpointValue({ base: true, md: false });
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleQuote, setVisibleQuote] = useState<{ [key: number]: boolean }>(
     {}
   );
   const { isOpen, onOpen, onClose } = useDisclosure();
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+  useEffect(() => {
+    if (isMobile) {
+      setCurrentIndex(0); // Reset to show the first card on mobile
+    }
+  }, [isMobile]);
+
 
   const toggleQuoteVisibility = (id: number) => {
     setVisibleQuote((prevState) => ({
@@ -252,7 +261,7 @@ const Adn: React.FC<AdnProps> = ({ logos, teamEntries }) => {
       ),
     trackMouse: true,
   });
-
+  if (!isMounted) return null;
   return (
     <Layout>
       <Head>

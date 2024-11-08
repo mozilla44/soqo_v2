@@ -104,7 +104,7 @@ const ReverseCover: React.FC<TestProps> = ({
         </Text>
         {isButtonVisible && (
           <Button
-            ml="8%"
+            ml={{md:"8%"}}
             cursor="pointer"
             _hover={{
               boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",

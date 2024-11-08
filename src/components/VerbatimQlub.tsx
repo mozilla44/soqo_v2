@@ -1,5 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Box, Image, Text, Flex, IconButton, VStack, HStack } from "@chakra-ui/react";
+import {
+  Box,
+  Image,
+  Text,
+  Flex,
+  IconButton,
+  VStack,
+  HStack,
+} from "@chakra-ui/react";
 import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { IVerbatimImpact } from "../types/generated/contentful";
 import { Color } from "styles/theme";
@@ -71,6 +79,7 @@ const VerbatimCards: React.FC<VerbatimCardsProps> = ({ verbatimEntries }) => {
       backgroundColor={Color.BLUE}
       fontFamily={"Minion Pro"}
       color={Color.KAKI}
+      position="relative"
     >
       <Flex
         direction="column"
@@ -80,102 +89,99 @@ const VerbatimCards: React.FC<VerbatimCardsProps> = ({ verbatimEntries }) => {
         maxW="1200px"
         mx="auto"
         px={{ base: 4, md: 8 }}
+        position="relative"
       >
-        <Flex
-          justifyContent="space-between"
-          mb={8}
-          alignItems="center"
-          flexWrap="wrap"
-          width="100%"
-        >
-          {!isMobile && (
-            <IconButton
-              borderRadius="50%"
-              border="1px solid #163A2C"
-              icon={<ArrowBackIcon boxSize={6} />}
-              aria-label="Previous"
-              color={Color.KAKI}
-              onClick={showPrev}
-              variant="ghost"
-              backgroundColor="transparent"
-              _hover={{ backgroundColor: Color.KAKI, color: Color.BEIGE }}
-            />
-          )}
+        {/* Left Arrow */}
+        <IconButton
+          borderRadius="50%"
+          border={{ base: "none", md: "1px solid #163A2C" }}
+          icon={<ArrowBackIcon boxSize={{ base: 4, md: 6 }} />}
+          aria-label="Previous"
+          color={Color.KAKI}
+          onClick={showPrev}
+          variant="ghost"
+          backgroundColor="transparent"
+          _hover={{ backgroundColor: Color.KAKI, color: Color.BEIGE }}
+          position="absolute"
+          left={{ base: -6, md: 4 }}
+          top="50%"
+          transform="translateY(-50%)"
+          zIndex={10}
+        />
 
-          <Box flexGrow={1} {...handlers}>
-            <Flex justifyContent="center" gap={8} overflow="hidden">
-              {verbatimEntries.map((entry, index) => (
-                <Box
-                  key={entry.sys.id}
-                  display={visibleIndices.includes(index) ? "block" : "none"}
-                  w={{ base: "100%", md: "700px" }}
-                  bg={Color.BEIGE}
-                  p={8}
-                  borderRadius="xl"
-                  boxShadow="md"
-                  minHeight="250px"
-                >
-                  <Text
-                    fontSize="xl"
-                    fontWeight="bold"
-                    textAlign="left"
-                    mb={6}
-                  >
-                    {entry.fields.quote &&
-                      entry.fields.quote.content.map(
-                        (content: { content: any[] }, idx: number) => (
-                          <React.Fragment key={idx}>
-                            {content.content
-                              .map((item) => item.value)
-                              .join(" ")}
-                          </React.Fragment>
-                        )
-                      )}
-                  </Text>
+        {/* Slideshow Content */}
+        <Box flexGrow={1} {...handlers}>
+          <Flex justifyContent="center" gap={8} overflow="hidden">
+            {verbatimEntries.map((entry, index) => (
+              <Box
+                key={entry.sys.id}
+                display={visibleIndices.includes(index) ? "block" : "none"}
+                w={{ base: "100%", md: "700px" }}
+                bg={Color.BEIGE}
+                p={8}
+                borderRadius="xl"
+                boxShadow="md"
+                minHeight="250px"
+              >
+                <Text fontSize="xl" fontWeight="bold" textAlign="left" mb={6}>
+                  {entry.fields.quote &&
+                    entry.fields.quote.content.map(
+                      (content: { content: any[] }, idx: number) => (
+                        <React.Fragment key={idx}>
+                          {content.content
+                            .map((item) => item.value)
+                            .join(" ")}
+                        </React.Fragment>
+                      )
+                    )}
+                </Text>
 
-                  <Flex mt={4} alignItems="center">
-                    <Image
-                      src={entry.fields.photo.fields.file.url}
-                      alt={entry.fields.nom}
-                      borderRadius="full"
-                      objectFit="cover"
-                      w="80px"
-                      h="80px"
-                      mr={4}
-                    />
-                    <VStack align="start" spacing={0}>
-                      <Text fontWeight="bold" fontSize="lg" pl={"1rem"}>
-                        {entry.fields.nom}
-                      </Text>
-                      <Text fontSize="md" color={Color.KAKI} pl={"1rem"}>
-                        {entry.fields.position}
-                      </Text>
-                      <Text fontSize="md" color={Color.KAKI} pl={"1rem"}>
-                        {entry.fields.entreprise}
-                      </Text>
-                    </VStack>
-                  </Flex>
-                </Box>
-              ))}
-            </Flex>
-          </Box>
+                <Flex mt={4} alignItems="center">
+                  <Image
+                    src={entry.fields.photo.fields.file.url}
+                    alt={entry.fields.nom}
+                    borderRadius="full"
+                    objectFit="cover"
+                    w="80px"
+                    h="80px"
+                    mr={4}
+                  />
+                  <VStack align="start" spacing={0}>
+                    <Text fontWeight="bold" fontSize="lg" pl={"1rem"}>
+                      {entry.fields.nom}
+                    </Text>
+                    <Text fontSize="md" color={Color.KAKI} pl={"1rem"}>
+                      {entry.fields.position}
+                    </Text>
+                    <Text fontSize="md" color={Color.KAKI} pl={"1rem"}>
+                      {entry.fields.entreprise}
+                    </Text>
+                  </VStack>
+                </Flex>
+              </Box>
+            ))}
+          </Flex>
+        </Box>
 
-          {!isMobile && (
-            <IconButton
-              borderRadius="50%"
-              border="1px solid #163A2C"
-              icon={<ArrowForwardIcon boxSize={6} />}
-              aria-label="Next"
-              onClick={showNext}
-              color={Color.KAKI}
-              variant="ghost"
-              backgroundColor="transparent"
-              _hover={{ backgroundColor: Color.KAKI, color: Color.BEIGE }}
-            />
-          )}
-        </Flex>
+        {/* Right Arrow */}
+        <IconButton
+          borderRadius="50%"
+          border={{ base: "none", md: "1px solid #163A2C" }}
+          icon={<ArrowForwardIcon boxSize={{ base: 4, md: 6 }} />}
+          aria-label="Next"
+          onClick={showNext}
+          color={Color.KAKI}
+          variant="ghost"
+          backgroundColor="transparent"
+          _hover={{ backgroundColor: Color.KAKI, color: Color.BEIGE }}
+          position="absolute"
+          right={{ base: -6, md: 4 }}
+          top="50%"
+          transform="translateY(-50%)"
+          zIndex={10}
+        />
 
-        {/* Dots  */}
+        {/* Dots Navigation */}
         <HStack spacing={3} mt={4}>
           {verbatimEntries.map((_, index) => (
             <Box

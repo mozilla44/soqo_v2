@@ -64,11 +64,12 @@ const Cover: React.FC<TestProps> = ({
         display="flex"
         flexDirection="column"
         justifyContent="center"
-        paddingX="4.5rem"
-        paddingY="5rem"
+        paddingX={{md:"4.5rem", base: "3rem" }}
+        paddingY={{md:"5rem", base: "2rem"}}
         borderRight="1px solid rgba(0, 0, 0, 0.1)"
       >
         <Heading
+
           as="h1"
           fontFamily="Minion Pro"
           fontWeight="thin"
@@ -76,8 +77,8 @@ const Cover: React.FC<TestProps> = ({
           mb={4}
           color={textColor}
           textAlign="left"
-          ml={{ md: "8%", base: "0%" }}
-          width={{ md: "80%", base: "100%" }}
+          ml={{ md: "8%", base: "-1%" }}
+          width={{ md: "80%", base: "17rem" }}
           lineHeight="110%"
         >
           {title}
@@ -94,7 +95,7 @@ const Cover: React.FC<TestProps> = ({
         </Text>
         {isButtonVisible && (
           <Button
-            ml="8%"
+            ml={{md:"8%"}}
             cursor="pointer"
             _hover={{
               boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",

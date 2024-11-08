@@ -136,8 +136,9 @@ const Qlub: React.FC<QlubProps> = ({ logos, verbatimEntries }) => {
         <Text
           fontFamily={"Minion Pro"}
           fontSize={"4xl"}
-          ml={"9.5rem"}
+          ml={{md:"9.5rem"}}
           mt={"4rem"}
+          px={{base:"4"}}
         >
           Pourquoi les associations rejoignent Le Qlub ?
         </Text>

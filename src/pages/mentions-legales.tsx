@@ -1,4 +1,5 @@
 import { Box, Heading, Text, Flex, Link, VStack } from "@chakra-ui/react";
+import Footer from "components/Footer";
 import Header from "components/Header";
 import Layout from "components/Layout";
 import { Color } from "styles/theme";
@@ -26,18 +27,17 @@ const LegalMentions = () => {
 
             <VStack align="left" spacing={4}>
               <Text>
-                <strong>Propriétaire et Éditeur</strong>: Dénomination Sociale :
-                SOQO
+                <strong>Propriétaire et Éditeur</strong>: SOQO SAS
               </Text>
               <Text>
-                <strong>Raison Sociale</strong> : SAS de l&#39;ESS (Économie
-                Sociale et Solidaire)
+                <strong>Raison Sociale</strong> : SOQO
               </Text>
               <Text>
                 <strong>Capital Social</strong>: 5 000 €
               </Text>
               <Text>
                 <strong>Adresse du siège social</strong>: 21 rue titon 75011
+                Paris
               </Text>
               <Text>
                 <strong>Directeur de la publication</strong>: Najma Sourouque &
@@ -61,18 +61,18 @@ const LegalMentions = () => {
 
               <Text fontWeight="bold">Limitations de responsabilité</Text>
               <Text>
-                Malgré toute l&#39;attention apportée sur la qualité des
+                Malgré toute l&apos;attention apportée sur la qualité des
                 informations, fonctionnalités et contenus disponibles sur notre
                 site Internet, Soqo* ne saurait être tenu responsable des
                 imprécisions, erreurs, absences de disponibilité des
-                fonctionnalités et/ou du contenu...
+                fonctionnalités et/ou du contenu.
               </Text>
 
               <Text fontWeight="bold">Droits de propriété intellectuelle</Text>
               <Text>
                 Soqo* se réserve tous les droits de propriété intellectuelle sur
                 ce site Internet ainsi que sur les informations mises à
-                disposition...
+                disposition.
               </Text>
 
               <Text fontWeight="bold">
@@ -81,7 +81,7 @@ const LegalMentions = () => {
               <Text>
                 Les données reçues de votre part sont reprises dans les fichiers
                 de Soqo* et servent uniquement à répondre à la demande
-                d&#39;informations...
+                d&#39;informations.
               </Text>
 
               <Text fontWeight="bold">
@@ -90,12 +90,20 @@ const LegalMentions = () => {
               <Text>
                 Les cookies sont des fichiers textes placés sur votre terminal,
                 ils permettent de vous reconnaître lors de vos visites sur notre
-                site...
+                site.
               </Text>
             </VStack>
           </VStack>
         </Box>
       </Box>
+      <Footer
+        bgColor={Color.BEIGE}
+        textColor={Color.KAKI}
+        imageSrc={"/assets/tampon_vert.png"}
+        dividerColor={Color.KAKI}
+        iconColor={Color.KAKI}
+        iconBgColor={Color.BEIGE}
+      />
     </Layout>
   );
 };

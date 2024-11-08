@@ -1,4 +1,5 @@
 import { Box, Heading, Text, Flex, Link, VStack } from "@chakra-ui/react";
+import Footer from "components/Footer";
 import Header from "components/Header";
 import { Color } from "styles/theme";
 
@@ -19,15 +20,15 @@ const Privacy = () => {
           </Heading>
 
           <Text fontStyle="italic" fontSize="lg" fontFamily="Minion Pro">
-            Date de dernière mise à jour:
+            Date de dernière mise à jour: 02.11.2024
           </Text>
 
           <VStack align="left" spacing={6} fontFamily="Minion Pro">
             <Text>
               Cette politique de confidentialité est destinée à vous indiquer
               comment les données à caractère personnel vous concernant (les
-              &laquo;Données Personnelles&raquo;) sont collectées, traitées et
-              stockées par la société SOQO...
+              «Données Personnelles») sont collectées, traitées et stockées par
+              la société SOQO.ntuelles nouvelles pratiques.
             </Text>
 
             <Heading
@@ -42,7 +43,7 @@ const Privacy = () => {
               SOQO vous informe que dans le cadre de votre interaction avec le
               Site, vos Données Personnelles sont collectées directement auprès
               de vous lorsque vous remplissez un formulaire en ligne ou lorsque
-              vous faites le choix de nous les communiquer par email...
+              vous faites le choix de nous les communiquer par email.
             </Text>
 
             <Heading
@@ -56,7 +57,7 @@ const Privacy = () => {
             <Text>
               SOQO ne transmettra vos Données Personnelles à aucun tiers à
               l&#39;exception de tout prestataire qui pourrait intervenir en
-              qualité de sous-traitant...
+              qualité de sous-traitant.
             </Text>
 
             <Heading
@@ -70,7 +71,7 @@ const Privacy = () => {
             <Text>
               SOQO conserve vos Données Personnelles uniquement pour la durée
               nécessaire à l&#39;atteinte des finalités pour lesquelles elles
-              ont été collectées et traitées...
+              ont été collectées et traitées.
             </Text>
 
             <Heading
@@ -85,7 +86,7 @@ const Privacy = () => {
               Dans le cadre de l&#39;exploitation du Site, SOQO utilise des
               cookies. Un cookie est un petit fichier texte envoyé à votre
               navigateur par le site internet consulté, et stocké dans votre
-              équipement terminal...
+              équipement terminal.
             </Text>
 
             <Heading
@@ -114,46 +115,18 @@ const Privacy = () => {
             <VStack align="left" spacing={2} fontFamily="Minion Pro">
               <Text fontWeight="bold">Conception du Site Internet</Text>
               <Text>Antoine Declercq</Text>
-              <Text>Direction artistique 2021: Gilbert Wilson Studio</Text>
             </VStack>
-
-            <VStack align="left" fontFamily="Minion Pro">
-              <Text fontWeight="bold">Recevoir notre newsletter</Text>
-              <Flex>
-                <input
-                  type="email"
-                  placeholder="Votre adresse email"
-                  style={{
-                    padding: "10px",
-                    border: "1px solid #1A1F2C",
-                    borderRadius: "5px",
-                  }}
-                />
-                <button
-                  style={{
-                    backgroundColor: "#1A1F2C",
-                    color: "#FFF",
-                    padding: "10px 15px",
-                    marginLeft: "10px",
-                    borderRadius: "5px",
-                  }}
-                >
-                  S&#39;abonner
-                </button>
-              </Flex>
-            </VStack>
-          </Flex>
-
-          <Flex justify="center" pt={10}>
-            <Link href="#" mx={2} fontFamily="Minion Pro">
-              Mentions Légales
-            </Link>
-            <Link href="#" mx={2} fontFamily="Minion Pro">
-              Politique de confidentialité
-            </Link>
           </Flex>
         </VStack>
       </Box>
+      <Footer
+        bgColor={Color.BEIGE}
+        textColor={Color.KAKI}
+        imageSrc={"/assets/tampon_vert.png"}
+        dividerColor={Color.KAKI}
+        iconColor={Color.KAKI}
+        iconBgColor={Color.BEIGE}
+      />
     </Box>
   );
 };
