@@ -88,7 +88,7 @@ function Founders() {
           <Box>
             <Text fontSize="xl" fontWeight={"bold"}>
             “Une équipe experte et passionnée, à vos côtés pour concrétiser
-            vos ambitions et générer un impact significatif”.
+            vos ambitions et générer un impact significatif.”
             </Text>
             <Text  fontSize="xl" mt={2}>
              Victor
