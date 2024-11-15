@@ -133,15 +133,17 @@ const Qlub: React.FC<QlubProps> = ({ logos, verbatimEntries }) => {
           }
         />
 
-        <Text
-          fontFamily={"Minion Pro"}
-          fontSize={"4xl"}
-          ml={{md:"9.5rem"}}
-          mt={"4rem"}
-          px={{base:"4"}}
-        >
-          Pourquoi les associations rejoignent Le Qlub ?
-        </Text>
+<Text
+  fontFamily="Minion Pro"
+  fontSize="4xl"
+  mt="4rem"
+  px={{ base: "7", md: "6" }} 
+  mx="auto" // Centers the text horizontally
+  maxWidth={{ base: "90%", md: "70%" }} 
+>
+  Pourquoi les associations rejoignent Le Qlub ?
+</Text>
+
         <VStack
           width={"80%"}
           mt={10}
