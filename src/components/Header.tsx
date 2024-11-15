@@ -171,7 +171,11 @@ const MobileMenuContent: React.FC<MobileMenuContentProps> = ({
       dropdownTextColor={dropdownTextColor}
       dropdownHoverBgColor={dropdownHoverBgColor}
     />
-    <MenuLink isActive={pathname === "/adn"} href="/adn" linkColor={mobileLinkColor}>
+    <MenuLink
+      isActive={pathname === "/adn"}
+      href="/adn"
+      linkColor={mobileLinkColor}
+    >
       Qui sommes-nous
     </MenuLink>
     <DropdownMenuLink
@@ -217,8 +221,8 @@ interface HeaderProps {
   buttonTextColor?: string;
   buttonBgColor?: string;
   hamburgerIconColor?: string;
-  desktopChevronColor?: string;  // New prop for desktop chevron color
-  mobileChevronColor?: string;   // New prop for mobile chevron color
+  desktopChevronColor?: string; // New prop for desktop chevron color
+  mobileChevronColor?: string; // New prop for mobile chevron color
   logosrc: string;
 }
 
@@ -232,8 +236,8 @@ const Header: React.FC<HeaderProps> = ({
   buttonTextColor = Color.BEIGE,
   buttonBgColor = Color.KAKI,
   hamburgerIconColor = "black",
-  desktopChevronColor = "#163A2C",   // Default desktop chevron color
-  mobileChevronColor = "#163A2C",    // Default mobile chevron color
+  desktopChevronColor = "#163A2C", // Default desktop chevron color
+  mobileChevronColor = "#163A2C", // Default mobile chevron color
   logosrc,
 }) => {
   const { pathname } = useRouter();
@@ -260,18 +264,26 @@ const Header: React.FC<HeaderProps> = ({
             alt="Soqo"
             width="120px"
             src={logosrc}
-            ml={{md:"7rem", base:"20%"}}
+            ml={{ md: "7rem", base: "20%" }}
           />
         </CustomLink>
         {/* Desktop Navigation */}
-        <HStack spacing={10} display={{ base: "none", xl: "flex" }} ml="auto" pr={0}>
+        <HStack
+          spacing={10}
+          display={{ base: "none", xl: "flex" }}
+          ml="auto"
+          pr={0}
+        >
           <DropdownMenuLink
             label="Services"
             linkColor={linkColor}
-            chevronIconColor={desktopChevronColor}  // Use desktop chevron color
+            chevronIconColor={desktopChevronColor} // Use desktop chevron color
             links={[
               { label: "Projets à impact", href: "/services_projets" },
-              { label: "Événements responsables", href: "/services_evenements" },
+              {
+                label: "Événements responsables",
+                href: "/services_evenements",
+              },
             ]}
             dropdownBgColor={dropdownBgColor}
             dropdownTextColor={dropdownTextColor}
@@ -280,7 +292,7 @@ const Header: React.FC<HeaderProps> = ({
           <DropdownMenuLink
             label="Projets"
             linkColor={linkColor}
-            chevronIconColor={desktopChevronColor}  // Use desktop chevron color
+            chevronIconColor={desktopChevronColor} // Use desktop chevron color
             links={[
               { label: "Projets à impact", href: "/projets" },
               { label: "Événements responsables", href: "/projets_evenements" },
@@ -289,13 +301,17 @@ const Header: React.FC<HeaderProps> = ({
             dropdownTextColor={dropdownTextColor}
             dropdownHoverBgColor={dropdownHoverBgColor}
           />
-          <MenuLink isActive={pathname === "/adn"} href="/adn" linkColor={linkColor}>
+          <MenuLink
+            isActive={pathname === "/adn"}
+            href="/adn"
+            linkColor={linkColor}
+          >
             Qui sommes-nous
           </MenuLink>
           <DropdownMenuLink
             label="Ressources"
             linkColor={linkColor}
-            chevronIconColor={desktopChevronColor}  // Use desktop chevron color
+            chevronIconColor={desktopChevronColor} // Use desktop chevron color
             links={[
               { label: "Blog", href: "/blog" },
               { label: "FAQ", href: "/faq" },
@@ -332,12 +348,23 @@ const Header: React.FC<HeaderProps> = ({
           visibility={{ base: "visible", xl: "hidden" }}
           aria-label="Menu"
           icon={<HamburgerIcon color={hamburgerIconColor} />}
+          _hover={{ bg: "transparent" }} // Remove hover background
+          _focus={{ boxShadow: "none" }}
         />
         {/* Mobile Drawer */}
-        <Drawer returnFocusOnClose={false} isOpen={isOpen} placement="right" onClose={onClose}>
+        <Drawer
+          returnFocusOnClose={false}
+          isOpen={isOpen}
+          placement="right"
+          onClose={onClose}
+        >
           <DrawerOverlay />
           <DrawerContent>
-            <DrawerCloseButton fontSize="xl" />
+            <DrawerCloseButton
+              fontSize="xl"
+              _hover={{ bg: "transparent" }} // Remove hover background
+              _focus={{ boxShadow: "none" }}
+            />
             <DrawerBody
               display="flex"
               pt="4rem"
@@ -351,7 +378,7 @@ const Header: React.FC<HeaderProps> = ({
                 dropdownBgColor={dropdownBgColor}
                 dropdownTextColor={dropdownTextColor}
                 dropdownHoverBgColor={dropdownHoverBgColor}
-                chevronIconColor={mobileChevronColor}  // Use mobile chevron color
+                chevronIconColor={mobileChevronColor} // Use mobile chevron color
               />
             </DrawerBody>
           </DrawerContent>
