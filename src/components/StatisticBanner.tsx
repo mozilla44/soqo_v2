@@ -1,5 +1,5 @@
 import React from "react";
-import { ChakraProvider, Box, Text, Flex } from "@chakra-ui/react";
+import { Box, Text, Flex } from "@chakra-ui/react";
 import { Color } from "styles/theme";
 
 function StatisticBanner() {
@@ -16,25 +16,24 @@ function StatisticBanner() {
       <Flex
         align="center"
         justify="center"
-        direction={{ base: "column", md: "row" }} 
+        direction={{ base: "column", md: "row" }} // Stack on mobile, row on desktop
+        textAlign={{ base: "center", md: "left" }} // Center text on mobile, align left on desktop
       >
         <Text
           fontSize={["6xl", "8xl"]}
           fontWeight="bold"
           color={Color.KAKI}
-          mr={{base:"1rem"}}
-          textAlign="left"
-          mb={{ base: 4, md: 0 }} 
+          mr={{ base: 0, md: "1rem" }} // Add margin on desktop for spacing
+          textAlign={{ base: "center", md: "right" }} // Center on mobile
+          mb={{ base: 4, md: 0 }} // Add margin bottom on mobile
         >
           89%
         </Text>
         <Text
-
           fontSize={["xl", "3xl"]}
           color={Color.KAKI}
-          textAlign="left"
           lineHeight="110%"
-          width={{ base: "85%", }}
+          width={{ base: "85%", md: "auto" }}
         >
           des entreprises estiment que les enjeux sociaux et environnementaux <br />
           sont un moteur essentiel dans la mise en œuvre de leurs actions RSE.
@@ -45,7 +44,6 @@ function StatisticBanner() {
             display="block" 
             mt={{ base: "0.5rem" }} 
             color={Color.KAKI}
-            textAlign="left"
           >
             *Barometre RSE 2024
           </Text>

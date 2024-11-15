@@ -33,6 +33,8 @@ export const Map = () => {
           color={Color.KAKI}
           width={{ md: "88%" }}
           lineHeight="110%"
+          ml={{ md: "7.2rem" }}
+
         >
           Nos projets n&apos;ont pas de frontières
         </Text>
@@ -43,6 +45,8 @@ export const Map = () => {
           mt={4}
           width={{ md: "100%" }}
           lineHeight="110%"
+          ml={{ md: "7.2rem" }}
+
         >
           Notre savoir-faire nous permet de vous accompagner en France comme à
           l&apos;international.
@@ -53,7 +57,8 @@ export const Map = () => {
           color={Color.KAKI}
           borderColor={Color.KAKI}
           paddingX={"5rem"}
-        >
+          marginLeft={{md: "7.2rem" }}
+          >
           &nbsp;&nbsp;&nbsp;En savoir plus&nbsp;&nbsp;&nbsp;
         </EmptyButton>
       </Box>
