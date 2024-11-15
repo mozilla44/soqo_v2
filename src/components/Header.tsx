@@ -340,17 +340,19 @@ const Header: React.FC<HeaderProps> = ({
           </CustomLink>
         </HStack>
         <IconButton
-          pr={"2rem"}
-          onClick={onOpen}
-          fontSize="3xl"
-          variant="ghost"
-          display="block"
-          visibility={{ base: "visible", xl: "hidden" }}
-          aria-label="Menu"
-          icon={<HamburgerIcon color={hamburgerIconColor} />}
-          _hover={{ bg: "transparent" }} // Remove hover background
-          _focus={{ boxShadow: "none" }}
-        />
+  pr={"2rem"}
+  onClick={onOpen}
+  fontSize="3xl"
+  variant="ghost"
+  display="block"
+  visibility={{ base: "visible", xl: "hidden" }}
+  aria-label="Menu"
+  icon={<HamburgerIcon color={hamburgerIconColor} />}
+  _hover={{ bg: "transparent" }} // Remove hover background
+  _focus={{ boxShadow: "none", bg: "transparent" }} // Remove focus background
+  _active={{ bg: "transparent" }} // Remove active state background
+/>
+
         {/* Mobile Drawer */}
         <Drawer
           returnFocusOnClose={false}
@@ -364,6 +366,7 @@ const Header: React.FC<HeaderProps> = ({
               fontSize="xl"
               _hover={{ bg: "transparent" }} // Remove hover background
               _focus={{ boxShadow: "none" }}
+              _active={{ bg: "transparent" }} 
             />
             <DrawerBody
               display="flex"
