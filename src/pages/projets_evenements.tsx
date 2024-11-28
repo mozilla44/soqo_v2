@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid, Text, Heading, Image, Link } from "@chakra-ui/react";
+import { Box, Grid, Text, Heading, Image, Link, Tag } from "@chakra-ui/react";
 import Header from "components/Header";
 import client from "core/client";
 import { Color } from "styles/theme";
@@ -7,14 +7,20 @@ import { IProjetEvent, IProjetEventFields } from "types/generated/contentful";
 import Layout from "components/Layout";
 import Footer from "components/Footer";
 import ReactMarkdown from "react-markdown";
-import AltCover from "components/AltCover_bak";
 import Cover from "components/Cover";
 
 interface ImpactProjectsProps {
   eventEntries: IProjetEvent[];
+  tags: { sys: { id: string }; name: string }[]; // Add the tags prop
 }
 
-const EventsProjects: React.FC<ImpactProjectsProps> = ({ eventEntries }) => {
+const EventsProjects: React.FC<ImpactProjectsProps> = ({ eventEntries, tags }) => {
+  // Helper function to get the tag name
+  const getTagName = (tags: { sys: { id: string }; name: string }[], id: string) => {
+    const tag = tags.find((tag) => tag.sys.id === id);
+    return tag ? tag.name.toLocaleUpperCase() : id.toUpperCase(); // Fallback to id if name is not found
+  };
+
   return (
     <Layout>
       <Header
@@ -28,26 +34,6 @@ const EventsProjects: React.FC<ImpactProjectsProps> = ({ eventEntries }) => {
         buttonBgColor={Color.BEIGE}
         hamburgerIconColor={Color.BEIGE}
       />
-
-   {/*    <AltCover
-        title={"Les entreprises\ns’engagent avec Soqo*"}
-        content={"Découvrez les derniers\nprojets menés et leur impact."}
-        buttonText="Prendre rendez-vous avec Najma"
-        buttonLink="https://cal.com/najmasouroque"
-        imageSrc={"/assets/orange_shirt.png"}
-        btnColor={Color.KAKI}
-        btnBackground={Color.BEIGE}
-        bgColor={Color.KAKI}
-        textColor={Color.BEIGE}
-        borderColor={Color.BEIGE}
-        buttonBorderColor={Color.KAKI}
-        lineHeight={"100%"}
-        marginTop="1rem"
-        BtnMarginTop="4rem"
-        imageBoxSize=""
-        imagePaddingTop=""
-        imageBorder=""
-      /> */}
       <Cover
         btnText={"Prendre rendez-vous avec Najma"}
         buttonLink={"https://cal.com/najmasouroque"}
@@ -63,7 +49,8 @@ const EventsProjects: React.FC<ImpactProjectsProps> = ({ eventEntries }) => {
         title={"Les entreprises\ns'engagent avec Soqo*"}
         content={
           <>
-         Découvrez les derniers événements <br />que nous avons accompagné et leur impact.
+            Découvrez les derniers événements <br />
+            que nous avons accompagné et leur impact.
           </>
         }
       />
@@ -93,11 +80,9 @@ const EventsProjects: React.FC<ImpactProjectsProps> = ({ eventEntries }) => {
                 "0 8px 16px rgba(0, 0, 0, 0.3), 0 -8px 16px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15)",
             }}
           >
-            {/* Title and Tags with fixed height */}
             <Box mb={4} minHeight="100px">
               <Heading
                 size="lg"
-                
                 mb={2}
                 fontWeight={"thin"}
                 fontFamily={"Minion Pro"}
@@ -106,9 +91,27 @@ const EventsProjects: React.FC<ImpactProjectsProps> = ({ eventEntries }) => {
               >
                 {entry.fields.name}
               </Heading>
+              <Box>
+                {entry.metadata.tags.map((tag) => (
+                  <Tag
+                    pt={"1"}
+                    paddingX={2}
+                    fontSize={"sm"}
+                    fontFamily={"Minion Pro"}
+                    key={tag.sys.id}
+                    bg={Color.KAKI}
+                    color={Color.BEIGE}
+                    border={`1px solid ${Color.BEIGE}`}
+                    mr={2}
+                    mb={2}
+                    borderRadius="full"
+                  >
+                    {getTagName(tags, tag.sys.id)}
+                  </Tag>
+                ))}
+              </Box>
             </Box>
 
-            {/* Square Image Container */}
             <Box
               flexShrink={0}
               position="relative"
@@ -130,14 +133,12 @@ const EventsProjects: React.FC<ImpactProjectsProps> = ({ eventEntries }) => {
               />
             </Box>
 
-            {/* Render long text as HTML */}
             <Box fontFamily={"Minion Pro"} mb={4} pl={3} color={Color.BEIGE}>
               <Text fontSize={"1.25rem"} mt={4}>
                 <ReactMarkdown>{entry.fields.description}</ReactMarkdown>
               </Text>
             </Box>
 
-            {/* Download link */}
             <Link
               mt="auto"
               fontSize={"xl"}
@@ -175,9 +176,14 @@ export const getStaticProps = async () => {
   const eventEntries: IProjetEvent[] =
     eventEntriesResponse.items as IProjetEvent[];
 
+  // Fetch all tags
+  const tagsResponse = await client.getTags();
+  const tags = tagsResponse.items;
+
   return {
     props: {
       eventEntries,
+      tags,
     },
     revalidate: 10,
   };
