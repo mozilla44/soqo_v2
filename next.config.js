@@ -18,6 +18,25 @@ const nextConfig = {
         destination: '/projets',
         permanent: true,
       },
+
+      {
+        source: '/projets/puma(.*)', // Regex match for variations
+        destination: '/projets',
+        permanent: true,
+      },
+
+      {
+        source: '/projets/team_autremonde-adidas(.*)', // Regex match for variations
+        destination: '/projets',
+        permanent: true,
+      },
+
+      {
+        source: '/projets/linkee-and-yego(.*)', // Regex match for variations
+        destination: '/projets',
+        permanent: true,
+      },
+     
      
     ];
   },
