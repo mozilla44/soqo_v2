@@ -12,6 +12,7 @@ const variants = {
 const MotionBox = motion(Box)
 
 const Layout: React.FC = ({ children }) => {
+  console.log("Google Analytics ID:", process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID);
   return (
     <>
       <Script
