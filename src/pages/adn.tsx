@@ -298,7 +298,7 @@ const Adn: React.FC<AdnProps> = ({ logos, teamEntries }) => {
         bgColor={Color.BEIGE}
         textColor={Color.KAKI}
         mobileHeight={"30vh"}
-        imageSrc={"/assets/team2.jpg"}
+        imageSrc={"/assets/team3.jpg"}
         title={"Notre manifeste"}
         content={(
           <>
