@@ -605,7 +605,7 @@ const Adn: React.FC<AdnProps> = ({ logos, teamEntries }) => {
           ml={"8%"}
           pt={"1rem"}
         >
-          Notre comité stratégique
+          Notre comité d&apos;impact
         </Heading>
         <Text ml="8%" mb="2rem" fontSize={{ md: "3xl", base: "2xl" }}>
           6 personnalités aux profils complémentaires, qui nous inspirent et
