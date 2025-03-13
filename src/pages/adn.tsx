@@ -227,6 +227,12 @@ const Adn: React.FC<AdnProps> = ({ logos, teamEntries }) => {
         "Intrapreneur, stratégie & partenariats, management interculturel, mentor chez makesense.",
       imageUrl: "/assets/nguyen.png",
     },
+    {
+      name: "Siège tournant",
+      description:
+        "Représentant.e d'une de nos associations partenaires",
+      imageUrl: "/assets/hand2.jpg",
+    },
   ];
   const [isMounted, setIsMounted] = useState(false);
   const isMobile = useBreakpointValue({ base: true, md: false });
