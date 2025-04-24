@@ -104,6 +104,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ slides }) => {
   }, [slidesToShow]);
 
   return (
+    <Layout>
     <Flex
       overflow="hidden"
       alignItems="center"
@@ -184,6 +185,7 @@ const Slideshow: React.FC<SlideshowProps> = ({ slides }) => {
         _hover={{ backgroundColor: "white", color: "black" }}
       />
     </Flex>
+    </Layout>
   );
 };
 
