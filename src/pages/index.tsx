@@ -97,7 +97,7 @@ const Home: React.FC<HomeProps> = ({
             <br />
             bureau de création
             <br />
-            de <Marker color={Color.BLUE}>projets à impact</Marker>
+            de projets à impact
           </>
         }
         content={

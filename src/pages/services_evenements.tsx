@@ -88,9 +88,7 @@ const Events: React.FC<EventsProps> = ({ logos }) => {
             <>
               Optez pour des <br />
               événements <br />
-              <Marker color={Color.BLUE} textColor={Color.KAKI}>
-                durables
-              </Marker>
+              durables
             </>
           }
           content={`Nous vous accompagnons pour réduire l'impact environnemental de vos projets.`}
@@ -121,15 +119,14 @@ const Events: React.FC<EventsProps> = ({ logos }) => {
           borderBottom={`1px solid ${Color.BEIGE}`}
         />
         <Box bg={Color.KAKI} pb={"2rem"}>
-        <GreenPictures
-          pic1={"/assets/pic1.png"}
-          pic2={"/assets/pic2.png"}
-          pic3={"/assets/pic3.png"}
-          btnText={"Découvrir nos projets"}
-          btnLink={"/projets_evenements"}
-        />
+          <GreenPictures
+            pic1={"/assets/pic1.png"}
+            pic2={"/assets/pic2.png"}
+            pic3={"/assets/pic3.png"}
+            btnText={"Découvrir nos projets"}
+            btnLink={"/projets_evenements"}
+          />
         </Box>
-        
       </Flex>
       <Footer
         bgColor={Color.KAKI}

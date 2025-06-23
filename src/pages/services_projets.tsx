@@ -113,7 +113,7 @@ const projets_impact: React.FC<ProjectsProps> = ({
             <>
               Transformer
               <br />
-              <Marker color={Color.BLUE}>l&apos;engagement</Marker> en
+             l&apos;engagement en
               <br />
               action
             </>
