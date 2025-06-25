@@ -129,7 +129,7 @@ const Qlub: React.FC<QlubProps> = ({ logos, verbatimEntries }) => {
           imageSrc={"/assets/basket_fauteuil.jpg"}
           title={"Le Qlub, notre atout coeur chez Soqo*"}
           content={
-            "Parce que soutenir l’écosystème associatif est au cœur de nos actions, nous vous connectons à notre réseau d'associations lorsque cela est pertinent. Une manière d’accompagner leur ndéveloppement tout en maximisant l’impact de vos projets."
+            "Parce que soutenir l’écosystème associatif est au cœur de nos actions, nous vous connectons à notre réseau d'associations lorsque cela est pertinent. Une manière d’accompagner leur développement tout en maximisant l’impact de vos projets."
           }
         />
 
