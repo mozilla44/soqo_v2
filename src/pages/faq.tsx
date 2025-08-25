@@ -32,7 +32,6 @@ const Item: React.FC<{ label: string }> = ({ label, children }) => {
     >
       <Flex justifyContent="space-between" alignItems="center">
         <Text maxWidth="90%" fontSize={{ base: "2xl", md: "3xl" }}>
-          {" "}
           {/* Adjusted font sizes here */}
           {label}
         </Text>
@@ -109,18 +108,16 @@ const FAQ = () => {
           </Item>
           <Item label="Où sont situés les bureaux de Soqo* ?">
             <Text {...titleProps}>
-              Nous sommes installés à
-              <a href="https://cesure.paris/" target="_blank" rel="noreferrer">
-                {" "}
+              Nous sommes installés à{" "}
+              <a href="https://cesure.paris/" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline', }}>
                 <b>Césure</b>
               </a>
               , un tiers-lieu du 5ᵉ arrondissement qui rassemble plus de 150
               structures engagées dans l’Économie Sociale et Solidaire. Cet
               environnement stimulant nous permet de rester au plus près des
               besoins du secteur associatif. Nous sommes aussi colocataires de
-              la
-              <a href="https://climate.house/" target="_blank" rel="noreferrer">
-                {" "}
+              la{" "}
+              <a href="https://climate.house/" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline', }}>
                 <b>Climate House</b>
               </a>
               , dans le 2ᵉ arrondissement, en plein cœur du Sentier — un
