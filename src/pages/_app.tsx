@@ -19,6 +19,7 @@ type AppPropsWithLayout = AppProps & {
 };
 
 const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
+  // Prevent SSR warnings with useLayoutEffect
   React.useLayoutEffect = React.useEffect;
 
   return (
@@ -31,19 +32,29 @@ const MyApp = ({ Component, pageProps }: AppPropsWithLayout) => {
           name="viewport"
           content="width=device-width, initial-scale=1, min-scale=1, max-scale=1"
         />
-       {/*  <script
-          src="//cdn.conveythis.com/javascript/conveythis.js?api_key=pub_fc8de8d7941e7002b92fea3c72ed815f"
-          async
-        ></script>  */}
-        
       </Head>
+
+      {/* ✅ Weglot Script */}
+      <Script
+        src="https://cdn.weglot.com/weglot.min.js"
+        strategy="afterInteractive"
+        onLoad={() => {
+          if (typeof window !== "undefined" && (window as any).Weglot) {
+            (window as any).Weglot.initialize({
+              api_key: "wg_d7a5b927790fbf4e341f54e26afdfd574",
+            });
+          }
+        }}
+      />
+
       <Global
         styles={{
-          "html,body": {
+          "html, body": {
             backgroundColor: Component.backgroundColor || "transparent",
           },
         }}
       />
+
       <AnimatePresence
         initial={false}
         onExitComplete={() => window.scrollTo(0, 0)}
