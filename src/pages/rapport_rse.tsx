@@ -132,7 +132,7 @@ const LivreBlanc = () => {
                 padding={{ base: "1rem", md: "1.5rem" }}
                 onClick={() => handleOpenModal("https://tally.so/r/3j9yQx")} // Replace with your external link
               >
-                Télécharger le Livre Blanc
+                Télécharger le rapport RSE 2024
               </Button>
             </Box>
             <Box
