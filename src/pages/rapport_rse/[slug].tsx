@@ -230,7 +230,7 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
                 maxHeight="100%"
                 objectFit="cover"
                 alt="Livre Blanc Soqo"
-                src="/assets/livre.png"
+                src={cover.fields.file.url}
                 transform="rotate(-5deg)"
                 marginRight={{ sm: "3rem" }}
                 marginLeft={{ base: "2rem" }}
