@@ -393,6 +393,40 @@ export interface IProjetImpact extends Entry<IProjetImpactFields> {
   };
 }
 
+export interface IRapportFields {
+  /** Titre */
+  titre: string;
+
+  /** URL */
+  slug: string;
+
+  /** soustitre */
+  soustitre: Document;
+
+  /** article */
+  article: string;
+
+  /** cover */
+  cover: Asset;
+}
+
+export interface IRapport extends Entry<IRapportFields> {
+  sys: {
+    id: string;
+    type: string;
+    createdAt: string;
+    updatedAt: string;
+    locale: string;
+    contentType: {
+      sys: {
+        id: "rapport";
+        linkType: "ContentType";
+        type: "Link";
+      };
+    };
+  };
+}
+
 export interface IServiceFields {
   /** nom */
   name?: string | undefined;
@@ -570,6 +604,7 @@ export type CONTENT_TYPE =
   | "project"
   | "projetEvent"
   | "projetImpact"
+  | "rapport"
   | "service"
   | "team"
   | "verbatimHome"
