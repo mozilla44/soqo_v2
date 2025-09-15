@@ -1,224 +1,162 @@
-/* eslint-disable react/no-unescaped-entities */
-import { GetStaticPaths, GetStaticProps } from "next";
-import { useRouter } from "next/router";
-import client from "core/client";
-import { IRapport, IRapportFields } from "types/generated/contentful";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import ReactMarkdown from "react-markdown";
+import React, { ReactNode } from "react";
 import {
   Box,
-  Text,
-  Image,
-  Flex,
   Button,
+  Heading,
+  Text,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
 } from "@chakra-ui/react";
-import Head from "next/head";
-import Layout from "components/Layout";
-import Header from "components/Header";
-import Footer from "components/Footer";
-import { Color } from "styles/theme";
 
-interface RapportDetailProps {
-  rapport: IRapport;
+interface TestProps {
+  buttonLink: string;
+  borderColor: string;
+  bgColor: string;
+  textColor: string;
+  btnTextColor?: string;
+  btnBgColor?: string;
+  btnMarginTop?: string;
+  imageSrc: string;
+  title: ReactNode;
+  content: ReactNode;
+  btnText?: string;
+  mobileHeight?: string;
+  btnBorderColor: string;
+  imageBorder?: string; // Optional prop for image border
 }
 
-const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
-  const router = useRouter();
+const AltCover: React.FC<TestProps> = ({
+  buttonLink,
+  borderColor,
+  bgColor,
+  textColor,
+  btnBgColor,
+  btnTextColor,
+  btnMarginTop,
+  imageSrc,
+  title,
+  content,
+  btnText,
+  mobileHeight,
+  btnBorderColor,
+  imageBorder,  // Destructure the new prop
+}) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
-  if (router.isFallback) {
-    return <Box fontFamily="Minion Pro">Loading...</Box>;
-  }
-
-  const { titre, cover, article, soustitre } = rapport.fields;
+  const isButtonVisible =
+    buttonLink && btnTextColor && btnBgColor && btnMarginTop && btnText;
 
   return (
-    <Layout>
-      <Box fontFamily="Minion Pro"> {/* Set Minion Pro globally here */}
-        <Head>
-          <title>{titre} - Soqo</title>
-          <meta property="og:title" content={titre} />
-          <meta
-            property="og:description"
-            content="L’étude qui explore les partenariats associations-entreprises."
-          />
-          <meta
-            property="og:image"
-            content="http://bonjour-soqo.com/thumb_og.png"
-          />
-        </Head>
-
-        <Header
-          headerBgColor={Color.BEIGE}
-          linkColor={Color.KAKI}
-          mobileLinkColor={Color.KAKI}
-          logosrc={"/assets/logo.png"}
-        />
-
-        <Box
-          borderTop={"1px solid"}
-          p={{ base: 4, md: 10 }}
-          as="section"
-          display="flex"
-          justifyContent="space-between"
-          flexDirection={{ base: "column", md: "row" }}
-          backgroundColor={Color.BEIGE}
+    <Box
+      display="flex"
+      flexDirection={{ base: "column", md: "row" }}
+      minHeight={{ base: mobileHeight ? mobileHeight : "80vh", md: "75vh" }}
+      borderBottom={`1px solid ${borderColor}`}
+      borderTop={`1px solid ${borderColor}`}
+    >
+      {/* Left side with text */}
+      <Box
+        bgColor={bgColor}
+        flex="1.1"
+        display="flex"
+        flexDirection="column"
+        justifyContent="center"
+        paddingX="4.5rem"
+        paddingY="5rem"
+      >
+        <Heading
+          as="h1"
+          fontFamily="Minion Pro"
+          fontWeight="thin"
+          fontSize={{ base: "4xl", md: "5xl" }}
+          mb={4}
+          color={textColor}
+          textAlign="left"
+          ml={{ md: "8%", base: "0%" }}
+          width={{ md: "80%", base: "100%" }}
+          lineHeight="110%"
         >
-          {/* Text Side */}
-          <Box
-            width={{ base: "100%", md: "55%" }}
-            textAlign={{ base: "center", md: "left" }}
+          {title}
+        </Heading>
+        <Text
+          color={textColor}
+          textAlign="left"
+          ml={{ md: "8%", base: "0%" }}
+          fontSize={{ base: "2xl", md: "2xl" }}
+          width={{ md: "75%", base: "100%" }}
+          lineHeight="110%"
+        >
+          {content}
+        </Text>
+        {isButtonVisible && (
+          <Button
+            ml="8%"
+            cursor="pointer"
+            _hover={{
+              boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",
+              transform: "translateY(-0.09rem)",
+            }}
+            fontSize={{ base: "md", md: "1.6rem" }}
+            color={btnTextColor}
+            backgroundColor={btnBgColor}
+            fontFamily="Minion Pro"
+            mt={btnMarginTop}
+            fontWeight="500"
+            padding={{ base: "1rem", md: "1.5rem" }}
+            border={`1px solid ${btnBorderColor || "transparent"}`}
+            width="fit-content"
+            onClick={onOpen}
           >
-            <Text fontSize="5xl" color={Color.KAKI}>
-              {titre}
-            </Text>
-
-            <Text
-              fontSize="3xl"
-              color={Color.KAKI}
-              marginTop="2rem"
-              fontWeight="bold"
-            >
-              {documentToReactComponents(soustitre, {
-                renderNode: {
-                  "paragraph": (node, children) => (
-                    <Text as="p">{children}</Text>
-                  )
-                }
-              })}
-            </Text>
-
-            <Box
-              marginTop="2rem"
-              border="3px solid red"
-              width="100%"
-              maxWidth="100%"
-              whiteSpace="normal"
-              wordBreak="break-word"
-              overflowWrap="break-word"
-            >
-              <ReactMarkdown
-                components={{
-                  p: ({ children }) => (
-                    <Text fontSize={{ base: "md", md: "2xl" }}>
-                      {children}
-                    </Text>
-                  ),
-                  h1: ({ children }) => (
-                    <Text fontSize={{ base: "4xl", md: "5xl" }} fontWeight="bold" mb="4">
-                      {children}
-                    </Text>
-                  ),
-                  h2: ({ children }) => (
-                    <Text fontSize={{ base: "xl", md: "3xl" }} fontWeight="bold" mb="3" mt="2rem">
-                      {children}
-                    </Text>
-                  ),
-                  li: ({ children }) => (
-                    <Text as="li" ml="4" mb="1" listStyleType="disc">
-                      {children}
-                    </Text>
-                  ),
-                  a: ({ href, children }) => (
-                    <Text as="a" href={href} textDecoration="underline" color={Color.KAKI}>
-                      {children}
-                    </Text>
-                  ),
-                }}
-              >
-                {article}
-              </ReactMarkdown>
-            </Box>
-
-            <Button
-              cursor={"pointer"}
-              _hover={{
-                boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",
-                transform: "translateY(-0.09rem)",
-              }}
-              fontSize={{ base: "md", md: "1.6rem" }}
-              color={Color.BEIGE}
-              backgroundColor={Color.KAKI}
-              mt={"2rem"}
-              fontWeight="500"
-              padding={{ base: "1rem", md: "1.5rem" }}
-            >
-              Télécharger le document
-            </Button>
-          </Box>
-
-          {/* Image Side */}
-          <Box
-            width={{ base: "100%", md: "40%" }}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-            mt={{ base: 8, md: 0 }}
-          >
-            {cover && (
-              <Image
-                src={cover.fields.file.url}
-                alt={titre}
-                height={{ base: "auto", md: "30rem" }}
-                maxWidth="100%"
-                objectFit="cover"
-                transform="rotate(-5deg)"
-              />
-            )}
-          </Box>
-        </Box>
-
-       {/*  <Footer
-          bgColor={Color.KAKI}
-          textColor={Color.BEIGE}
-          imageSrc={"/assets/tampon_creme.png"}
-          dividerColor={Color.BEIGE}
-        /> */}
+            {btnText}
+          </Button>
+        )}
       </Box>
-    </Layout>
+
+      {/* Right side with image */}
+      <Box
+        flex="1"
+        display={{ base: "none", md: "flex" }} // Hide on mobile, show on desktop
+        justifyContent="center"
+        alignItems="center"
+        borderLeft={`1px solid ${borderColor}`}
+      >
+        <Box
+          mr={{ md: "12rem" }}
+          bgImage={`url(${imageSrc})`}
+          bgSize="contain"
+          bgRepeat="no-repeat"
+          bgPosition="center"
+          width="70%" // Adjust width as needed for sizing
+          height="70%" // Adjust height as needed for sizing
+          transition="all 0.3s ease"
+          border={imageBorder} // Apply optional image border
+        />
+      </Box>
+
+      {/* Modal for additional information */}
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalCloseButton />
+          <ModalBody>
+            <iframe
+              src={buttonLink}
+              width="100%"
+              height="500px"
+              style={{ border: "none" }}
+              title=""
+            ></iframe>
+          </ModalBody>
+          <ModalFooter></ModalFooter>
+        </ModalContent>
+      </Modal>
+    </Box>
   );
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const entries = await client.getEntries<IRapportFields>({
-    content_type: "rapport",
-  });
-
-  const rapports = entries.items as IRapport[];
-  const paths = rapports.map((rapport) => ({
-    params: { slug: rapport.fields.slug },
-  }));
-
-  return {
-    paths,
-    fallback: true,
-  };
-};
-
-export const getStaticProps: GetStaticProps<RapportDetailProps> = async (
-  context
-) => {
-  const { slug } = context.params as { slug: string };
-
-  const entries = await client.getEntries<IRapportFields>({
-    content_type: "rapport",
-    "fields.slug": slug,
-    limit: 1,
-  });
-
-  const rapport = entries.items[0] as IRapport | undefined;
-
-  if (!rapport) {
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: {
-      rapport,
-    },
-    revalidate: 10,
-  };
-};
-
-export default RapportDetail;
+export default AltCover;
