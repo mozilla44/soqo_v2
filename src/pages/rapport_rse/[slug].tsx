@@ -26,14 +26,88 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
   const router = useRouter();
 
   if (router.isFallback) {
-    return <Box>Loading...</Box>;
+    return <Box fontFamily="Minion Pro">Loading...</Box>;
   }
 
   const { titre, cover, article, soustitre } = rapport.fields;
 
+  // Map Markdown elements to Chakra Text with Minion Pro
+  const markdownComponents = {
+    p: ({ children }: { children: React.ReactNode }) => (
+      <Text fontFamily="Minion Pro" fontSize={{ base: "md", md: "2xl" }} mb="4" whiteSpace="normal" wordBreak="break-word">
+        {children}
+      </Text>
+    ),
+    h1: ({ children }: { children: React.ReactNode }) => (
+      <Text
+        as="h1"
+        fontFamily="Minion Pro"
+        fontSize={{ base: "4xl", md: "5xl" }}
+        fontWeight="bold"
+        mb="4"
+        whiteSpace="normal"
+        wordBreak="break-word"
+      >
+        {children}
+      </Text>
+    ),
+    h2: ({ children }: { children: React.ReactNode }) => (
+      <Text
+        as="h2"
+        fontFamily="Minion Pro"
+        fontSize={{ base: "xl", md: "3xl" }}
+        fontWeight="bold"
+        mb="3"
+        mt="2rem"
+        whiteSpace="normal"
+        wordBreak="break-word"
+      >
+        {children}
+      </Text>
+    ),
+    li: ({ children }: { children: React.ReactNode }) => (
+      <Text
+        as="li"
+        fontFamily="Minion Pro"
+        fontSize={{ base: "md", md: "2xl" }}
+        ml="4"
+        mb="1"
+        listStyleType="disc"
+        whiteSpace="normal"
+        wordBreak="break-word"
+      >
+        {children}
+      </Text>
+    ),
+    a: ({ href, children }: { href?: string; children: React.ReactNode }) => (
+      <Text
+        as="a"
+        fontFamily="Minion Pro"
+        href={href}
+        color={Color.KAKI}
+        textDecoration="underline"
+        whiteSpace="normal"
+        wordBreak="break-word"
+      >
+        {children}
+      </Text>
+    ),
+    strong: ({ children }: { children: React.ReactNode }) => (
+      <Text as="b" fontFamily="Minion Pro">{children}</Text>
+    ),
+    em: ({ children }: { children: React.ReactNode }) => (
+      <Text as="i" fontFamily="Minion Pro">{children}</Text>
+    ),
+    code: ({ children }: { children: React.ReactNode }) => (
+      <Text as="code" fontFamily="Minion Pro"  px="1" py="0.5" borderRadius="md" fontSize={"xl"} >
+        {children}
+      </Text>
+    ),
+  };
+
   return (
     <Layout>
-      <Box>
+      <Box fontFamily="Minion Pro">
         <Head>
           <title>{titre} - Soqo</title>
           <meta property="og:title" content={titre} />
@@ -64,76 +138,43 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
           backgroundColor={Color.BEIGE}
         >
           {/* Text Side */}
-          <Box
-            width={{ base: "100%", md: "55%" }}
-            textAlign={{ base: "center", md: "left" }}
-          >
-            <Text fontSize="5xl" color={Color.KAKI} fontFamily="Minion Pro">
+          <Box width={{ base: "100%", md: "55%" }} textAlign={{ base: "center", md: "left" }}>
+            <Text fontFamily="Minion Pro" fontSize="5xl" color={Color.KAKI}>
               {titre}
             </Text>
 
-            <Text
-              fontSize="3xl"
-              color={Color.KAKI}
-              marginTop="2rem"
-              fontWeight="bold"
-              fontFamily="Minion Pro"
-            >
-              {documentToReactComponents(soustitre)}
-            </Text>
+            <Box mt="2rem" fontSize="2xl">
+              {documentToReactComponents(soustitre, {
+                renderNode: {
+                  paragraph: (node, children) => (
+                    <Text fontFamily="Minion Pro">{children}</Text>
+                  ),
+                },
+              })}
+            </Box>
 
             <Box
               marginTop="2rem"
               width="100%"
               maxWidth="100%"
-              whiteSpace="normal" // allow text to wrap
-              wordBreak="break-word" // break long words
-              overflowWrap="break-word" // support wrapping long words
+              whiteSpace="normal"
+              wordBreak="break-word"
+              overflowWrap="break-word"
             >
-              <ReactMarkdown
-                components={{
-                  p: ({ children }) => (
-                    <Text fontSize={{ base: "md", md: "2xl" }} mb="4">
-                      {children}
-                    </Text>
-                  ),
-                  h1: ({ children }) => (
-                    <Text fontSize={{ base: "4xl", md: "5xl" }} fontWeight="bold" mb="4">
-                      {children}
-                    </Text>
-                  ),
-                  h2: ({ children }) => (
-                    <Text fontSize={{ base: "xl", md: "3xl" }} fontWeight="bold" mb="3" mt="2rem">
-                      {children}
-                    </Text>
-                  ),
-                  li: ({ children }) => (
-                    <Text as="li" ml="4" mb="1" listStyleType="disc">
-                      {children}
-                    </Text>
-                  ),
-                  a: ({ href, children }) => (
-                    <Text as="a" href={href} textDecoration="underline" color={Color.KAKI}>
-                      {children}
-                    </Text>
-                  ),
-                }}
-              >
-                {article}
-              </ReactMarkdown>
+              <ReactMarkdown components={markdownComponents}>{article}</ReactMarkdown>
             </Box>
 
             <Button
-              cursor={"pointer"}
+              cursor="pointer"
               _hover={{
                 boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",
                 transform: "translateY(-0.09rem)",
               }}
+              fontFamily="Minion Pro"
               fontSize={{ base: "md", md: "1.6rem" }}
               color={Color.BEIGE}
               backgroundColor={Color.KAKI}
-              fontFamily="Minion Pro"
-              mt={"2rem"}
+              mt="2rem"
               fontWeight="500"
               padding={{ base: "1rem", md: "1.5rem" }}
             >
@@ -162,14 +203,7 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
           </Box>
         </Box>
 
-        {/* <Footer
-          bgColor={Color.KAKI}
-          textColor={Color.BEIGE}
-          imageSrc={"/assets/tampon_creme.png"}
-          dividerColor={Color.BEIGE}
-        /> */}
-      </Box>
-        <Footer
+     <Footer
         bgColor={Color.BEIGE}
         textColor={Color.KAKI}
         imageSrc={"/assets/tampon_vert.png"}
@@ -177,6 +211,7 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
         iconColor={Color.KAKI}
         iconBgColor={Color.BEIGE}
       />
+      </Box>
     </Layout>
   );
 };
@@ -191,15 +226,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
     params: { slug: rapport.fields.slug },
   }));
 
-  return {
-    paths,
-    fallback: true,
-  };
+  return { paths, fallback: true };
 };
 
-export const getStaticProps: GetStaticProps<RapportDetailProps> = async (
-  context
-) => {
+export const getStaticProps: GetStaticProps<RapportDetailProps> = async (context) => {
   const { slug } = context.params as { slug: string };
 
   const entries = await client.getEntries<IRapportFields>({
@@ -210,18 +240,9 @@ export const getStaticProps: GetStaticProps<RapportDetailProps> = async (
 
   const rapport = entries.items[0] as IRapport | undefined;
 
-  if (!rapport) {
-    return {
-      notFound: true,
-    };
-  }
+  if (!rapport) return { notFound: true };
 
-  return {
-    props: {
-      rapport,
-    },
-    revalidate: 10,
-  };
+  return { props: { rapport }, revalidate: 10 };
 };
 
 export default RapportDetail;
