@@ -31,7 +31,6 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
 
   const { titre, cover, article, soustitre } = rapport.fields;
 
-  // Map Markdown elements to Chakra Text with Minion Pro
   const markdownComponents = {
     p: ({ children }: { children: React.ReactNode }) => (
       <Text fontFamily="Minion Pro" fontSize={{ base: "md", md: "2xl" }} mb="4" whiteSpace="normal" wordBreak="break-word">
@@ -73,6 +72,8 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
         ml="4"
         mb="1"
         listStyleType="disc"
+        listStylePosition="outside"
+        textAlign="left"
         whiteSpace="normal"
         wordBreak="break-word"
       >
@@ -99,7 +100,7 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
       <Text as="i" fontFamily="Minion Pro">{children}</Text>
     ),
     code: ({ children }: { children: React.ReactNode }) => (
-      <Text as="code" fontFamily="Minion Pro"  px="1" py="0.5" borderRadius="md" fontSize={"xl"} >
+      <Text as="code" fontFamily="Minion Pro" px="1" py="0.5" borderRadius="md" fontSize="xl">
         {children}
       </Text>
     ),
@@ -138,7 +139,7 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
           backgroundColor={Color.BEIGE}
         >
           {/* Text Side */}
-          <Box width={{ base: "100%", md: "55%" }} textAlign={{ base: "center", md: "left" }}>
+          <Box width={{ base: "100%", md: "55%" }} textAlign="left">
             <Text fontFamily="Minion Pro" fontSize="5xl" color={Color.KAKI}>
               {titre}
             </Text>
@@ -160,6 +161,7 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
               whiteSpace="normal"
               wordBreak="break-word"
               overflowWrap="break-word"
+              textAlign="left"
             >
               <ReactMarkdown components={markdownComponents}>{article}</ReactMarkdown>
             </Box>
@@ -203,14 +205,14 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
           </Box>
         </Box>
 
-     <Footer
-        bgColor={Color.BEIGE}
-        textColor={Color.KAKI}
-        imageSrc={"/assets/tampon_vert.png"}
-        dividerColor={Color.KAKI}
-        iconColor={Color.KAKI}
-        iconBgColor={Color.BEIGE}
-      />
+        <Footer
+          bgColor={Color.BEIGE}
+          textColor={Color.KAKI}
+          imageSrc={"/assets/tampon_vert.png"}
+          dividerColor={Color.KAKI}
+          iconColor={Color.KAKI}
+          iconBgColor={Color.BEIGE}
+        />
       </Box>
     </Layout>
   );
