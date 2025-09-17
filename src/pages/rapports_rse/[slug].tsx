@@ -166,22 +166,43 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
               <ReactMarkdown components={markdownComponents}>{article}</ReactMarkdown>
             </Box>
 
-            <Button
-              cursor="pointer"
-              _hover={{
-                boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",
-                transform: "translateY(-0.09rem)",
-              }}
-              fontFamily="Minion Pro"
-              fontSize={{ base: "md", md: "1.6rem" }}
-              color={Color.BEIGE}
-              backgroundColor={Color.KAKI}
-              mt="2rem"
-              fontWeight="500"
-              padding={{ base: "1rem", md: "1.5rem" }}
+            <Flex 
+              mt="2rem" 
+              gap="2rem" 
+              flexDirection={{ base: "column", md: "row" }} // Ensures buttons stack on mobile
             >
-              Télécharger le document
-            </Button>
+              <Button
+                cursor="pointer"
+                _hover={{
+                  boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",
+                  transform: "translateY(-0.09rem)",
+                }}
+                fontFamily="Minion Pro"
+                fontSize={{ base: "md", md: "1.6rem" }}
+                color={Color.BEIGE}
+                backgroundColor={Color.KAKI}
+                fontWeight="500"
+                padding={{ base: "1rem", md: "1.5rem" }}
+              >
+                Télécharger le document
+              </Button>
+
+              <Button
+                cursor="pointer"
+                _hover={{
+                  boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",
+                  transform: "translateY(-0.09rem)",
+                }}
+                fontFamily="Minion Pro"
+                fontSize={{ base: "md", md: "1.6rem" }}
+                color={Color.BEIGE}
+                backgroundColor={Color.KAKI}
+                fontWeight="500"
+                padding={{ base: "1rem", md: "1.5rem" }}
+              >
+                Télécharger le résumé en une page 
+              </Button>
+            </Flex>
           </Box>
 
           {/* Image Side */}
