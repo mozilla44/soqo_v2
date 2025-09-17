@@ -408,6 +408,12 @@ export interface IRapportFields {
 
   /** cover */
   cover: Asset;
+
+  /** link 1 */
+  link1: string;
+
+  /** link 2 */
+  link2: string;
 }
 
 export interface IRapport extends Entry<IRapportFields> {

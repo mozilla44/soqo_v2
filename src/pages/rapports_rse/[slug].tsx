@@ -11,6 +11,12 @@ import {
   Image,
   Flex,
   Button,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
 } from "@chakra-ui/react";
 import Head from "next/head";
 import Layout from "components/Layout";
@@ -25,15 +31,36 @@ interface RapportDetailProps {
 const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
   const router = useRouter();
 
+  const {
+    isOpen: isDocOpen,
+    onOpen: onDocOpen,
+    onClose: onDocClose,
+  } = useDisclosure();
+  const {
+    isOpen: isSummaryOpen,
+    onOpen: onSummaryOpen,
+    onClose: onSummaryClose,
+  } = useDisclosure();
+
   if (router.isFallback) {
     return <Box fontFamily="Minion Pro">Loading...</Box>;
   }
 
   const { titre, cover, article, soustitre } = rapport.fields;
 
+  // Contentful URLs
+  const documentUrl = rapport.fields.link1; /* || "https://example.com" */
+  const summaryUrl = rapport.fields.link2; /* || "https://example.com" */
+
   const markdownComponents = {
     p: ({ children }: { children: React.ReactNode }) => (
-      <Text fontFamily="Minion Pro" fontSize={{ base: "md", md: "2xl" }} mb="4" whiteSpace="normal" wordBreak="break-word">
+      <Text
+        fontFamily="Minion Pro"
+        fontSize={{ base: "md", md: "2xl" }}
+        mb="4"
+        whiteSpace="normal"
+        wordBreak="break-word"
+      >
         {children}
       </Text>
     ),
@@ -94,13 +121,24 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
       </Text>
     ),
     strong: ({ children }: { children: React.ReactNode }) => (
-      <Text as="b" fontFamily="Minion Pro">{children}</Text>
+      <Text as="b" fontFamily="Minion Pro">
+        {children}
+      </Text>
     ),
     em: ({ children }: { children: React.ReactNode }) => (
-      <Text as="i" fontFamily="Minion Pro">{children}</Text>
+      <Text as="i" fontFamily="Minion Pro">
+        {children}
+      </Text>
     ),
     code: ({ children }: { children: React.ReactNode }) => (
-      <Text as="code" fontFamily="Minion Pro" px="1" py="0.5" borderRadius="md" fontSize="xl">
+      <Text
+        as="code"
+        fontFamily="Minion Pro"
+        px="1"
+        py="0.5"
+        borderRadius="md"
+        fontSize="xl"
+      >
         {children}
       </Text>
     ),
@@ -163,15 +201,18 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
               overflowWrap="break-word"
               textAlign="left"
             >
-              <ReactMarkdown components={markdownComponents}>{article}</ReactMarkdown>
+              <ReactMarkdown components={markdownComponents}>
+                {article}
+              </ReactMarkdown>
             </Box>
 
-            <Flex 
-              mt="2rem" 
-              gap="2rem" 
-              flexDirection={{ base: "column", md: "row" }} // Ensures buttons stack on mobile
+            <Flex
+              mt="2rem"
+              gap="2rem"
+              flexDirection={{ base: "column", md: "row" }}
             >
               <Button
+                onClick={onDocOpen}
                 cursor="pointer"
                 _hover={{
                   boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",
@@ -188,6 +229,7 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
               </Button>
 
               <Button
+                onClick={onSummaryOpen}
                 cursor="pointer"
                 _hover={{
                   boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.5)",
@@ -200,7 +242,7 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
                 fontWeight="500"
                 padding={{ base: "1rem", md: "1.5rem" }}
               >
-                Télécharger le résumé en une page 
+                Télécharger le résumé en une page
               </Button>
             </Flex>
           </Box>
@@ -225,6 +267,39 @@ const RapportDetail: React.FC<RapportDetailProps> = ({ rapport }) => {
             )}
           </Box>
         </Box>
+
+        {/* Modal for Document */}
+        <Modal isOpen={isDocOpen} onClose={onDocClose} size="6xl" isCentered>
+          <ModalOverlay />
+          <ModalContent maxW="90vw" h="90vh">
+            <ModalCloseButton />
+            <ModalBody p={0}>
+              <iframe
+                src={documentUrl}
+                style={{ width: "100%", height: "100%", border: "none" }}
+              />
+            </ModalBody>
+          </ModalContent>
+        </Modal>
+
+        {/* Modal for Summary */}
+        <Modal
+          isOpen={isSummaryOpen}
+          onClose={onSummaryClose}
+          size="6xl"
+          isCentered
+        >
+          <ModalOverlay />
+          <ModalContent maxW="90vw" h="90vh">
+            <ModalCloseButton />
+            <ModalBody p={0}>
+              <iframe
+                src={summaryUrl}
+                style={{ width: "100%", height: "100%", border: "none" }}
+              />
+            </ModalBody>
+          </ModalContent>
+        </Modal>
 
         <Footer
           bgColor={Color.BEIGE}
@@ -252,18 +327,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: true };
 };
 
-export const getStaticProps: GetStaticProps<RapportDetailProps> = async (context) => {
-  const { slug } = context.params as { slug: string };
-
+export const getStaticProps: GetStaticProps<RapportDetailProps> = async ({
+  params,
+}) => {
   const entries = await client.getEntries<IRapportFields>({
     content_type: "rapport",
-    "fields.slug": slug,
+    "fields.slug": params?.slug,
     limit: 1,
   });
 
-  const rapport = entries.items[0] as IRapport | undefined;
-
-  if (!rapport) return { notFound: true };
+  const rapport = entries.items[0] as IRapport;
 
   return { props: { rapport }, revalidate: 10 };
 };
