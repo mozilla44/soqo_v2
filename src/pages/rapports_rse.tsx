@@ -39,7 +39,7 @@ const Rapport: React.FC<RapportProps> = ({ rapportEntries }) => {
       >
         <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="6" px={{ md: "20" }} mt={8}>
           {rapportEntries.map((entry) => (
-            <Link key={entry.sys.id} href={`/rapport_rse/${entry.fields.slug}`} _hover={{ textDecoration: 'none' }}>
+            <Link key={entry.sys.id} href={`/rapports_rse/${entry.fields.slug}`} _hover={{ textDecoration: 'none' }}>
               <Box
                 padding="4"
                 backgroundColor="beige.500"
