@@ -187,6 +187,8 @@ const MobileMenuContent: React.FC<MobileMenuContentProps> = ({
         { label: "FAQ", href: "/faq" },
         { label: "Newsletter", href: "/newsletter" },
         { label: "Livre Blanc", href: "/livre-blanc" },
+        { label: "Rapports RSE", href: "/rapports_rse" },
+
       ]}
       dropdownBgColor={dropdownBgColor}
       dropdownTextColor={dropdownTextColor}
@@ -317,6 +319,8 @@ const Header: React.FC<HeaderProps> = ({
               { label: "FAQ", href: "/faq" },
               { label: "Newsletter", href: "/newsletter" },
               { label: "Livre Blanc", href: "/livre-blanc" },
+              { label: "Rapports RSE", href: "/rapports_rse" },
+
             ]}
             dropdownBgColor={dropdownBgColor}
             dropdownTextColor={dropdownTextColor}
