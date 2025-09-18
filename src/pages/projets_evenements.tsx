@@ -171,7 +171,7 @@ const EventsProjects: React.FC<ImpactProjectsProps> = ({ eventEntries, tags }) =
 export const getStaticProps = async () => {
   const eventEntriesResponse = await client.getEntries<IProjetEventFields>({
     content_type: "projetEvent",
-    order: "sys.createdAt",
+    order: "-sys.updatedAt",
   });
   const eventEntries: IProjetEvent[] =
     eventEntriesResponse.items as IProjetEvent[];

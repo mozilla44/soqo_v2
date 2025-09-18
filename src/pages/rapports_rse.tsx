@@ -59,7 +59,7 @@ const Rapport: React.FC<RapportProps> = ({ rapportEntries }) => {
                   />
                 </AspectRatio>
                 <Text fontSize={{ base: "md", md: "xl" }} pt={4}>
-                  {new Date(entry.sys.createdAt).toLocaleDateString("fr-FR")}
+                  {new Date(entry.sys.updatedAt).toLocaleDateString("fr-FR")}
                 </Text>
                 <Text
                   pt={2}
