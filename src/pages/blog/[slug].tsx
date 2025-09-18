@@ -54,7 +54,7 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ post }) => {
           {titre}
         </Text>
         <Text fontSize="xl" color={Color.KAKI} marginBottom="4">
-          {new Date(post.sys.updatedAt).toLocaleDateString("fr-FR")}
+          {new Date(post.sys.createdAt).toLocaleDateString("fr-FR")}
         </Text>
         <Text fontSize={{ base: "lg", md: "2xl" }}>
           {documentToReactComponents(chapeau)}

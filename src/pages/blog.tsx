@@ -59,7 +59,7 @@ const Blog: React.FC<BlogProps> = ({ blogEntries }) => {
                   />
                 </AspectRatio>
                 <Text fontSize={{ base: "md", md: "xl" }} pt={4}>
-                  {new Date(entry.sys.updatedAt).toLocaleDateString("fr-FR")}
+                  {new Date(entry.sys.createdAt).toLocaleDateString("fr-FR")}
                 </Text>
                 <Text
                   pt={2}
@@ -99,7 +99,7 @@ const Blog: React.FC<BlogProps> = ({ blogEntries }) => {
 export const getStaticProps: GetStaticProps = async () => {
   const blogEntriesResponse = await client.getEntries<IBlogPostFields>({
     content_type: "blogPost",
-    order: "-sys.updatedAt",
+    order: "sys.createdAt",
   });
   const blogEntries: IBlogPost[] = blogEntriesResponse.items as IBlogPost[];
 

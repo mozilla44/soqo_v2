@@ -199,7 +199,7 @@ const ImpactProjects: React.FC<ImpactProjectsProps> = ({ impactEntries }) => {
 export const getStaticProps = async () => {
   const impactEntriesResponse = await client.getEntries<IProjetImpactFields>({
     content_type: "projetImpact",
-    order: "sys.updatedAt",
+    order: "sys.createdAt",
   });
   const impactEntries: IProjetImpact[] =
     impactEntriesResponse.items as IProjetImpact[];
