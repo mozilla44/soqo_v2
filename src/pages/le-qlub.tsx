@@ -117,7 +117,7 @@ const Qlub: React.FC<QlubProps> = ({ logos, verbatimEntries }) => {
 
         <ReverseCover
           btnText={"Prendre rendez-vous avec Laura"}
-          buttonLink={"https://cal.com/laura-duboc"}
+          buttonLink={"https://cal.com/laura-duboc/demo-du-qlub"}
           btnTextColor={Color.KAKI}
           btnBorderColor={Color.KAKI}
           btnBgColor='transparent'
